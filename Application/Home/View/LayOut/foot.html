@@ -1,0 +1,51 @@
+<!--登录遮罩-->
+<!--<div class="mask"></div>-->
+<div class="qdlogin-wrap hidden">
+    <div class="login-wrap fl">
+        <a class="close" id="close" href="javascript:"><em class="iconfont">X</em></a>
+
+        <div class="login-tab cf" id="j_loginTab">
+            <ul>
+                <li class="lang act stat" tab="qidian" data-stat="qd_L01|账号登录|1">帐号登录</li>
+            </ul>
+        </div>
+
+        <!-- start 登录切换容器 -->
+        <div class="login-switch-wrap" id="j_loginSwitchWrap">
+            <!-- start 起点登录 -->
+            <div class="qd-login login-box " style="display: block;">
+
+                <!-- start 普通登录 -->
+                <div class="normal-login" id="j_normalLogin">
+                    <div class="error-tip hidden"></div>
+                    <ul>
+                        <li>
+                            <em class="iconfont"></em>
+                            <input type="text" tabindex="1" placeholder="请输入邮箱" id="username" autocomplete="off">
+                        </li>
+                        <li>
+                            <em class="iconfont"></em>
+                            <input type="password" tabindex="2" id="password" placeholder="密码" autocomplete="off">
+                        </li>
+                    </ul>
+                    <div class="auto-login-box cf">
+                        <div class="link fr">
+                            <a href="{:U('Register/register')}" target="_blank" id="regQd">免费注册</a>
+                        </div>
+                        <input type="checkbox" id="autologin" tabindex="3" name="checkbox" checked="checked">
+                        <label for="autologin" class="ui-checkbox stat" data-stat="qd_L04|勾选自动登录|2" data-off-stat="qd_L05|取消自动登录|2"></label>
+                        <label for="autologin">自动登录</label>
+                    </div>
+                    <a class="red-btn go-login btnLogin" tabindex="4" href="javascript:">登 录</a>
+                </div>
+                <!-- end 普通登录 -->
+
+            </div>
+        </div>
+    </div>
+</div>
+<load href="/Public/js/jquery-1.12.4.min.js" />
+<load href="/Public/js/common.js" />
+</body>
+
+</html>
