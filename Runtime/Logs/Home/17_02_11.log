@@ -1,0 +1,328 @@
+[ 2017-02-11T14:40:04+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000522s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000939s ]
+
+[ 2017-02-11T14:47:10+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000373s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000927s ]
+
+[ 2017-02-11T14:49:46+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000476s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000821s ]
+
+[ 2017-02-11T14:54:55+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000447s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000904s ]
+
+[ 2017-02-11T15:08:23+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000252s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000473s ]
+ERR: 1146:Table 'novel.users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `users`
+ERR: 1146:Table 'novel.users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `users`
+
+[ 2017-02-11T15:14:15+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000804s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001490s ]
+
+[ 2017-02-11T15:14:46+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000292s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000523s ]
+ERR: 1146:Table 'novel.users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `users`
+ERR: 1146:Table 'novel.users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `users`
+
+[ 2017-02-11T15:15:27+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000512s ]
+ERR: 1146:Table 'novel.users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `users`
+ERR: 1146:Table 'novel.users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `users`
+
+[ 2017-02-11T15:19:43+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000253s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000484s ]
+ERR: 1146:Table 'novel.users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `users`
+ERR: 1146:Table 'novel.users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `users`
+
+[ 2017-02-11T16:16:49+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000279s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000587s ]
+ERR: 1146:Table 'novel.users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `users`
+ERR: 1146:Table 'novel.users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `users`
+
+[ 2017-02-11T16:17:19+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000242s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000442s ]
+ERR: 1146:Table 'novel.users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `users`
+ERR: 1146:Table 'novel.users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `users`
+
+[ 2017-02-11T16:18:18+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000436s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000810s ]
+ERR: 1146:Table 'novel.users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `users`
+ERR: 1146:Table 'novel.users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `users`
+
+[ 2017-02-11T16:18:43+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000248s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000457s ]
+
+[ 2017-02-11T16:19:45+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000261s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000704s ]
+ERR: 1146:Table 'novel.users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `users`
+ERR: 1146:Table 'novel.users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `users`
+
+[ 2017-02-11T16:20:20+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000226s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000423s ]
+ERR: 1146:Table 'novel.users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `users`
+ERR: 1146:Table 'novel.users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `users`
+
+[ 2017-02-11T16:20:55+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000237s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000443s ]
+ERR: 1146:Table 'novel.users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `users`
+ERR: 1146:Table 'novel.users' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `users`
+
+[ 2017-02-11T16:24:45+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000529s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000948s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0030s ]
+
+[ 2017-02-11T16:25:52+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000242s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000491s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0018s ]
+NOTIC: [8] Undefined index: validate /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+SQL: SELECT * FROM `users` WHERE `email` = 'songjian@d1xy.cn' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: auto /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+NOTIC: [2] md5() expects at least 1 parameter, 0 given /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1154 行.
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000313s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000374s ]
+
+[ 2017-02-11T16:27:12+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000482s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000931s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0022s ]
+NOTIC: [8] Undefined index: validate /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+SQL: SELECT * FROM `users` WHERE `email` = '18258127579@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: auto /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+NOTIC: [2] md5() expects at least 1 parameter, 0 given /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1154 行.
+ERR: 1048:Column 'password' cannot be null
+ [ SQL语句 ] : INSERT INTO `users` (`email`,`password`) VALUES ('18258127579@qq.com',NULL)
+ERR: 1048:Column 'password' cannot be null
+ [ SQL语句 ] : INSERT INTO `users` (`email`,`password`) VALUES ('18258127579@qq.com',NULL)
+
+[ 2017-02-11T16:28:29+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000844s ]
+
+[ 2017-02-11T16:29:16+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000957s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0026s ]
+NOTIC: [8] Undefined index: validate /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+SQL: SELECT * FROM `users` WHERE `email` = 'song1jian@dxy.cn' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: auto /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+NOTIC: [2] md5() expects at least 1 parameter, 0 given /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1154 行.
+ERR: 1048:Column 'password' cannot be null
+ [ SQL语句 ] : INSERT INTO `users` (`email`,`password`) VALUES ('song1jian@dxy.cn',NULL)
+ERR: 1048:Column 'password' cannot be null
+ [ SQL语句 ] : INSERT INTO `users` (`email`,`password`) VALUES ('song1jian@dxy.cn',NULL)
+
+[ 2017-02-11T16:30:24+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000331s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000645s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0020s ]
+NOTIC: [8] Undefined index: validate /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+SQL: SELECT * FROM `users` WHERE `email` = 'songjian1@dxy.cn' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: auto /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+NOTIC: [2] md5() expects at least 1 parameter, 0 given /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1154 行.
+ERR: 1048:Column 'password' cannot be null
+ [ SQL语句 ] : INSERT INTO `users` (`email`,`password`) VALUES ('songjian1@dxy.cn',NULL)
+ERR: 1048:Column 'password' cannot be null
+ [ SQL语句 ] : INSERT INTO `users` (`email`,`password`) VALUES ('songjian1@dxy.cn',NULL)
+
+[ 2017-02-11T16:36:00+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000403s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000882s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0028s ]
+NOTIC: [8] Undefined index: validate /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+SQL: SELECT * FROM `users` WHERE `email` = 'saongjian@dxy.cn' LIMIT 1   [ RunTime:0.0006s ]
+NOTIC: [8] Undefined index: auto /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+SQL: INSERT INTO `users` (`email`,`password`) VALUES ('saongjian@dxy.cn','ed14ad3cffbeba56f02d4848348704e9') [ RunTime:0.0009s ]
+
+[ 2017-02-11T16:50:49+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000231s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000431s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0031s ]
+NOTIC: [8] Undefined index: validate /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+SQL: SELECT * FROM `users` WHERE `email` = 'son11gjian@dxy.cn' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined offset: 2 /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1205 行.
+NOTIC: [8] Undefined offset: 2 /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1205 行.
+NOTIC: [8] Undefined index: auto /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+ERR: 1062:Duplicate entry '' for key 'user_name'
+ [ SQL语句 ] : INSERT INTO `users` (`email`,`password`) VALUES ('son11gjian@dxy.cn','ed14ad3cffbeba56f02d4848348704e9')
+ERR: 1062:Duplicate entry '' for key 'user_name'
+ [ SQL语句 ] : INSERT INTO `users` (`email`,`password`) VALUES ('son11gjian@dxy.cn','ed14ad3cffbeba56f02d4848348704e9')
+
+[ 2017-02-11T16:56:02+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000423s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000810s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0032s ]
+NOTIC: [8] Undefined index: validate /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+SQL: SELECT * FROM `users` WHERE `email` = 'son1gjian@dxy.cn' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined offset: 2 /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1205 行.
+NOTIC: [8] Undefined offset: 2 /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1205 行.
+NOTIC: [8] Undefined index: auto /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+SQL: INSERT INTO `users` (`email`,`password`,`status`) VALUES ('son1gjian@dxy.cn','ed14ad3cffbeba56f02d4848348704e9','1') [ RunTime:0.0005s ]
+ERR: 1062:Duplicate entry 'son1gjian@dxy.cn' for key 'email'
+ [ SQL语句 ] : INSERT INTO `users` (`email`,`password`,`status`) VALUES ('son1gjian@dxy.cn','ed14ad3cffbeba56f02d4848348704e9','1')
+ERR: 1062:Duplicate entry 'son1gjian@dxy.cn' for key 'email'
+ [ SQL语句 ] : INSERT INTO `users` (`email`,`password`,`status`) VALUES ('son1gjian@dxy.cn','ed14ad3cffbeba56f02d4848348704e9','1')
+
+[ 2017-02-11T16:56:34+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000380s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000728s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0018s ]
+NOTIC: [8] Undefined index: validate /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+SQL: SELECT * FROM `users` WHERE `email` = 'wwwsong@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined offset: 2 /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1205 行.
+NOTIC: [8] Undefined offset: 2 /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1205 行.
+NOTIC: [8] Undefined index: auto /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+ERR: 1062:Duplicate entry '' for key 'user_name'
+ [ SQL语句 ] : INSERT INTO `users` (`email`,`password`,`status`) VALUES ('wwwsong@qq.com','ed14ad3cffbeba56f02d4848348704e9','1')
+ERR: 1062:Duplicate entry '' for key 'user_name'
+ [ SQL语句 ] : INSERT INTO `users` (`email`,`password`,`status`) VALUES ('wwwsong@qq.com','ed14ad3cffbeba56f02d4848348704e9','1')
+
+[ 2017-02-11T16:57:58+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000521s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000912s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0019s ]
+NOTIC: [8] Undefined index: validate /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+SQL: SELECT * FROM `users` WHERE `email` = 'songjian@dxy.cn' LIMIT 1   [ RunTime:0.0005s ]
+NOTIC: [8] Undefined index: auto /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+ERR: 1062:Duplicate entry '' for key 'user_name'
+ [ SQL语句 ] : INSERT INTO `users` (`email`,`password`,`status`) VALUES ('songjian@dxy.cn','ed14ad3cffbeba56f02d4848348704e9','1')
+ERR: 1062:Duplicate entry '' for key 'user_name'
+ [ SQL语句 ] : INSERT INTO `users` (`email`,`password`,`status`) VALUES ('songjian@dxy.cn','ed14ad3cffbeba56f02d4848348704e9','1')
+
+[ 2017-02-11T16:58:42+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000804s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001295s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0024s ]
+NOTIC: [8] Undefined index: validate /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+SQL: SELECT * FROM `users` WHERE `email` = 'songjian@dxy.cn' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: auto /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+ERR: 1062:Duplicate entry '' for key 'user_name'
+ [ SQL语句 ] : INSERT INTO `users` (`email`,`password`,`reg_date`,`reg_ip`,`status`) VALUES ('songjian@dxy.cn','ed14ad3cffbeba56f02d4848348704e9','1486803522','127.0.0.1','1')
+ERR: 1062:Duplicate entry '' for key 'user_name'
+ [ SQL语句 ] : INSERT INTO `users` (`email`,`password`,`reg_date`,`reg_ip`,`status`) VALUES ('songjian@dxy.cn','ed14ad3cffbeba56f02d4848348704e9','1486803522','127.0.0.1','1')
+
+[ 2017-02-11T17:11:46+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000542s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001077s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0037s ]
+NOTIC: [8] Undefined index: validate /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+SQL: SELECT * FROM `users` WHERE `email` = 'asdas@qq.com' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: auto /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+SQL: INSERT INTO `users` (`email`,`password`,`reg_date`,`reg_ip`,`status`,`user_name`) VALUES ('asdas@qq.com','ed14ad3cffbeba56f02d4848348704e9','1486804306','127.0.0.1','1','asdas') [ RunTime:0.0007s ]
+ERR: 1062:Duplicate entry 'asdas@qq.com' for key 'email'
+ [ SQL语句 ] : INSERT INTO `users` (`email`,`password`,`reg_date`,`reg_ip`,`status`,`user_name`) VALUES ('asdas@qq.com','ed14ad3cffbeba56f02d4848348704e9','1486804306','127.0.0.1','1','asdas')
+ERR: 1062:Duplicate entry 'asdas@qq.com' for key 'email'
+ [ SQL语句 ] : INSERT INTO `users` (`email`,`password`,`reg_date`,`reg_ip`,`status`,`user_name`) VALUES ('asdas@qq.com','ed14ad3cffbeba56f02d4848348704e9','1486804306','127.0.0.1','1','asdas')
+
+[ 2017-02-11T17:12:29+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000890s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0028s ]
+NOTIC: [8] Undefined index: validate /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+SQL: SELECT * FROM `users` WHERE `email` = 'a12sdas@qq.com' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: auto /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+SQL: INSERT INTO `users` (`email`,`password`,`reg_date`,`reg_ip`,`status`,`user_name`) VALUES ('a12sdas@qq.com','ed14ad3cffbeba56f02d4848348704e9','1486804349','127.0.0.1','1','a12sdas') [ RunTime:0.0005s ]
+
+[ 2017-02-11T17:20:44+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000529s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001350s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0022s ]
+NOTIC: [8] Undefined index: validate /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+SQL: SELECT * FROM `users` WHERE `email` = 'songjinaa@qq.com' LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [8] Undefined index: auto /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+SQL: INSERT INTO `users` (`email`,`password`,`reg_date`,`reg_ip`,`status`,`user_name`) VALUES ('songjinaa@qq.com','ed14ad3cffbeba56f02d4848348704e9','1486804844','127.0.0.1','1','songjinaa') [ RunTime:0.0007s ]
+
+[ 2017-02-11T17:21:38+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000225s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000421s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0024s ]
+NOTIC: [8] Undefined index: validate /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+SQL: SELECT * FROM `users` WHERE `email` = 'songjian@dxy.cn' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: auto /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+ERR: 1062:Duplicate entry 'songjian' for key 'user_name'
+ [ SQL语句 ] : INSERT INTO `users` (`email`,`password`,`reg_date`,`reg_ip`,`status`,`user_name`) VALUES ('songjian@dxy.cn','ed14ad3cffbeba56f02d4848348704e9','1486804898','127.0.0.1','1','songjian')
+ERR: 1062:Duplicate entry 'songjian' for key 'user_name'
+ [ SQL语句 ] : INSERT INTO `users` (`email`,`password`,`reg_date`,`reg_ip`,`status`,`user_name`) VALUES ('songjian@dxy.cn','ed14ad3cffbeba56f02d4848348704e9','1486804898','127.0.0.1','1','songjian')
+
+[ 2017-02-11T17:24:12+08:00 ] 127.0.0.1 /index.php?m=Home&c=Login&a=register
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000236s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000444s ]
+SQL: SHOW COLUMNS FROM `users` [ RunTime:0.0021s ]
+NOTIC: [8] Undefined index: validate /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1185 行.
+SQL: SELECT * FROM `users` WHERE `email` = 'songji11an@dxy.cn' LIMIT 1   [ RunTime:0.0002s ]
+NOTIC: [8] Undefined index: auto /private/var/www/MyTp/ThinkPHP/Library/Think/Model.class.php 第 1128 行.
+SQL: INSERT INTO `users` (`email`,`password`,`reg_date`,`reg_ip`,`status`,`user_name`) VALUES ('songji11an@dxy.cn','ed14ad3cffbeba56f02d4848348704e9','1486805052','127.0.0.1','1','songji11an') [ RunTime:0.0004s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000327s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000386s ]
+

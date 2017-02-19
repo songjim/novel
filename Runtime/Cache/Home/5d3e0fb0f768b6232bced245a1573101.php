@@ -47,86 +47,79 @@
         </div>
     </div>
     <!--头部-->
-<link rel="stylesheet" type="text/css" href="/Public/css/list.css" />
-    <!--start书详情容器-->
-    <div class="book-detail-wrap center990">
-        <div class="book-information cf">
-            <!--start书封面-->
-            <div class="book-img">
-                <a class="J-getJumpUrl" id="bookImg" href="" disabled="true">
-                    <img src="<?php echo ($book["book_img"]); ?>">
-                </a>
-            </div>
-            <!--end书封面-->
-            <!--start书信息-->
-            <div class="book-info">
-                <h1>
-                    <em><?php echo ($book["book_name"]); ?></em>
-                    <span>
-                            <a class="writer" href="javascript:void(0);" target="_blank" data-eid="qd_G08"><?php echo ($book["author"]); ?></a> 著
-                        </span>
-                </h1>
-                <p class="tag">
-                    <span class="blue">
-                        <?php switch($book["is_finished"]): case "1": ?>完结<?php break;?>
-                            <?php default: ?>连载<?php endswitch;?>
 
-                    </span>
-                </p>
-                <p class="intro">
-                    <?php echo ($book["description"]); ?>
-                </p>
-                <p>
-                    <em>3.73</em>
-                    <cite>万字</cite>
-                </p>
-                <p>
-                    <a href="<?php echo U('Books/showarticle',array('section_id'=>1,'book_id'=>$book[id]));?>" class="red-btn J-getJumpUrl ">开始阅读</a>
-                </p>
-            </div>
-            <!--end书信息-->
-
-        </div>
-
-        <!--start区块导航-->
-        <div class="content-nav-wrap cf">
-            <div class="nav-wrap fl">
-                <ul>
-                    <li class="j_catalog_block act">
-                        <a href="javascript:void(0);" class="lang">目录</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!--end区块导航-->
-
-        <!--start目录模块-->
-        <div class="catalog-content-wrap">
-            <!--start置顶按钮-->
-            <div class="go-top">
-                <div class="go-top-wrap">
-                    <a href="javascript:void(0);" class="icon-go-top J-go-top">
-                        <em class="iconfont" data-eid="qd_G72">TOP</em>
-                    </a>
-                </div>
-            </div>
-            <!--end置顶按钮-->
-
-            <div class="volume-wrap">
-                <div class="volume">
-                    <h3>正文卷</h3>
-                    <ul class="cf">
-                        <?php if(is_array($sections)): $i = 0; $__LIST__ = $sections;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$section): $mod = ($i % 2 );++$i;?><li><a href="<?php echo U('Books/showarticle',array('section_id'=>$section[id],'book_id'=>$book[id]));?>"><?php echo ($section["name"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!--end目录模块-->
-
+<!--导航-->
+<div class="main-nav-wrap" data-l1="3">
+    <div class="main-nav box-center cf">
+        <ul>
+            <?php if(is_array($categories)): $i = 0; $__LIST__ = $categories;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$category): $mod = ($i % 2 );++$i;?><li class="nav-li"><a href="<?php echo U('HomePage/categoryshow',array('category_id'=>$category[id]));?>" data-eid="qd_A15"><?php echo ($category["name"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+            <!--<li class="nav-li"><a href="<?php echo U('HomePage/categoryshow');?>" data-eid="qd_A15">都市</a></li>-->
+            <!--<li class="nav-li"><a href="" data-eid="qd_A16">灵异</a></li>-->
+            <!--<li class="nav-li"><a href="" data-eid="qd_A17">武侠</a></li>-->
+            <!--<li class="nav-li"><a href="" data-eid="qd_A18">仙侠</a></li>-->
+            <li class="nav-li"><a href="<?php echo U('HomePage/forumshow');?>" target="_blank" data-eid="qd_A19">论坛</a></li>
+        </ul>
     </div>
-    <!--end书详情容器-->
+</div>
+<!--导航-->
+<link rel="stylesheet" type="text/css" href="/Public/css/personal.css" />
 
-
+    <!--照片墙-->
+    <div class="box-center mb40 cf forumboard">
+        <div class="person_wrap">
+            <div class="user clearfix">
+                <div class="avatar">
+                    <img src="http://s1.bbs.xiaomi.cn/statics/images/noavatar_middle.gif?&amp;_t=1487162105" onerror="javascript:this.src='http://s1.bbs.xiaomi.cn/statics/images/noavatar_small.gif';">
+                </div>
+                <div class="info">
+                    <strong class="username" u-id="49562247"><?php echo ($user_name); ?></strong>
+                </div>
+                <div class="score">
+                    <dl>
+                        <dt>
+                                <span class="txt">
+                                    <a href="">修改头像</a>
+                                </span>
+                        </dt>
+                    </dl>
+                </div>
+            </div>
+            <div class="contain_right">
+                <div class="session">
+                    <div class="theme">
+                        <div class="theme_con">
+                            <div class="theme_nav">
+                                <a href="#" class="theme_nav_list">主题<span class="num"><?php echo ($forums_count); ?></span></a>
+                                <a href="#" class="theme_nav_list">回复<span class="num">0</span></a>
+                            </div>
+                            <p style="height: 56px;">
+                                <span class="th1">帖子</span>
+                                <span class="th2">版块</span>
+                                <span class="th3">回复</span>
+                            </p>
+                            <div class="theme_con_index current">
+                                <ul>
+                                    <?php if(is_array($forums)): $i = 0; $__LIST__ = $forums;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$forum): $mod = ($i % 2 );++$i;?><li>
+                                            <div class="theme_list_con">
+                                                <div class="title">
+                                                    <a href="<?php echo U('Forums/detailshow',array('forum_id'=>$forum['id']));?>" class="title_name txtellipsis" target="_blank" rel="noopener noreferrer">
+                                                        <?php echo ($forum["name"]); ?></a>
+                                                </div>
+                                                <span class="plate"><?php echo ($forum["category_name"]); ?></span>
+                                                <span class="num">10/570</span>
+                                            </div>
+                                        </li><?php endforeach; endif; else: echo "" ;endif; ?>
+                                </ul>
+                            </div>
+                            <div class="theme_con_index">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--照片墙-->
 <!--页脚-->
 <div class="footer">
     <!--start 友情链接-->

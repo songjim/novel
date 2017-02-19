@@ -1,0 +1,64 @@
+<include file="LayOut/head" />
+
+<include file="LayOut/menu"/>
+<load href="/Public/css/personal.css"/>
+
+    <!--照片墙-->
+    <div class="box-center mb40 cf forumboard">
+        <div class="person_wrap">
+            <div class="user clearfix">
+                <div class="avatar">
+                    <img src="http://s1.bbs.xiaomi.cn/statics/images/noavatar_middle.gif?&amp;_t=1487162105" onerror="javascript:this.src='http://s1.bbs.xiaomi.cn/statics/images/noavatar_small.gif';">
+                </div>
+                <div class="info">
+                    <strong class="username" u-id="49562247">{$user_name}</strong>
+                </div>
+                <div class="score">
+                    <dl>
+                        <dt>
+                                <span class="txt">
+                                    <a href="">修改头像</a>
+                                </span>
+                        </dt>
+                    </dl>
+                </div>
+            </div>
+            <div class="contain_right">
+                <div class="session">
+                    <div class="theme">
+                        <div class="theme_con">
+                            <div class="theme_nav">
+                                <a href="#" class="theme_nav_list">主题<span class="num">{$forums_count}</span></a>
+                                <a href="#" class="theme_nav_list">回复<span class="num">0</span></a>
+                            </div>
+                            <p style="height: 56px;">
+                                <span class="th1">帖子</span>
+                                <span class="th2">版块</span>
+                                <span class="th3">回复</span>
+                            </p>
+                            <div class="theme_con_index current">
+                                <ul>
+                                    <volist name="forums" id="forum">
+                                        <li>
+                                            <div class="theme_list_con">
+                                                <div class="title">
+                                                    <a href="{:U('Forums/detailshow',array('forum_id'=>$forum['id']))}" class="title_name txtellipsis" target="_blank" rel="noopener noreferrer">
+                                                        {$forum.name}</a>
+                                                </div>
+                                                <span class="plate">{$forum.category_name}</span>
+                                                <span class="num">10/570</span>
+                                            </div>
+                                        </li>
+                                   </volist>
+                                </ul>
+                            </div>
+                            <div class="theme_con_index">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--照片墙-->
+<include file="Layout/foot"/>

@@ -1,5 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit();?>
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
 
 <head>
@@ -48,7 +47,7 @@
         </div>
     </div>
     <!--头部-->
-
+<link rel="stylesheet" type="text/css" href="/Public/css/category.css" />
 <!--导航-->
 <div class="main-nav-wrap" data-l1="3">
     <div class="main-nav box-center cf">
@@ -63,60 +62,87 @@
     </div>
 </div>
 <!--导航-->
-    <!--照片墙-->
-    <div class="focus-wrap box-center mb40 cf">
-        <div class="focus-box fl" data-l1="6">
-            <div class="focus-slider">
-                <div class="lbf-slides switchable-slides" id="switchable-slides">
-                    <img src="<?php echo (C("Public_Path")); ?>/img/index-cover.jpeg" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="notice-wrap fr">
-            <div class="notice" id="notice" data-l1="7">
-                <h3><a href="javascript:void(0);" target="_blank" data-eid="qd_A93">2017一起点红包</a></h3>
-                <div class="notice-list">
-                    <ul>
-                        <li class="color-type_0" data-rid="1"><a href="#" target="_blank" data-eid="qd_A94"><i>「</i>公告<i>」</i>竞技星创奖获奖名单</a></li>
-                        <li class="color-type_0" data-rid="2"><a href="#" target="_blank" data-eid="qd_A95"><i>「</i>资讯<i>」</i>阅文作品入选总局推介</a></li>
-                        <li class="color-type_0" data-rid="3"><a href="#" target="_blank" data-eid="qd_A96"><i>「</i>公告<i>」</i>斗破苍穹动画探班直播</a></li>
-                        <li class="color-type_0" data-rid="3"><a href="#" target="_blank" data-eid="qd_A96"><i>「</i>公告<i>」</i>斗破苍穹动画探班直播</a></li>
-                        <li class="color-type_0" data-rid="3"><a href="#" target="_blank" data-eid="qd_A96"><i>「</i>公告<i>」</i>斗破苍穹动画探班直播</a></li>
-                        <li class="color-type_0" data-rid="3"><a href="#" target="_blank" data-eid="qd_A96"><i>「</i>公告<i>」</i>斗破苍穹动画探班直播</a></li>
-                        <li class="color-type_0" data-rid="3"><a href="#" target="_blank" data-eid="qd_A96"><i>「</i>公告<i>」</i>斗破苍穹动画探班直播</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--照片墙-->
+    <!--&lt;!&ndash;导航&ndash;&gt;-->
+    <!--<div class="main-nav-wrap" data-l1="3">-->
+        <!--<div class="main-nav box-center cf">-->
+            <!--<ul>-->
+                <!--<li class="nav-li"><a href="" data-eid="qd_A15">都市</a></li>-->
+                <!--<li class="nav-li"><a href="" data-eid="qd_A16">灵异</a></li>-->
+                <!--<li class="nav-li"><a href="" data-eid="qd_A17">武侠</a></li>-->
+                <!--<li class="nav-li"><a href="" data-eid="qd_A18">仙侠</a></li>-->
+                <!--<li class="nav-li"><a href="" target="_blank" data-eid="qd_A19">论坛</a></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--&lt;!&ndash;导航&ndash;&gt;-->
 
     <!--小说列表-->
     <div class="all-pro-wrap box-center cf">
+        <!--start推荐书籍-->
+        <div class="focus-wrap mb40 cf">
+            <div class="channel-focus small-mode fl">
+                <div class="small-list cf">
+                    <ul>
+                        <?php if(is_array($recommends)): $i = 0; $__LIST__ = $recommends;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$recommend): $mod = ($i % 2 );++$i;?><li>
+                                <div class="book-shadow"></div>
+                                <div class="img-box">
+                                    <a href="">
+                                        <img src="<?php echo ($recommend["book_img"]); ?>" alt="">
+                                    </a>
+                                </div>
+                                <h3>
+                                    <a href="<?php echo U('Books/showsections',array('book_id'=>$recommend[id]));?>"><?php echo ($recommend["book_name"]); ?></a>
+                                </h3>
+                                <p>@<?php echo ($recommend["author"]); ?></p>
+                            </li><?php endforeach; endif; else: echo "" ;endif; ?>
+                        <!--<li>-->
+                            <!--<div class="book-shadow"></div>-->
+                            <!--<div class="img-box">-->
+                                <!--<a href="">-->
+                                    <!--<img src="" alt="">-->
+                                <!--</a>-->
+                            <!--</div>-->
+                            <!--<h3>-->
+                                <!--<a href="">雪鹰领主</a>-->
+                            <!--</h3>-->
+                            <!--<p>@小钢炮</p>-->
+                        <!--</li>-->
+                    </ul>
+                </div>
+            </div>
+            <div class="notice-wrap fr">
+                <div class="notice-box">
+                    <div class="edit-rec">
+                        <h3>简介</h3>
+                        <p><?php echo ($current_category["description"]); ?></p>
+                        <!--<p>ksfjksdjfksdjfksdjfksdjfkjsfdkjdskdfjks ksfjksdjfksdjfksdjfksdjfkjsfdkjdskdfjks ksfjksdjfksdjfksdjfksdjfkjsfdkjdskdfjks</p>-->
+                        <!--<p>ksfjksdjfksdjfksdjfksdjfkjsfdkjdskdfjks ksfjksdjfksdjfksdjfksdjfkjsfdkjdskdfjks ksfjksdjfksdjfksdjfksdjfkjsfdkjdskdfjks</p>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--end推荐书籍-->
         <div class="main-content-wrap fl" data-l1="5">
             <div class="all-book-list">
                 <div class="book-img-text">
                     <ul class="all-img-list cf">
-                        <?php if(is_array($books)): $i = 0; $__LIST__ = array_slice($books,0,4,true);if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$book): $mod = ($i % 2 );++$i;?><li data-rid="1">
+                        <?php if(is_array($all_book)): $i = 0; $__LIST__ = $all_book;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$book): $mod = ($i % 2 );++$i;?><li data-rid="1">
                                 <div class="book-img-box">
-                                    <a href="<?php echo U('Books/showsections',array('book_id'=>$book['id']));?>" data-bid="3513193" data-eid="qd_B57" target="_blank">
+                                    <a href="//book.qidian.com/info/3513193" data-bid="3513193" data-eid="qd_B57" target="_blank">
                                         <img src="<?php echo ($book["book_img"]); ?>" />
                                     </a>
                                 </div>
                                 <div class="book-mid-info">
-                                    <h4><a href="<?php echo U('Books/showsections',array('book_id'=>$book['id']));?>" target="_blank" data-eid="qd_B58" data-bid="3513193"><?php echo ($book["book_name"]); ?></a></h4>
+                                    <h4><a href="<?php echo U('Books/showsections',array('book_id'=>$book[id]));?>" target="_blank" data-eid="qd_B58" data-bid="3513193"><?php echo ($book["book_name"]); ?></a></h4>
                                     <p class="author">
                                         <img src="//qidian.gtimg.com/qd/images/ico/user.0.1.png">
                                         <a class="name" href="#" data-eid="qd_B59" target="_blank"><?php echo ($book["author"]); ?></a>
                                         <em>|</em>
-                                        <a href="" target="_blank" data-eid="qd_B60"><?php echo ($book["category_name"]); ?></a>
+                                        <a href="" target="_blank" data-eid="qd_B60">玄幻</a>
                                         <i>·</i>
                                         <a class="go-sub-type" data-typeid="21" data-subtypeid="73" href="javascript:" data-eid="qd_B61">异世大陆</a>
                                         <em>|</em>
-                                        <span>
-                                            <?php switch($book["is_finished"]): case "1": ?>完结<?php break;?>
-                                                <?php default: ?>连载中<?php endswitch;?>
-                                        </span>
+                                        <span>连载中</span>
                                     </p>
                                     <p class="intro">
                                         <?php echo ($book["description"]); ?>
@@ -133,7 +159,7 @@
                                 <!--</a>-->
                             <!--</div>-->
                             <!--<div class="book-mid-info">-->
-                                <!--<h4><a href="<?php echo U('Books/showsections','book_id=1');?>" target="_blank" data-eid="qd_B58" data-bid="3513193">雪鹰领主</a></h4>-->
+                                <!--<h4><a href="//book.qidian.com/info/3513193" target="_blank" data-eid="qd_B58" data-bid="3513193">雪鹰领主</a></h4>-->
                                 <!--<p class="author">-->
                                     <!--<img src="//qidian.gtimg.com/qd/images/ico/user.0.1.png">-->
                                     <!--<a class="name" href="#" data-eid="qd_B59" target="_blank">我吃西红柿</a>-->
@@ -182,6 +208,8 @@
         </div>
     </div>
     <!--小说列表-->
+
+
 <!--主体-->
 <!--页脚-->
 <div class="footer">

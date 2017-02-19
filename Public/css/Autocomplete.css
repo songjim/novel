@@ -6923,3 +6923,18 @@ input[type=submit].lbf-button-block,input[type=reset].lbf-button-block,input[typ
 .hidden {
     display: none
 }
+.rank-header {
+    margin-bottom: 24px;
+}
+.rank-header h3 {
+    font-size: 26px;
+    line-height: 26px;
+    margin-bottom: 15px;
+}
+.lang {
+    font-family: FZZCYSK;
+    font-weight: 400;
+}
+.height-auto {
+    height: auto!important;
+}

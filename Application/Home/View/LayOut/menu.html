@@ -1,0 +1,16 @@
+<!--导航-->
+<div class="main-nav-wrap" data-l1="3">
+    <div class="main-nav box-center cf">
+        <ul>
+            <volist name="categories" id="category">
+                <li class="nav-li"><a href="{:U('HomePage/categoryshow',array('category_id'=>$category[id]))}" data-eid="qd_A15">{$category.name}</a></li>
+            </volist>
+            <!--<li class="nav-li"><a href="{:U('HomePage/categoryshow')}" data-eid="qd_A15">都市</a></li>-->
+            <!--<li class="nav-li"><a href="" data-eid="qd_A16">灵异</a></li>-->
+            <!--<li class="nav-li"><a href="" data-eid="qd_A17">武侠</a></li>-->
+            <!--<li class="nav-li"><a href="" data-eid="qd_A18">仙侠</a></li>-->
+            <li class="nav-li"><a href="{:U('HomePage/forumshow')}" target="_blank" data-eid="qd_A19">论坛</a></li>
+        </ul>
+    </div>
+</div>
+<!--导航-->
