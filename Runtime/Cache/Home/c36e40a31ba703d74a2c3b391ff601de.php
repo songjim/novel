@@ -47,87 +47,67 @@
         </div>
     </div>
     <!--头部-->
-<link rel="stylesheet" type="text/css" href="/Public/css/list.css" />
-    <!--start书详情容器-->
-    <div class="book-detail-wrap center990">
-        <div class="book-information cf">
-            <!--start书封面-->
-            <div class="book-img">
-                <a class="J-getJumpUrl" id="bookImg" href="" disabled="true">
-                    <img src="<?php echo ($book["book_img"]); ?>">
-                </a>
-            </div>
-            <!--end书封面-->
-            <!--start书信息-->
-            <div class="book-info">
-                <h1>
-                    <em><?php echo ($book["book_name"]); ?></em>
-                    <span>
-                            <a class="writer" href="javascript:void(0);" target="_blank" data-eid="qd_G08"><?php echo ($book["author"]); ?></a> 著
-                        </span>
-                </h1>
-                <p class="tag">
-                    <span class="blue">
-                        <?php switch($book["is_finished"]): case "1": ?>完结<?php break;?>
-                            <?php default: ?>连载<?php endswitch;?>
 
-                    </span>
-                </p>
-                <p class="intro">
-                    <?php echo ($book["description"]); ?>
-                </p>
-                <p>
-                    <em>3.73</em>
-                    <cite>万字</cite>
-                </p>
-                <p>
-                    <a href="<?php echo U('Books/showarticle',array('section_id'=>1,'book_id'=>$book[id]));?>" class="red-btn J-getJumpUrl ">开始阅读</a>
-                </p>
-            </div>
-            <!--end书信息-->
-
-        </div>
-
-        <!--start区块导航-->
-        <div class="content-nav-wrap cf">
-            <div class="nav-wrap fl">
-                <ul>
-                    <li class="j_catalog_block act">
-                        <a href="javascript:void(0);" class="lang">目录</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!--end区块导航-->
-
-        <!--start目录模块-->
-        <div class="catalog-content-wrap">
-            <!--start置顶按钮-->
-            <div class="go-top">
-                <div class="go-top-wrap">
-                    <a href="javascript:void(0);" class="icon-go-top J-go-top">
-                        <em class="iconfont" data-eid="qd_G72">TOP</em>
-                    </a>
-                </div>
-            </div>
-            <!--end置顶按钮-->
-
-            <div class="volume-wrap">
-                <div class="volume">
-                    <h3>正文卷</h3>
-                    <ul class="cf">
-                        <?php if(is_array($sections)): $i = 0; $__LIST__ = $sections;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$section): $mod = ($i % 2 );++$i;?><li><a href="<?php echo U('Books/showarticle',array('section_id'=>$section[id],'book_id'=>$book[id]));?>"><?php echo ($section["name"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!--end目录模块-->
-
+<!--导航-->
+<div class="main-nav-wrap" data-l1="3">
+    <div class="main-nav box-center cf">
+        <ul>
+            <?php if(is_array($categories)): $i = 0; $__LIST__ = $categories;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$category): $mod = ($i % 2 );++$i;?><li class="nav-li"><a href="<?php echo U('HomePage/categoryshow',array('category_id'=>$category[id]));?>" data-eid="qd_A15"><?php echo ($category["name"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+            <!--<li class="nav-li"><a href="<?php echo U('HomePage/categoryshow');?>" data-eid="qd_A15">都市</a></li>-->
+            <!--<li class="nav-li"><a href="" data-eid="qd_A16">灵异</a></li>-->
+            <!--<li class="nav-li"><a href="" data-eid="qd_A17">武侠</a></li>-->
+            <!--<li class="nav-li"><a href="" data-eid="qd_A18">仙侠</a></li>-->
+            <li class="nav-li"><a href="<?php echo U('HomePage/forumshow');?>" target="_blank" data-eid="qd_A19">论坛</a></li>
+        </ul>
     </div>
-    <!--end书详情容器-->
+</div>
+<!--导航-->
+<link rel="stylesheet" type="text/css" href="/Public/css/view.css" />
+<link rel="stylesheet" type="text/css" href="/Public/css/forum.css" />
 
+    <!--start论坛-->
+    <div class="box-center">
+        <div class="wp">
+            <div class="bm cl" id="pt">
+                <div class="z">
+                    <a href="">HOME</a>
+                    <em>›</em>
+                    <a href="">论坛</a>
+                    <em>›</em>
+                    <a href=""><?php echo ($forum["category_name"]); ?></a>
+                    <em>›</em>
+                    <a href=""><?php echo ($forum["forum_name"]); ?></a>
+                </div>
+            </div>
+            <form action="<?php echo U('Forums/editReplays');?>" method="post">
+                <div class="ct2_a ct2_a_r wp cl" id="ct">
+                    <div class="bm bw0 cl" id="editorbox">
+                        <div id="postbox">
+                            <div class="pbt cl">
+                                <div class="z">
+                                        <span class="z">
+                                            RE: <?php echo ($replay["r_content"]); ?>
+                                        </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="edt">
+                        <input type="hidden" name="replay_id" value="<?php echo ($replay["id"]); ?>">
+                        <input type="hidden" name="forum_id" value="<?php echo ($forum["forum_id"]); ?>">
+                        <textarea name="r_content" id="" cols="30" rows="10"></textarea>
+                    </div>
+                    <div class="mtm mbm pnpost">
+                        <button type="submit" id="postsubmit" class="pn pnc" value="true" name="replysubmit">
+                            <span>参与/回复主题</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
-<!--页脚-->
+    <!--页脚-->
 <div class="footer">
     <!--start 友情链接-->
     <div class="box-center cf">

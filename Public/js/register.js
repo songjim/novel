@@ -584,32 +584,30 @@ function QRegister (config) {
         var psw   = $("#txtphonepwd").val();
 		var code  = $("#txtphoneimgcode").val();
         name = $.trim(name);
-		
-		if (this.checkAccount != true) {
-			this.checkEmail();
-			return false;
-		}
-		if (this.checkPassword('txtphonepwd') != true) return false;
+
 		if (this.checkPassword2() != true) return false;
 		
 		if ($('#deal').is(':checked') != true) {
-			//console.log('agree error');
 			return false;
 		}
         
         this.mailLoading();
         var that = this;
-        
+
         $.ajax({
-            url: '',
+            url: 'index.php?m=Home&c=Login&a=register',
             type: 'post',
             data: {
-                name: name,
-                psw: psw,
+                email: name,
+                password: psw,
             },
-            dataType: 'json',
             success: function (data) {
-                
+                var r_data = JSON.parse(data)
+                if (r_data && r_data.success) {
+
+                    location.href = r_data.url
+                }
+                return;
             }
         })
 	};

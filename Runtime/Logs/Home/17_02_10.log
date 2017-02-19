@@ -1,0 +1,23 @@
+[ 2017-02-10T00:05:28+08:00 ] 127.0.0.1 /index.php?m=Home&c=Books&a=showarticle&section_id=1
+ERR: 1054:Unknown column 'addslashes' in 'where clause'
+ [ SQL语句 ] : SELECT sections.name as section_name,sections.book_id,books.*,categories.*,articles.* FROM `articles` INNER JOIN sections on sections.id = articles.section_id INNER JOIN books on books.id = sections.book_id INNER JOIN categories on books.category_id = categories.id  WHERE ( articles.section_id=1 and books.id = addslashes ) LIMIT 1  
+
+[ 2017-02-10T00:06:05+08:00 ] 127.0.0.1 /index.php?m=Home&c=Books&a=showarticle&section_id=1
+ERR: 1054:Unknown column 'addslashes' in 'where clause'
+ [ SQL语句 ] : SELECT sections.name as section_name,sections.book_id,books.*,categories.*,articles.* FROM `articles` INNER JOIN sections on sections.id = articles.section_id INNER JOIN books on books.id = sections.book_id INNER JOIN categories on books.category_id = categories.id  WHERE ( articles.section_id=1 and books.id = addslashes ) LIMIT 1  
+
+[ 2017-02-10T00:53:24+08:00 ] 127.0.0.1 /index.php?m=Home&c=HomePage&a=homeshow
+ERR: XML标签语法错误 : value={$book.is_finished}
+
+[ 2017-02-10T01:00:05+08:00 ] 127.0.0.1 /index.php?m=Home&c=HomePage&a=homeshow
+ERR: 1054:Unknown column 'categories.name' in 'field list'
+ [ SQL语句 ] : SELECT books.*,categories.name as category_name,categories.description as category_description FROM `books` INNER JOIN categories c on c.id = books.category_id  
+
+[ 2017-02-10T01:03:05+08:00 ] 127.0.0.1 /index.php?m=Home&c=Books&a=showsections&book_id=Arrayid
+ERR: 1054:Unknown column 'Arrayid' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `books` WHERE ( id = Arrayid ) LIMIT 1  
+
+[ 2017-02-10T01:03:29+08:00 ] 127.0.0.1 /index.php?m=Home&c=Books&a=showsections&book_id=Arrayid
+ERR: 1054:Unknown column 'Arrayid' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `books` WHERE ( id = Arrayid ) LIMIT 1  
+
