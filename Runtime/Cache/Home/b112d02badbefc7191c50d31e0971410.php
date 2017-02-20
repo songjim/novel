@@ -20,19 +20,28 @@
         <div class="box-center cf">
             <!--登录注册框-->
             <div class="login-box fr">
-                <div class="sign-in hidden">
-                    <span>你好，</span>
-                    <a class="black" id="user-name" href="//me.qidian.com" target="_blank" data-eid="qd_A08"></a>
-                    <em>|</em>
-                    <a class="black" id="msg-btn" href="//me.qidian.com/msg/systems.aspx?page=1" target="_blank" data-eid="qd_A09">
-                        消息<cite id="msg-box">(<i></i>)</cite></a><em>|</em>
-                    <a id="exit-btn" href="javascript:" data-eid="qd_A10">退出</a>
-                </div>
-                <div class="sign-out">
-                    <a id="login-btn" class="black" href="javascript:" data-eid="qd_A06">登录</a>
-                    <em>|</em>
-                    <a id="reg-btn" href="<?php echo U('Register/register');?>" target="_blank" data-eid="qd_A07">注册</a>
-                </div>
+                <?php if(($user_name != '')): ?><div class="sign-in">
+                        <span>你好，<?php echo ($user_name); ?></span>
+                        <a class="black" id="user-name" href="//me.qidian.com" target="_blank" data-eid="qd_A08"></a>
+                        <em>|</em>
+                        <a class="black" id="msg-btn" href="//me.qidian.com/msg/systems.aspx?page=1" target="_blank" data-eid="qd_A09">
+                            消息<cite id="msg-box">(<i></i>)</cite></a><em>|</em>
+                        <a id="exit-btn" href="<?php echo U('Login/logout');?>" data-eid="qd_A10">退出</a>
+                    </div>
+                    <?php else: ?>
+                    <div class="sign-out">
+                        <a id="login-btn" class="black" href="javascript:" data-eid="qd_A06">登录</a>
+                        <em>|</em>
+                        <a id="reg-btn" href="<?php echo U('Register/register');?>" target="_blank" data-eid="qd_A07">注册</a>
+                    </div><?php endif; ?>
+                <!--<div class="sign-in">-->
+                    <!--<span>你好，<?php echo ($user_name); ?></span>-->
+                    <!--<a class="black" id="user-name" href="//me.qidian.com" target="_blank" data-eid="qd_A08"></a>-->
+                    <!--<em>|</em>-->
+                    <!--<a class="black" id="msg-btn" href="//me.qidian.com/msg/systems.aspx?page=1" target="_blank" data-eid="qd_A09">-->
+                        <!--消息<cite id="msg-box">(<i></i>)</cite></a><em>|</em>-->
+                    <!--<a id="exit-btn" href="javascript:" data-eid="qd_A10">退出</a>-->
+                <!--</div>-->
             </div>
             <!--登录注册框-->
         </div>
@@ -52,17 +61,18 @@
                         <!-- start 封面版权信息 -->
                         <div class="book-cover-wrap">
                             <div class="book-photo">
-                                <img src="">
+                                <img src="<?php echo ($article["book_img"]); ?>">
                             </div>
-                            <h1>斗战狂潮</h1>
+                            <h1><?php echo ($article["book_name"]); ?></h1>
                             <h2>
-                                <a href="JavaScript:void(0);" target="_blank">骷髅精灵</a>著
+                                <a href="JavaScript:void(0);" target="_blank"><?php echo ($article["author"]); ?></a>著
                             </h2>
                             <div class="info-list cf">
                                 <ul>
-                                    <li><p>仙侠</p><span>类型</span></li>
-                                    <li><em>2016.08.01</em><span>上架</span></li>
-                                    <li><p><em>83.20</em>万</p><span>连载（字）</span></li>
+                                    <li><p><?php echo ($article["name"]); ?></p><span>类型</span></li>
+
+                                    <li><em><?php echo ($create_time); ?></em><span>上架</span></li>
+                                    <li><p><em><?php echo ($up_article["name"]); ?></em>章</p><span>连载（章节）</span></li>
                                 </ul>
                             </div>
                             <h5>本书由起点中文网首发</h5>
@@ -82,21 +92,21 @@
                                 <p>点击书签后，可收藏每个章节的书签，“阅读进度”可以在个人中心书架里查看</p>
                             </div>
                             <a class="book-mark" href="javascript:" title="书签"></a>
-                            <h3 class="j_chapterName">第一章 嬉命小丑</h3>
+                            <h3 class="j_chapterName"><?php echo ($article["section_name"]); ?></h3>
                             <div class="text-info cf">
                                 <!-- start 书信息 -->
                                 <div class="info fl">
-                                    <a href="http://book.qidian.com/info/1003694333" target="_blank"><em class="iconfont"></em>斗战狂潮</a>
-                                    <a href="http://me.qidian.com/authorIndex.aspx?id=4362443" target="_blank"><em class="iconfont"></em>骷髅精灵</a>
+                                    <a href="http://book.qidian.com/info/1003694333" target="_blank"><em class="iconfont"></em><?php echo ($article["book_name"]); ?></a>
+                                    <a href="http://me.qidian.com/authorIndex.aspx?id=4362443" target="_blank"><em class="iconfont"></em><?php echo ($article["author"]); ?></a>
                                     <i><em class="iconfont"></em><span class="j_chapterWordCut">2490</span>字</i>
-                                    <i><em class="iconfont"></em><span class="j_updateTime">2016.08.01 06:30</span></i>
+                                    <i><em class="iconfont"></em><span class="j_updateTime"><?php echo ($up_time); ?></span></i>
                                 </div>
                                 <!-- end 书信息 -->
                             </div>
                         </div>
                         <!--start正文内容-->
                         <div class="read-content j_readContent">
-                            <p>2216年，黑洞制造成功，但是后果却是人类无法预料的，黑洞让一个高纬度的位面和地球重叠，产生了空间能量的叠射效应，导致了地球剧变，空间裂缝、异能力，变异生物，地球陷入全面混乱，然而传统武器对这种怪物并没有太大的作用，在终极手段核武器无效之后，短短三年的时间，地球人口锐减至两亿多，原有的文明几乎被摧毁殆尽，人类进入末世。</p>
+                            <?php echo ($article['body']); ?>
                         </div>
                         <!--end正文内容-->
                     </div>
@@ -106,15 +116,30 @@
             <!-- start 章节控制器 -->
             <div class="chapter-control dib-wrap" data-l1="3">
                 <a id="j_chapterPrev" class="disabled" href="javascript:void(0);">上一章</a><span>|</span>
-                <a href="" target="_blank">目录</a><span>|</span>
-                <a id="j_chapterNext" href="">下一章</a>
+                <a href="<?php echo U('Books/showsections',array('book_id'=>$article['book_id']));?>">目录</a><span>|</span>
+                <?php echo ($article['section_id']+=1); ?>
+                <a id="j_chapterNext" href="<?php echo U('Books/showarticle',array('section_id'=>$article['section_id'],'book_id'=>$article['book_id']));?>">下一章</a>
             </div>
             <!-- end 章节控制器 -->
         </div>
     </div>
     <!--end阅读主体容器-->
 
-    <!--登录遮罩-->
+    <!--页脚-->
+<div class="footer">
+    <!--start 友情链接-->
+    <div class="box-center cf">
+        <!--start 版权-->
+        <div class="copy-right">
+            <p><span>Copyright © 2002-2017 All Right Reserved</span>版权所有 xxxxxxx</p>
+            <p>本站所收录作品、社区话题、书库评论及本站所做之广告均属个人行为，与本站立场无关</p>
+        </div>
+        <!--end 版权-->
+    </div>
+</div>
+<!--页脚-->
+</div>
+<!--登录遮罩-->
 <!--<div class="mask"></div>-->
 <div class="qdlogin-wrap hidden">
     <div class="login-wrap fl">
@@ -137,7 +162,7 @@
                     <ul>
                         <li>
                             <em class="iconfont"></em>
-                            <input type="text" tabindex="1" placeholder="请输入邮箱" id="username" autocomplete="off">
+                            <input type="text" tabindex="1" placeholder="请输入邮箱" id="email" autocomplete="off">
                         </li>
                         <li>
                             <em class="iconfont"></em>

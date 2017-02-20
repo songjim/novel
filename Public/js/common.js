@@ -53,17 +53,18 @@ $(function () {
             e.stopPropagation();
             var curTarget = $(e.currentTarget);
             var form = curTarget.parents('#j_loginSwitchWrap');
-
             $.ajax({
-                url: './1111',
+                url: '/index.php?m=Home&c=Login&a=login',
                 type: 'post',
                 data: {
-                    username: form.find('input#username').value().trim(),
-                    password: form.find('input#password').value().trim()
+                    email: form.find('input#email').val().trim(),
+                    password: form.find('input#password').val().trim()
                 },
-                dataType: 'json',
                 success: function(data) {
-
+                    var r_data = JSON.parse(data);
+                    if (r_data && r_data.success) {
+                        location.href = r_data.url
+                    }
                 }
             })
         }
