@@ -108,10 +108,22 @@ class HomePageController extends Controller
         $user_id = session('user_id');
         $forums = M('Forums')->join("categories c on c.id = forums.category_id")
             ->where("user_id = $user_id")->field('c.name as category_name,forums.*')->select();
-        var_dump($forums);
+//        var_dump($forums);
         $this->assign('forums_count',count($forums));
         $this->assign('forums',$forums);
         $this->display();
+//        $replay_id = M('Replays')->where("user_id = {$_SESSION['user_id']}")->field('id')->select();
+//        $r_replay_id = [];
+//        foreach ($replay_id as $value) {
+//            $r_replay_id[] = $value['id'];
+//        }
+//        var_dump($r_replay_id);
+        $replay_new = M('Replays')->join('users u on u.id = replays.user_id')
+            ->join('forums f on f.id = replays.forum_id')
+            ->where("replay_id in (select id from replays where user_id = {$_SESSION['user_id']})")
+            ->field('u.user_name,u.user_img,f.name as f_name,replays.*')
+            ->select();
+        var_dump($replay_new);
     }
 
 }

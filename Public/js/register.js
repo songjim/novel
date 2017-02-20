@@ -355,7 +355,7 @@ function QRegister (config) {
 		
 		this.hideError('phonecode');
 		
-		this.sendLoading();	
+		this.sendLoading();
 
 	};
 	

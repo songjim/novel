@@ -123,4 +123,14 @@ class ForumsController extends Controller
             }
         }
     }
+
+    public function messageNum()
+    {
+        if ($_SESSION['user_name'] == '') {
+            redirect(U('HomePage/homeshow'));
+        }
+
+        echo json_encode(array('success'=>true,'msg'=>'','data'=>array('count'=>99)));
+        exit();
+    }
 }

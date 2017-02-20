@@ -7,6 +7,7 @@ $(function () {
         init: function () {
             var that = this;
 
+            that.initHtml();
             that.bindEvents();
         },
 
@@ -19,9 +20,35 @@ $(function () {
                 .on('click', '#close', $.proxy(that.cancelLogin, that))
                 .on('click', '.btnLogin', $.proxy(that.goLogin, that))
                 .on('click', '.J-go-top', $.proxy(that.goTop, that)) // 回到顶部按钮
+                .on('click', '.theme_nav_list', $.proxy(that.changeTag, that))
+                .on('click', '#sendCodeBtn', $.proxy(that.sendCode, that))
 
         },
 
+        // 页面初始化
+        initHtml: function () {
+            var signIn = $('.sign-in').length;
+
+            if (signIn) {
+
+                setInterval(function () {
+                    $.ajax({
+                        url: '/index.php?m=Home&c=Forums&a=messageNum',
+                        type: 'get',
+                        dataType: 'json',
+                        success: function (res) {
+
+                            if (res.success) {
+                                var num = res.data.count || 0;
+                                $('#msg-btn').find('i').text(num);
+                            } else {
+                                console.log(res.message);
+                            }
+                        }
+                    })
+                }, 30000);
+            }
+        },
         /**
          * 回到顶部
          */
@@ -29,6 +56,26 @@ $(function () {
             $("body,html").animate({
                 scrollTop: 0
             });
+        },
+
+        /**
+         * 发送验证码
+         */
+        sendCode: function () {
+            var mail = $('#txtemail').val().trim();
+
+            if (mail) {
+                $.ajax({
+                    url: '123',
+                    type: 'get',
+                    data: {
+                        mail: mail
+                    },
+                    success: function (res) {
+
+                    }
+                })
+            };
         },
 
         // 登录方法
@@ -67,6 +114,18 @@ $(function () {
                     }
                 }
             })
+        },
+
+        // 切换
+        changeTag: function (e) {
+            e.stopPropagation();
+            var curTarget = $(e.currentTarget);
+            var index = curTarget.index();
+
+            $('.theme_nav_list').removeClass('current');
+            $('.theme_con_index').removeClass('current');
+            $('.theme_nav_list').eq(index).addClass('current');
+            $('.theme_con_index').eq(index).addClass('current');
         }
     }
 
