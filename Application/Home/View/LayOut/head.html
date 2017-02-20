@@ -18,10 +18,10 @@
     <!--头部-->
     <div class="top-nav" data-l1="1">
         <div class="box-center cf">
-            <!--登录注册框-->
+            <!--start登录注册框-->
             <div class="login-box fr">
                 <if condition="($user_name neq '')">
-                    <div class="sign-in">
+                    <div class="g">
                         <span>你好，{$user_name}</span>
                         <a class="black" id="user-name" href="//me.qidian.com" target="_blank" data-eid="qd_A08"></a>
                         <em>|</em>
@@ -36,16 +36,17 @@
                         <a id="reg-btn" href="{:U('Register/register')}" target="_blank" data-eid="qd_A07">注册</a>
                     </div>
                 </if>
-                <!--<div class="sign-in">-->
-                    <!--<span>你好，{$user_name}</span>-->
-                    <!--<a class="black" id="user-name" href="//me.qidian.com" target="_blank" data-eid="qd_A08"></a>-->
-                    <!--<em>|</em>-->
-                    <!--<a class="black" id="msg-btn" href="//me.qidian.com/msg/systems.aspx?page=1" target="_blank" data-eid="qd_A09">-->
-                        <!--消息<cite id="msg-box">(<i></i>)</cite></a><em>|</em>-->
-                    <!--<a id="exit-btn" href="javascript:" data-eid="qd_A10">退出</a>-->
-                <!--</div>-->
             </div>
-            <!--登录注册框-->
+            <!--end登录注册框-->
+            <!--start公告滚动-->
+            <div class="anno-box fl J-anno-box">
+                <ul>
+                    <li>公告：[体验交流] 御魂回收比例在这儿！体验服更新速报</li>
+                    <li>公告：[体验交流] 御魂回收比例在这儿！体验服更新速报</li>
+                    <li>公告：[体验交流] 御魂回收比例在这儿！体验服更新速报</li>
+                </ul>
+            </div>
+            <!--end公告滚动-->
         </div>
     </div>
     <!--头部-->

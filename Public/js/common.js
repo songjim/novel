@@ -8,6 +8,7 @@ $(function () {
             var that = this;
 
             that.initHtml();
+            that.scrollEvent();
             that.bindEvents();
         },
 
@@ -48,6 +49,16 @@ $(function () {
                     })
                 }, 30000);
             }
+        },
+
+        /**
+         * 公告滚动事件
+         */
+        scrollEvent: function () {
+            $('.J-anno-box').myScroll({
+                speed: 90, //数值越大，速度越慢
+                rowHeight: 36 //li的高度
+            });
         },
         /**
          * 回到顶部

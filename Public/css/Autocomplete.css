@@ -667,6 +667,23 @@ p {
     background: #f7f7f7
 }
 
+/**
+公告样式
+ */
+.anno-box {
+    width: 690px;
+    height: 36px;
+    line-height: 36px;
+    overflow: hidden;
+    font-size: 14px;
+    color: #d91a29;
+}
+
+.anno-box li{
+    height: 36px;
+    line-height: 36px;
+}
+
 .top-nav a,.top-nav em {
     float: left
 }
