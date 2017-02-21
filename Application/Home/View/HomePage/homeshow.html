@@ -16,14 +16,10 @@
                 <h3><a href="javascript:void(0);" target="_blank" data-eid="qd_A93">最新资讯</a></h3>
                 <div class="notice-list">
                     <ul>
-                        <li class="color-type_0" data-rid="1"><a href="#" target="_blank" data-eid="qd_A94"><i>「</i>公告<i>」</i>竞技星创奖获奖名单</a></li>
-                        <li class="color-type_0" data-rid="2"><a href="#" target="_blank" data-eid="qd_A95"><i>「</i>资讯<i>」</i>阅文作品入选总局推介</a></li>
-                        <li class="color-type_0" data-rid="3"><a href="#" target="_blank" data-eid="qd_A96"><i>「</i>公告<i>」</i>斗破苍穹动画探班直播</a></li>
-                        <li class="color-type_0" data-rid="3"><a href="#" target="_blank" data-eid="qd_A96"><i>「</i>公告<i>」</i>斗破苍穹动画探班直播</a></li>
-                        <li class="color-type_0" data-rid="3"><a href="#" target="_blank" data-eid="qd_A96"><i>「</i>公告<i>」</i>斗破苍穹动画探班直播</a></li>
-                        <li class="color-type_0" data-rid="3"><a href="#" target="_blank" data-eid="qd_A96"><i>「</i>公告<i>」</i>斗破苍穹动画探班直播</a></li>
-                        <li class="color-type_0" data-rid="3"><a href="#" target="_blank" data-eid="qd_A96"><i>「</i>公告<i>」</i>斗破苍穹动画探班直播</a></li>
-                    </ul>
+                        <volist name="replays" id="replay">
+                            <li class="color-type_0" data-rid="1"><a href="{:U('Forums/detailshow',array('forum_id'=>$replay['forum_id']))}" target="_blank" data-eid="qd_A94"><i>「</i>{$replay.c_name}<i>」</i>{$replay.r_content}</a></li>
+                        </volist>
+                      </ul>
                 </div>
             </div>
         </div>

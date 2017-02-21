@@ -28,37 +28,49 @@ $(function () {
 
         // 页面初始化
         initHtml: function () {
+            var that = this;
+            console.log($('.sign-in').length)
             var signIn = $('.sign-in').length;
-
             if (signIn) {
+                that.getNotice();
 
                 setInterval(function () {
-                    $.ajax({
-                        url: '/index.php?m=Home&c=Forums&a=messageNum',
-                        type: 'get',
-                        dataType: 'json',
-                        success: function (res) {
-
-                            if (res.success) {
-                                var num = res.data.count || 0;
-                                $('#msg-btn').find('i').text(num);
-                            } else {
-                                console.log(res.message);
-                            }
-                        }
-                    })
+                    that.getNotice();
                 }, 30000);
             }
+        },
+
+        /**
+         * 消息请求方法
+         */
+        getNotice: function () {
+            $.ajax({
+                url: '/index.php?m=Home&c=Forums&a=messageNum',
+                type: 'get',
+                dataType: 'json',
+                success: function (res) {
+
+                    if (res.success) {
+                        var num = res.data.count || 0;
+                        $('#msg-btn').find('i').text(num);
+                    } else {
+                        console.log(res.message);
+                    }
+                }
+            })
         },
 
         /**
          * 公告滚动事件
          */
         scrollEvent: function () {
-            $('.J-anno-box').myScroll({
-                speed: 90, //数值越大，速度越慢
-                rowHeight: 36 //li的高度
-            });
+            if ($('.J-anno-box').length) {
+                $('.J-anno-box').myScroll({
+                    speed: 90, //数值越大，速度越慢
+                    rowHeight: 36 //li的高度
+                });
+            }
+
         },
         /**
          * 回到顶部
@@ -77,13 +89,13 @@ $(function () {
 
             if (mail) {
                 $.ajax({
-                    url: '123',
-                    type: 'get',
+                    url: '/index.php?m=Home&c=Register&a=sendCodeEmail',
+                    type: 'post',
                     data: {
                         mail: mail
                     },
                     success: function (res) {
-
+                        console.log(res)
                     }
                 })
             };
