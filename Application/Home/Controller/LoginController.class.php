@@ -56,12 +56,19 @@ class LoginController extends Controller
     {
         // 判断提交方式 做不同处理
         if (IS_POST) {
-            $email = I('post.email','addslashes');
-            $password = I('post.password','addslashes');
+            $email = I('post.email','','addslashes');
+            $password = I('post.password','','addslashes');
+            $code = I('post.code','','addslashes');
             if (empty($email) || empty($password)) {
                 echo json_encode(array('success'=>false,'msg'=>'用户名或密码为空!'));
                 exit();
             }
+            $r_code = session('code');
+            if (empty($code) || $code != $r_code) {
+                echo json_encode(array('success'=>false,'msg'=>'验证码错误!'));
+                exit();
+            }
+            session('code',null);
             // 实例化User对象
             $user = D('Users');
             // 自动验证 创建数据集

@@ -23,6 +23,8 @@ class HomePageController extends Controller
         $books = M('Books')->join('categories c on c.id = books.category_id')->order('books.updated_at desc')
             ->field('books.*,c.name as category_name,c.description as category_description')->select();
         $this->assign('books',$books);
+        $replays = M('Replays')->join('forums f on f.id = replays.forum_id')->join('categories c on c.id = f.category_id')->order('created_at desc')->field('c.name as c_name,replays.*')->limit(6)->select();
+        $this->assign('replays',$replays);
         $this->display();
     }
 
