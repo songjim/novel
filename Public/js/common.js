@@ -8,6 +8,7 @@ $(function () {
             var that = this;
 
             that.initHtml();
+            that.initScroll();
             that.scrollEvent();
             that.bindEvents();
         },
@@ -37,6 +38,26 @@ $(function () {
                 setInterval(function () {
                     that.getNotice();
                 }, 30000);
+            }
+        },
+
+        /**
+         * 初始化首页轮播
+         */
+        initScroll: function () {
+            var demo = $('#demo1');
+
+            if (demo.length) {
+                demo.bxCarousel({
+                    display_num: 4,
+                    move: 1,
+                    auto: true,
+                    controls: false,
+                    margin: 10,
+                    auto_hover: true,
+                    // speed: 3000,
+                    auto_interval: 3000
+                });
             }
         },
 
