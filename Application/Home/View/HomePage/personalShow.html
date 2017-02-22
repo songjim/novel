@@ -29,12 +29,12 @@
                         <div class="theme_con">
                             <div class="theme_nav">
                                 <a href="#" class="theme_nav_list current">主题<span class="num">{$forums_count}</span></a>
-                                <a href="#" class="theme_nav_list">回复<span class="num">0</span></a>
+                                <a href="#" class="theme_nav_list">回复<span class="num">{$replays_count}</span></a>
                             </div>
                             <p style="height: 56px;">
                                 <span class="th1">帖子</span>
                                 <span class="th2">版块</span>
-                                <span class="th3">回复</span>
+                                <span class="th3">回复时间</span>
                             </p>
                             <div class="theme_con_index current">
                                 <ul>
@@ -46,7 +46,7 @@
                                                         {$forum.name}</a>
                                                 </div>
                                                 <span class="plate">{$forum.category_name}</span>
-                                                <span class="num">10/570</span>
+                                                <span class="num">{$forum.updated_at}</span>
                                             </div>
                                         </li>
                                    </volist>
@@ -54,18 +54,26 @@
                             </div>
                             <div class="theme_con_index">
                                 <ul class="clearfix">
+                                    <volist name="replays_data" id="replay">
                                     <li>
                                         <div class="theme_list_con">
                                             <div class="title">
-                                                <a href="http://bbs.xiaomi.cn/t-13356996" class="title_name txtellipsis" target="_blank" rel="noopener noreferrer">红米4高配版解锁BL+完整ROO+解锁system+安装XP详细教程</a>
+                                                <a href="{:U('Forums/detailshow',array('forum_id'=>$replay['forum_id'],'read'=>1,'replay_id'=>$replay['id']))}" class="title_name txtellipsis" target="_blank" rel="noopener noreferrer">{$replay.name}</a>
+
+
                                             </div>
-                                            <span class="plate">红米4/4A</span>
-                                            <span class="num">3/951</span>
+                                            <span class="plate">{$replay.c_name}</span>
+                                            <span class="num">{$replay.created_at}</span>
                                         </div>
                                         <ul>
-                                            <li><a href="http://bbs.xiaomi.cn/t-13356996-n2#2" target="_blank" rel="noopener noreferrer">感谢整理</a></li>
+                                            <li><a href="http://bbs.xiaomi.cn/t-13356996-n2#2" target="_blank" rel="noopener noreferrer">{$replay.r_content}</a>
+                                                <switch name="replay.is_read" >
+                                                    <case value="0">&nbsp;<span style="color: red">*</span></case>
+                                                </switch>
+                                            </li>
                                         </ul>
                                     </li>
+                                    </volist>
                                 </ul>
                             </div>
                         </div>

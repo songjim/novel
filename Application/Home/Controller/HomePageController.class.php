@@ -60,19 +60,6 @@ class HomePageController extends Controller
 
     public function forumshow()
     {
-//        $User = M('User'); // 实例化User对象
-//        // 进行分页数据查询 注意page方法的参数的前面部分是当前的页数使用 $_GET[p]获取
-//        $list = $User->where('status=1')->order('create_time')->page($_GET['p'].',25')->select();
-//        $this->assign('list',$list);// 赋值数据集
-//        $count      = $User->where('status=1')->count();// 查询满足要求的总记录数
-//        $Page       = new \Think\Page($count,25);// 实例化分页类 传入总记录数和每页显示的记录数
-//        $show       = $Page->show();// 分页显示输出
-//        $this->assign('page',$show);// 赋值分页输出
-//        $this->display(); // 输出模板
-//
-
-
-
         if ($_SESSION['user_name'] != '') {
             $this->assign('user_name',$_SESSION['user_name']);
         }
@@ -110,22 +97,26 @@ class HomePageController extends Controller
         $user_id = session('user_id');
         $forums = M('Forums')->join("categories c on c.id = forums.category_id")
             ->where("user_id = $user_id")->field('c.name as category_name,forums.*')->select();
-//        var_dump($forums);
         $this->assign('forums_count',count($forums));
         $this->assign('forums',$forums);
-        $this->display();
-//        $replay_id = M('Replays')->where("user_id = {$_SESSION['user_id']}")->field('id')->select();
-//        $r_replay_id = [];
-//        foreach ($replay_id as $value) {
-//            $r_replay_id[] = $value['id'];
-//        }
-//        var_dump($r_replay_id);
-        $replay_new = M('Replays')->join('users u on u.id = replays.user_id')
-            ->join('forums f on f.id = replays.forum_id')
-            ->where("replay_id in (select id from replays where user_id = {$_SESSION['user_id']})")
-            ->field('u.user_name,u.user_img,f.name as f_name,replays.*')
+
+        $replays = M('Forums f')->join("replays r on r.forum_id = f.id")
+            ->join('categories c on f.category_id = c.id')
+            ->join('users u on u.id = r.user_id')
+            ->where("f.id in (select id from forums where user_id = {$_SESSION['user_id']}) and r.user_id <> {$_SESSION['user_id']}")
+            ->order('r.created_at desc')
+            ->field('r.*,f.name,u.user_name,c.name as c_name')
             ->select();
-        var_dump($replay_new);
+        $replays_r = M('Replays r')->join('forums f on f.id = r.forum_id')
+            ->join('categories c on f.category_id = c.id')
+            ->join('users u on u.id = r.user_id')
+            ->order('r.created_at desc')
+            ->where("r.replay_id in (select id from replays where user_id = {$_SESSION['user_id']}) and r.user_id <> {$_SESSION['user_id']}")
+            ->field('r.*,c.name as c_name,f.name,u.user_name')->select();
+        $replays_data = array_merge($replays,$replays_r);
+        $this->assign('replays_count',count($replays_data));
+        $this->assign('replays_data',$replays_data);
+        $this->display();
     }
 
 }
