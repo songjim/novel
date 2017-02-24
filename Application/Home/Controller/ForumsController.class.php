@@ -18,6 +18,13 @@ class ForumsController extends Controller
         if ($_SESSION['user_name'] != '') {
             $this->assign('user_name', $_SESSION['user_name']);
         }
+        $is_read = I('get.read',0,'addslashes');
+        $replay_id = I('get.replay_id',0,'addslashes');
+        if ($is_read == 1) {
+            $replay = M('Replays');
+            $replay->is_read = 1;
+            $replay->where("id = $replay_id")->save();
+        }
         $Categries = M('Categories');
         $data = $Categries->select();
         $this->assign('categories', $data);
@@ -129,8 +136,20 @@ class ForumsController extends Controller
         if ($_SESSION['user_name'] == '') {
             redirect(U('HomePage/homeshow'));
         }
-
-        echo json_encode(array('success'=>true,'msg'=>'','data'=>array('count'=>99)));
+        $replays = M('Forums f')->join("replays r on r.forum_id = f.id")
+            ->join('categories c on f.category_id = c.id')
+            ->join('users u on u.id = r.user_id')
+            ->where("f.id in (select id from forums where user_id = {$_SESSION['user_id']}) and r.user_id <> {$_SESSION['user_id']} and r.is_read = 0")
+            ->field('r.*,f.name,u.user_name,c.name as c_name')
+            ->select();
+        $replays_r = M('Replays r')->join('forums f on f.id = r.forum_id')
+            ->join('categories c on f.category_id = c.id')
+            ->join('users u on u.id = r.user_id')
+            ->where("r.replay_id in (select id from replays where user_id = {$_SESSION['user_id']}) and r.user_id <> {$_SESSION['user_id']} and r.is_read = 0")
+            ->field('r.*,c.name as c_name,f.name,u.user_name')->select();
+        $replays_data = array_merge($replays,$replays_r);
+        $massage_num = count($replays_data);
+        echo json_encode(array('success'=>true,'msg'=>'','data'=>array('count'=>$massage_num)));
         exit();
     }
 }
