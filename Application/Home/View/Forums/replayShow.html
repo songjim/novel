@@ -34,7 +34,10 @@
                     <div class="edt">
                         <input type="hidden" name="replay_id" value="{$replay.id}">
                         <input type="hidden" name="forum_id" value="{$forum.forum_id}">
-                        <textarea name="r_content" id="" cols="30" rows="10"></textarea>
+                        <!--style给定宽度可以影响编辑器的最终宽度-->
+                        <script type="text/plain" id="myEditor" style="width: 100%; height: 150px;" name="r_content">
+                            <p>这里我可以写一些输入提示</p>
+                        </script>
                     </div>
                     <div class="mtm mbm pnpost">
                         <button type="submit" id="postsubmit" class="pn pnc" value="true" name="replysubmit">

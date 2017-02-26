@@ -740,7 +740,7 @@ p {
     }
 
     .sprite {
-        background-image: url(/qd/images/sprite_2x.png);
+        background-image: url(../img/sprite_2x.png);
         background-size: 60px;
     }
 }
@@ -3599,7 +3599,7 @@ span.ui-date-item {
 
 .reg-header {
     border-bottom: none;
-    margin-bottom: 32px
+    margin-bottom: 0
 }
 
 .reg-header em,.reg-header span {

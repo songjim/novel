@@ -18,7 +18,7 @@
             <span class="pgb y">
                 <a href="">返&nbsp;回</a>
             </span>
-            <a href="" id="newspecial">发新帖</a>
+            <a href="" id="newspecial" class="J-check-login">发新帖</a>
         </div>
         <!--论坛内容-->
         <div id="postlist" class="pl bm">
@@ -209,7 +209,7 @@
                                 <div class="po">
                                     <div class="pob cl f13">
                                         <em>
-                                            <a href="{:U('Forums/replayShow',array('category_id'=>$forum['category_id'],'forum_id'=>$forum['id'],'replay_id'=>$replay['id']))}" class="fastre">回复</a>
+                                            <a href="{:U('Forums/replayShow',array('category_id'=>$forum['category_id'],'forum_id'=>$forum['id'],'replay_id'=>$replay['id']))}" class="fastre J-check-login">回复</a>
                                         </em>
                                     </div>
                                 </div>
@@ -234,14 +234,6 @@
         </div>
         <!--end下一页-->
 
-        <!--start回复-->
-        <div class="pgs mtm mbm cl">
-            <a href="" id="post_replytmp">
-                回复
-            </a>
-        </div>
-        <!--end回复-->
-
         <div class="pl bm bmw" id="f_pst">
             <form action="{:U('Forums/editReplays')}" method="post">
                 <table cellspacing="0" cellpadding="0">
@@ -256,11 +248,14 @@
                             <div class="cl">
                                 <div class="hasfsl">
                                     <input type="hidden" name="forum_id" value="{$forum.id}">
-                                    <textarea name="r_content" id="" cols="30" rows="10" calss="is-login"></textarea>
+                                    <!--style给定宽度可以影响编辑器的最终宽度-->
+                                    <script type="text/plain" id="myEditor" class="is-login" style="width: 100%; height: 150px;" name="r_content">
+                                    <p>这里我可以写一些输入提示</p>
+                                </script>
                                 </div>
                             </div>
                             <div class="ptm pnpost">
-                                <button class="pn pnc vm" type="submit">
+                                <button class="pn pnc vm J-check-login" type="submit">
                                     <strong>发表回复</strong>
                                 </button>
                             </div>
