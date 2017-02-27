@@ -18,7 +18,7 @@
             <span class="pgb y">
                     <a href="">返&nbsp;回</a>
                 </span>
-            <a href="" id="newspecial">发新帖</a>
+            <a href="" id="newspecial" class="J-check-login">发新帖</a>
         </div>
         <!--start论坛导航-->
         <ul class="ttp bm cl">
@@ -93,12 +93,12 @@
                 <form action="{:U('Forums/editForums')}" method="post" id="fastpostform">
                     <div class="pbt cl">
                         <div class="ftid">
-                            <select name="category_id" id="category_id">
+                            <select name="category_id" id="category_id" class="select-style">
                                 <volist name="categories" id="category">
                                 <option value="{$category.id}">{$category.name}</option>
                                 </volist>
                             </select>
-                            <input type="text" name="name" class="px" style="width: 25em" />
+                            <input type="text" name="name" class="px ml10" style="width: 25em" />
                         </div>
                     </div>
                     <div class="cl">
@@ -111,7 +111,10 @@
                                     <a href="{:U('Register/register')}">注册通行证</a>
                                 </div>
                                 <else />
-                                <textarea name="content" id="" cols="30" rows="10" calss="is-login"></textarea>
+                                <!--style给定宽度可以影响编辑器的最终宽度-->
+                                <script type="text/plain" id="myEditor" class="is-login" style="width: 100%; height: 150px;" name="content">
+                                    <p>这里我可以写一些输入提示</p>
+                                </script>
                             </if>
                             <!--start没有登录-->
 

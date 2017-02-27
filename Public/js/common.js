@@ -10,6 +10,8 @@ $(function () {
             that.initHtml();
             that.initScroll();
             that.scrollEvent();
+            that.initEditor();
+            that.initSaveHead();
             that.bindEvents();
         },
 
@@ -24,13 +26,126 @@ $(function () {
                 .on('click', '.J-go-top', $.proxy(that.goTop, that)) // 回到顶部按钮
                 .on('click', '.theme_nav_list', $.proxy(that.changeTag, that))
                 .on('click', '#sendCodeBtn', $.proxy(that.sendCode, that))
+                .on('click', '.J-check-login', $.proxy(that.checkLogin, that))
+                .on('click', '.J-change-name', $.proxy(that.changeName, that))
+                .on('click', 'button.J-name-input', $.proxy(that.saveName, that))
+        },
 
+        /**
+         * 实例化编辑器
+         */
+        initEditor: function () {
+            try {
+                var um = UM.getEditor('myEditor');
+                um.addListener('blur',function(){
+                    $('#focush2').html('编辑器失去焦点了')
+                });
+                um.addListener('focus',function(){
+                    $('#focush2').html('')
+                });
+            } catch (err) {
+
+            }
+        },
+
+        /**
+         * 修改昵称
+         */
+        changeName: function () {
+            var name = $('.J-username-text').text().trim();
+            $('input.J-name-input').val(name);
+            $('.J-name-input').show();
+            $('.J-username-text').hide();
+        },
+
+        /**
+         * 初始化上传头像
+         */
+        initSaveHead: function () {
+            var options =
+                {
+                    thumbBox: '.thumbBox',
+                    spinner: '.spinner',
+                    imgSrc: 'images/avatar.png'
+                }
+
+                try {
+                    var cropper = $('.imageBox').cropbox(options);
+                } catch (err) {
+                    return false;
+                }
+
+            $('#upload-file').on('change', function(){
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    options.imgSrc = e.target.result;
+                    cropper = $('.imageBox').cropbox(options);
+                }
+                reader.readAsDataURL(this.files[0]);
+                this.files = [];
+            })
+            $('#btnCrop').on('click', function(){
+                var img = cropper.getDataURL();
+                $('.cropped').html('');
+                $('.cropped').append('<img src="'+img+'" align="absmiddle" style="width:64px;margin-top:4px;border-radius:64px;box-shadow:0px 0px 12px #7E7E7E;" ><p>64px*64px</p>');
+                $('.cropped').append('<img src="'+img+'" align="absmiddle" style="width:128px;margin-top:4px;border-radius:128px;box-shadow:0px 0px 12px #7E7E7E;"><p>128px*128px</p>');
+                $('.cropped').append('<img src="'+img+'" align="absmiddle" style="width:180px;margin-top:4px;border-radius:180px;box-shadow:0px 0px 12px #7E7E7E;"><p>180px*180px</p>');
+            })
+            $('#btnZoomIn').on('click', function(){
+                cropper.zoomIn();
+            })
+            $('#btnZoomOut').on('click', function(){
+                cropper.zoomOut();
+            })
+            $('#J-save-head-img').on('click', function(){
+                var img = cropper.getDataURL();
+
+                $.ajax({
+                    url: '1111',
+                    type: 'post',
+                    data: {
+                        img: img
+                    },
+                    success: function(data) {
+                        if (data) {
+                            window.reload();
+                        }
+                    }
+                })
+            })
+        },
+
+        /**
+         * 保存昵称
+         */
+        saveName: function () {
+            var name = $('input.J-name-input').val().trim();
+
+            if (name) {
+
+                $.ajax({
+                    url: '1111',
+                    type: 'post',
+                    data: {
+                        name: name
+                    },
+                    success: function (data) {
+                        if (data) {
+                            $('.J-username-text').text(name);
+                            $('.J-name-input').hide();
+                            $('.J-username-text').show();
+                        }
+                    }
+                });
+            } else {
+                $('.J-name-input').hide();
+                $('.J-username-text').show();
+            }
         },
 
         // 页面初始化
         initHtml: function () {
             var that = this;
-            console.log($('.sign-in').length)
             var signIn = $('.sign-in').length;
             if (signIn) {
                 that.getNotice();
@@ -38,6 +153,19 @@ $(function () {
                 setInterval(function () {
                     that.getNotice();
                 }, 30000);
+            }
+        },
+
+        /**
+         * 检查是否登录
+         */
+        checkLogin: function () {
+            var that = this;
+            var signIn = $('.sign-in').length;
+
+            if (!signIn) {
+                $('#login-btn').trigger('click');
+                return false;
             }
         },
 
@@ -155,6 +283,8 @@ $(function () {
                     var r_data = JSON.parse(data);
                     if (r_data && r_data.success) {
                         location.href = r_data.url
+                    } else {
+                        $('.J-error-box').html('用户名或密码输入错误').removeClass('hidden');
                     }
                 }
             })

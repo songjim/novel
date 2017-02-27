@@ -296,7 +296,7 @@ function QRegister(config) {
 
     //验证图片验证码
     this.checkImageCode = function (txtid, showid) {
-
+        console.log(this.needValidateCode)
         if (!this.needValidateCode) return true;
 
         var code = $('#' + txtid).val();
@@ -640,6 +640,7 @@ function QRegister(config) {
     };
 
     this.showError = function (id, msg, showid) {
+        console.log(id)
         $('#' + id + ' .icon-pass').remove();
         $('#' + id + ' .icon-error').remove();
         $('#' + id + ' .error-tip').remove();

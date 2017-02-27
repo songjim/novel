@@ -3,7 +3,6 @@
 <include file="LayOut/menu"/>
 <load href="/Public/css/personal.css"/>
 
-    <!--照片墙-->
     <div class="box-center mb40 cf forumboard">
         <div class="person_wrap">
             <div class="user clearfix">
@@ -11,14 +10,23 @@
                     <img src="http://s1.bbs.xiaomi.cn/statics/images/noavatar_middle.gif?&amp;_t=1487162105" onerror="javascript:this.src='http://s1.bbs.xiaomi.cn/statics/images/noavatar_small.gif';">
                 </div>
                 <div class="info">
-                    <strong class="username" u-id="49562247">{$user_name}</strong>
+                    <strong class="username J-username-text" u-id="49562247">{$user_name}</strong>
+                    <input type="text" class="J-name-input name-input hidden">
+                    <button class="J-name-input name-btn hidden">保存</button>
                 </div>
                 <div class="score">
                     <dl>
                         <dt>
-                                <span class="txt">
-                                    <a href="">修改头像</a>
-                                </span>
+                            <span class="txt">
+                                <a href="">修改头像</a>
+                            </span>
+                        </dt>
+                    </dl>
+                    <dl>
+                        <dt>
+                            <span class="txt">
+                                <a href="javascript:void(0);" class="J-change-name">修改昵称</a>
+                            </span>
                         </dt>
                     </dl>
                 </div>
@@ -83,4 +91,29 @@
         </div>
     </div>
     <!--照片墙-->
+
+    <!--修改头像block-->
+    <div class="portrai-shade">
+        <div class="container-outer">
+            <div class="container">
+                <div class="imageBox">
+                    <div class="thumbBox"></div>
+                    <div class="spinner" style="display: none">Loading...</div>
+                </div>
+                <div class="action">
+                    <div class="new-contentarea tc"> <a href="javascript:void(0)" class="upload-img">
+                        <label for="upload-file">上传图像</label>
+                    </a>
+                        <input type="file" class="" name="upload-file" id="upload-file" />
+                    </div>
+                    <input type="button" id="J-save-head-img"  class="Btnsty_peyton" value="确定">
+                    <input type="button" id="btnCrop"  class="Btnsty_peyton" value="裁切">
+                    <input type="button" id="btnZoomIn" class="Btnsty_peyton" value="+"  >
+                    <input type="button" id="btnZoomOut" class="Btnsty_peyton" value="-" >
+                </div>
+                <div class="cropped"></div>
+            </div>
+        </div>
+    </div>
+    <!--修改头像block-->
 <include file="Layout/foot"/>
