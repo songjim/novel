@@ -152,4 +152,41 @@ class ForumsController extends Controller
         echo json_encode(array('success'=>true,'msg'=>'','data'=>array('count'=>$massage_num)));
         exit();
     }
+
+    public function personImg()
+    {
+        if (empty($_REQUEST['img'])) {
+            $this->error('图片信息出错');
+            exit();
+        }
+        $img_name = uniqid(time());
+        $img_a = explode(',',$_REQUEST['img']);
+        $img = $img_a[1];
+        $img_r = base64_decode($img);
+        $user_id = session('user_id');
+        $users = M('Users');
+        $a = file_put_contents('./user_img/'.$img_name.'.png', $img_r);//返回的是字节数
+        if ($a) {
+            $users->user_img = 'user_img/'.$img_name.'.png';
+            $users->where("id = $user_id")->save();
+            echo json_encode(array('success'=>true,'msg'=>'保存成功'));
+        }
+    }
+
+    public function userNameUp()
+    {
+        if (empty($_REQUEST['name'])) {
+            $this->error('用户昵称出错');
+            exit();
+        }
+        $uid = session('user_id');
+        $user_name = I('post.name','','addslashes');
+        session('user_name',$user_name);
+        $user = M('Users');
+        $user->user_name = $user_name;
+        $user->where("id = $uid")->save();
+        echo json_encode(array('seccuss'=>true,'msg'=>''));
+    }
+
+
 }

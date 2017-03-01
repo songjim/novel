@@ -7,7 +7,12 @@
         <div class="person_wrap">
             <div class="user clearfix">
                 <div class="avatar">
-                    <img src="http://s1.bbs.xiaomi.cn/statics/images/noavatar_middle.gif?&amp;_t=1487162105" onerror="javascript:this.src='http://s1.bbs.xiaomi.cn/statics/images/noavatar_small.gif';">
+                    <if condition=" $user.user_img neq '' ">
+                        <img src="{$user.user_img}" onerror="javascript:this.src='http://s1.bbs.xiaomi.cn/statics/images/noavatar_small.gif';">
+                    <else/>
+                        <img src="http://s1.bbs.xiaomi.cn/statics/images/noavatar_middle.gif?&amp;_t=1487162105" onerror="javascript:this.src='http://s1.bbs.xiaomi.cn/statics/images/noavatar_small.gif';">
+                    </if>
+
                 </div>
                 <div class="info">
                     <strong class="username J-username-text" u-id="49562247">{$user_name}</strong>

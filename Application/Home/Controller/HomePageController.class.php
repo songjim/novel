@@ -93,6 +93,7 @@ class HomePageController extends Controller
             redirect(U('HomePage/homeshow'));
         } else {
             $this->assign('user_name', $_SESSION['user_name']);
+            $id = session('user_id');
         }
         $Categries = M('Categories');
         $data = $Categries->select();
@@ -102,7 +103,8 @@ class HomePageController extends Controller
             ->where("user_id = $user_id")->field('c.name as category_name,forums.*')->select();
         $this->assign('forums_count',count($forums));
         $this->assign('forums',$forums);
-
+        $user = M('Users')->find($id);
+        $this->assign('user',$user);
         $replays = M('Forums f')->join("replays r on r.forum_id = f.id")
             ->join('categories c on f.category_id = c.id')
             ->join('users u on u.id = r.user_id')
