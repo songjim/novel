@@ -3605,7 +3605,8 @@ body {
 
 .focus-wrap .focus-box {
     width: 748px;
-    padding-left: 10px
+    padding-left: 10px;
+    overflow: hidden;
 }
 
 .focus-wrap .focus-box .focus-slider {
