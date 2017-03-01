@@ -18,8 +18,8 @@ class BookModel extends Model
         array('title','require','标题必须'),
     );
     // 定义自动完成
-    protected $_auto    =   array(
-        array('create_time','time',1,'function'),
-    );
+//    protected $_auto    =   array(
+//        array('create_time','time',1,'function'),
+//    );
 
 }

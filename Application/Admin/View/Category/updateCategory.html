@@ -1,0 +1,59 @@
+<include file="Layout/head"/>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">分类管理</h1>
+    </div>
+
+
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    更新分类
+                </div>
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <form role="form" action="{:U('Category/saveCategory')}" method="post">
+                                <input type="hidden" value="{$category.id}" name="id">
+                                <div class="form-group">
+                                    <label>公告内容</label>
+                                    <input class="form-control" name="name" placeholder="{$category.name}">
+                                </div>
+                                <div class="form-group">
+                                    <label>需要推荐的小说</label>
+                                    <volist name="books" id="book">
+                                        <div class="checkbox">
+                                            <if condition="$book.is_recommend eq 1">
+                                                <label>
+                                                    <input type="checkbox" name="recommend[]" value="{$book.id}" checked>{$book.book_name}
+                                                </label>
+                                            <else/>
+                                                <label>
+                                                    <input type="checkbox" name="recommend[]" value="{$book.id}" >{$book.book_name}
+                                                </label>
+                                            </if>
+                                        </div>
+                                    </volist>
+                                </div>
+                                <button type="submit" class="btn btn-default">更新</button>
+                            </form>
+                        </div>
+                        <!-- /.col-lg-6 (nested) -->
+
+                        <!-- /.col-lg-6 (nested) -->
+                    </div>
+                    <!-- /.row (nested) -->
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.col-lg-12 -->
+
+<include file="Layout/foot"/>

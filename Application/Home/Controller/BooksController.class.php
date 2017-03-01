@@ -36,10 +36,10 @@ class BooksController extends Controller
         $section_id = I('get.section_id', 'addslashes');
         $book_id = I('get.book_id','addslashes');
         $Article = D('Articles');
-        $data = $Article->join('sections on sections.id = articles.section_id')
+        $data = $Article->join('sections on sections.id = articles.sections_id')
             ->join('books on books.id = sections.book_id')
             ->join('categories on books.category_id = categories.id')
-            ->where("articles.section_id=$section_id and books.id = $book_id")
+            ->where("articles.sections_id=$section_id and books.id = $book_id")
             ->field('sections.name as section_name,sections.book_id,books.*,categories.*,articles.*')
             ->find();
         $up_article = M('Sections')->where("book_id = $book_id")->order('id desc')->field('name')->find();
