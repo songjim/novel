@@ -29,6 +29,7 @@ $(function () {
                 .on('click', '.J-check-login', $.proxy(that.checkLogin, that))
                 .on('click', '.J-change-name', $.proxy(that.changeName, that))
                 .on('click', 'button.J-name-input', $.proxy(that.saveName, that))
+                .on('click', '.J-change-avatar', $.proxy(that.changeAvatar, that))
         },
 
         /**
@@ -46,6 +47,13 @@ $(function () {
             } catch (err) {
 
             }
+        },
+
+        /**
+         * 展示修改头像框
+         */
+        changeAvatar: function () {
+            $('.portrai-shade').show();
         },
 
         /**
@@ -98,20 +106,24 @@ $(function () {
                 cropper.zoomOut();
             })
             $('#J-save-head-img').on('click', function(){
-                var img = cropper.getDataURL();
 
-                $.ajax({
-                    url: '1111',
-                    type: 'post',
-                    data: {
-                        img: img
-                    },
-                    success: function(data) {
-                        if (data) {
-                            window.reload();
+                try {
+                    var img = cropper.getDataURL();
+                    $.ajax({
+                        url: '1111',
+                        type: 'post',
+                        data: {
+                            img: img
+                        },
+                        success: function(data) {
+                            if (data) {
+                                window.reload();
+                            }
                         }
-                    }
-                })
+                    })
+                } catch (err) {
+                    $('.portrai-shade').hide();
+                }
             })
         },
 

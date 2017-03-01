@@ -3745,7 +3745,8 @@ h3.wrap-title a .iconfont {
 
 .content-nav-wrap {
     margin-bottom: 34px;
-    border-bottom: 1px solid #e6e6e6
+    border-bottom: 1px solid #e6e6e6;
+    padding: 0px 10px;
 }
 
 .content-nav-wrap .nav-wrap li {
@@ -5946,7 +5947,7 @@ h3.wrap-title a .iconfont {
 }
 
 .catalog-content-wrap {
-    padding: 16px 0 0
+    padding: 16px 10px;
 }
 
 .catalog-content-wrap.subscribe-content {

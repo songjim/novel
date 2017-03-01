@@ -4434,7 +4434,8 @@ span.rank-tag.no3 cite {
 }
 
 .all-pro-wrap {
-    padding: 20px 0 0
+    padding: 20px 10px;
+    box-sizing: border-box;
 }
 
 .range-sidebar {

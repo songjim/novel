@@ -3605,7 +3605,8 @@ body {
 
 .focus-wrap .focus-box {
     width: 748px;
-    padding-left: 10px
+    padding-left: 10px;
+    overflow: hidden;
 }
 
 .focus-wrap .focus-box .focus-slider {
@@ -5858,9 +5859,10 @@ em.point span {
 }
 
 .box-center {
-    width: 1200px;
+    width: 990px;
     margin-right: auto;
-    margin-left: auto
+    margin-left: auto;
+    background: #fff;
 }
 
 @media (max-width: 1200px) {
@@ -7142,4 +7144,18 @@ a.upload-img:hover{
 
 .ml10 {
     margin-left: 10px;
+}
+
+/*全屏背景图片*/
+body {
+    background: #d8c088 url(../img/site-bg.jpg) center 45px no-repeat!important;
+}
+
+.pd10 {
+    padding:10px;
+    box-sizing: border-box;
+}
+
+.bgfff {
+    background: #fff;
 }
