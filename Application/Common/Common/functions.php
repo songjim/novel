@@ -8,8 +8,8 @@
 function think_send_mail($to, $name, $subject = '', $body = '', $attachment = null){
 
     $config = C('THINK_EMAIL');
-
-    Vendor('PHPMailer.PHPMailerAutoload'); //从PHPMailer目录导class.phpmailer.php类文件
+    vendor('SMTP');
+    Vendor('PHPMailer.class#phpmailer'); //从PHPMailer目录导class.phpmailer.php类文件
 
     $mail = new PHPMailer(); //PHPMailer对象
 
