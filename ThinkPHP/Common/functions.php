@@ -1567,17 +1567,17 @@ function think_send_mail($to, $name, $subject = '', $body = '', $attachment = nu
 
     // 2 = messages only
 
-//    $mail->SMTPAuth = true; // 启用 SMTP 验证功能
+    $mail->SMTPAuth = true; // 启用 SMTP 验证功能
 
-//    $mail->SMTPSecure = 'ssl'; // 使用安全协议
+    $mail->SMTPSecure = 'ssl'; // 使用安全协议
     $mail->Mailer = 'SMTP';
     $mail->Host = $config['SMTP_HOST']; // SMTP 服务器
 
     $mail->Port = $config['SMTP_PORT']; // SMTP服务器的端口号
 
-//    $mail->Username = $config['SMTP_USER']; // SMTP服务器用户名
+    $mail->Username = $config['SMTP_USER']; // SMTP服务器用户名
 
-//    $mail->Password = $config['SMTP_PASS']; // SMTP服务器密码
+    $mail->Password = $config['SMTP_PASS']; // SMTP服务器密码
 
     $mail->SetFrom($config['FROM_EMAIL'], $config['FROM_NAME']);
 
