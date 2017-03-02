@@ -48,10 +48,5 @@ class LoginController extends Controller
             $this->display();
         }
 
-
-
-        $user = A('Home/Users');
-//        $user->where()
-//        if ()
     }
 }

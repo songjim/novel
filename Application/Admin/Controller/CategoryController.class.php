@@ -15,6 +15,9 @@ class CategoryController extends Controller
 {
     public function categoriesList()
     {
+        if (session('user_name') != 'admin') {
+            redirect(U('Login/loginShow'));
+        }
         $categories = M('Categories')->select();
         $this->assign('categories',$categories);
         $this->display();
@@ -43,6 +46,9 @@ class CategoryController extends Controller
 
     public function saveCategory()
     {
+        if (session('user_name') != 'admin') {
+            redirect(U('Login/loginShow'));
+        }
         if (IS_POST) {
             $id = I('post.id',0,'intval');
             $name = I('post.name','','addslashes');
@@ -72,6 +78,9 @@ class CategoryController extends Controller
 
     public function categoriesNew()
     {
+        if (session('user_name') != 'admin') {
+            redirect(U('Login/loginShow'));
+        }
         $this->display();
     }
 }

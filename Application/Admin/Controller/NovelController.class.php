@@ -15,14 +15,19 @@ class NovelController extends Controller
 {
     public function novelAdminShow()
     {
+        if (session('user_name') != 'admin') {
+            redirect(U('Login/loginShow'));
+        }
         $books = M('Books')->select();
-//        var_dump($books);
         $this->assign('books',$books);
         $this->display();
     }
 
     public function novelNew()
     {
+        if (session('user_name') != 'admin') {
+            redirect(U('Login/loginShow'));
+        }
         $categorys = M('Categories')->select();
         $this->assign('categories',$categorys);
         $this->display();
@@ -30,6 +35,9 @@ class NovelController extends Controller
 
     public function novelList()
     {
+        if (session('user_name') != 'admin') {
+            redirect(U('Login/loginShow'));
+        }
         $books = M('Books b');
         $book = $books->join("left join categories c on c.id = b.category_id")
             ->field("c.id as c_id,c.name as c_name,b.*")->order('b.created_at desc')
@@ -44,6 +52,9 @@ class NovelController extends Controller
 
     public function novelUpdate()
     {
+        if (session('user_name') != 'admin') {
+            redirect(U('Login/loginShow'));
+        }
         $book_id = I('get.id',0,'intval');
         if (!$book_id) {
             $this->error('没有需要更新的小说');

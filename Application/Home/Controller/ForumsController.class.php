@@ -55,6 +55,13 @@ class ForumsController extends Controller
                 }
             }
         }
+//        $book = $books->join("left join categories c on c.id = b.category_id")
+//            ->field("c.id as c_id,c.name as c_name,b.*")->order('b.created_at desc')
+//            ->page($_GET['p'].',5')->select();
+//        $count = count($replays);
+////        $Page = new \Think\Page($count,5);
+//        $show = $Page->show();
+//        $this->assign('page',$show);
         $this->assign('replays', $replays);
         $this->display();
     }

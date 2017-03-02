@@ -15,6 +15,9 @@ class AffichesController extends Controller
 {
     public function affichesList()
     {
+        if (session('user_name') != 'admin') {
+            redirect(U('Login/loginShow'));
+        }
         $Affiches = M('Affiches');
 //        $data = M('Affiches a')->select();
         $data = $Affiches->order('created_at desc')
@@ -40,6 +43,9 @@ class AffichesController extends Controller
 
     public function updateAffiches()
     {
+        if (session('user_name') != 'admin') {
+            redirect(U('Login/loginShow'));
+        }
         $id = I('get.id',0,'intval');
         if ( !$id ) {
             $this->error('无效的公告号!');
@@ -52,6 +58,9 @@ class AffichesController extends Controller
 
     public function saveAffiches()
     {
+        if (session('user_name') != 'admin') {
+            redirect(U('Login/loginShow'));
+        }
         if (IS_POST) {
             $id = I('post.id',0,'intval');
             $contents = I('post.contents','','addslashes');
@@ -77,6 +86,9 @@ class AffichesController extends Controller
 
     public function affichesNew()
     {
+        if (session('user_name') != 'admin') {
+            redirect(U('Login/loginShow'));
+        }
         $this->display();
     }
 }
