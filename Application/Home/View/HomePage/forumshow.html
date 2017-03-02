@@ -1,0 +1,145 @@
+<include file="LayOut/head" />
+
+<include file="LayOut/menu"/>
+<load href="/Public/css/forum.css" />
+    <!--start论坛-->
+    <div class="box-center forumboard pd10 mb40">
+        <div class="bm bw0 pgs cl">
+                <span>
+                    <div class="pg">
+                        {$page}
+                        <!--<strong>1</strong>-->
+                        <!--<a href="">2</a>-->
+                        <!--<a href="">3</a>-->
+                        <!--<a href="">4</a>-->
+                        <!--<a href="" class="nxt">下一页</a>-->
+                    </div>
+                </span>
+            <span class="pgb y">
+                    <a href="">返&nbsp;回</a>
+                </span>
+            <a href="" id="newspecial" class="J-check-login">发新帖</a>
+        </div>
+        <!--start论坛导航-->
+        <ul class="ttp bm cl">
+            <li class="xw1 a">
+                <a href="{:U('HomePage/forumshow')}">全部</a>
+            </li>
+            <volist name="categories" id="category">
+                <li>
+                    <a href="{:U('HomePage/forumshow',array('category_id'=>$category['id']))}">{$category.name}</a>
+                </li>
+            </volist>
+
+        </ul>
+        <!--end论坛导航-->
+        <!--start论坛列表-->
+        <div class="tl bm bmw">
+            <div class="bgfff">
+                <form action="">
+                    <table>
+                        <tbody>
+                        <tr class="ts">
+                            <td class="w25">&nbsp;</td>
+                            <th class="w760">
+                                <a href="javascript:;" class="forumrefresh">板块主题</a>
+                            </th>
+                            <td class="w25">&nbsp;</td>
+                            <td class="w25">&nbsp;</td>
+                            <td class="">&nbsp;</td>
+                        </tr>
+                        </tbody>
+                        <tbody>
+                        <volist name="current_categories" id="current_category">
+                            <tr>
+                                <td class="icn">
+                                    <a href="">
+                                        <img src="/Public/img/pollsmall.gif" alt="">
+                                    </a>
+                                </td>
+                                <th class="new">
+                                    <em>[{$current_category.category_name}]</em>
+                                    <a href="{:U('Forums/detailshow',array('forum_id'=>$current_category['id']))}" class="s xst">
+                                        {$current_category.name}
+                                    </a>
+                                </th>
+                                <td class="by"></td>
+                                <td class="num"></td>
+                                <td class="by">
+                                    <cite>
+                                        <a href="">{$current_category.user_name}</a>
+                                    </cite>
+                                    <em>
+                                        <a href="">{$current_category.updated_at}</a>
+                                    </em>
+                                </td>
+                            </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+        <!--end论坛列表-->
+        <!--start下一页-->
+        <a href="" class="bm_h" id="autopbn">下一页</a>
+        <!--end下一页-->
+        <!--start发帖-->
+        <div class="bm" id="f_pst">
+            <div class="bm_h">
+                <h2>快速发帖</h2>
+            </div>
+            <div class="bm_c bgfff">
+                <form action="{:U('Forums/editForums')}" method="post" id="fastpostform">
+                    <div class="pbt cl">
+                        <div class="ftid">
+                            <select name="category_id" id="category_id" class="select-style">
+                                <volist name="categories" id="category">
+                                <option value="{$category.id}">{$category.name}</option>
+                                </volist>
+                            </select>
+                            <input type="text" name="name" class="px ml10" style="width: 25em" />
+                        </div>
+                    </div>
+                    <div class="cl">
+                        <div class="hasfsl" id="fastposteditor">
+                            <if condition="($user_name eq '')">
+                                <div class="no-login">
+                                    您需要登录后才可以发帖
+                                    <a href="">登录</a>
+                                    |
+                                    <a href="{:U('Register/register')}">注册通行证</a>
+                                </div>
+                                <else />
+                                <!--style给定宽度可以影响编辑器的最终宽度-->
+                                <script type="text/plain" id="myEditor" class="is-login" style="width: 100%; height: 150px;" name="content">
+                                    <p>这里我可以写一些输入提示</p>
+                                </script>
+                            </if>
+                            <!--start没有登录-->
+
+                            <!--end没有登录-->
+                            <!--start登录-->
+
+                            <!--end登录-->
+                        </div>
+                        <if condition="($user_name neq '')">
+                        <p class="ptm pnpost" type="submit">
+                            <button class="pn pnc" type="submit">
+                                <strong>发表帖子</strong>
+                            </button>
+                            <!--<input type="submit" value='发表'>-->
+                        </p>
+                        </if>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--end发帖-->
+    </div>
+    <!--end论坛-->
+
+
+<!--主体-->
+
+<include file="LayOut/foot"/>

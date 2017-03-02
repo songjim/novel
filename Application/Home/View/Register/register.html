@@ -1,11 +1,24 @@
-<include file="LayOut/head" />
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>C_NOVEL</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" href="Public/css/Autocomplete.css">
+    <link rel="stylesheet" href="Public/css/Button.css">
+    <link rel="stylesheet" href="Public/css/pact.css">
+</head>
 <!--主体-->
-<div class="wrap">
+<div class="wrap bgfff">
 
     <!--start头部-->
     <div class="header reg-header ">
         <div class="box-center">
-            <div class="logo cf"><span class="lang">用户注册</span></div>
+            <div class="logo cf">
+                <a href="{:U('HomePage/homeshow')}">C_NOVEL</a>
+                <span class="lang">用户注册</span>
+            </div>
         </div>
     </div>
     <!--end头部-->
@@ -16,16 +29,21 @@
             <span class="lang act">填写注册信息</span>
         </div>
         <div class="reg-form-wrap">
-            <form action="">
+            <form action="" method="post" id="re_from">
                 <div class="reg-form-list form-list">
                     <dl>
                         <dd id="email_dd">
                             <em>邮箱账号</em>
-                            <input type="text" placeholder="输入常用邮箱地址" id="txtemail">
+                            <input type="text" placeholder="输入常用邮箱地址" name="email" id="txtemail">
+                            <input type="button" id="sendCodeBtn" value="发送验证码" class="send-qr-code">
+                        </dd>
+                        <dd id="imgphonernd_code">
+                            <em>验证码</em>
+                            <input type="text" placeholder="请输入验证码" name="code" id="txtphoneimgcode">
                         </dd>
                         <dd id="phonepwd">
                             <em>密码</em>
-                            <input type="password" id="txtphonepwd" placeholder="6-18位大小写字母、符号或数字">
+                            <input type="password" name="password" id="txtphonepwd" placeholder="6-18位大小写字母、符号或数字">
                             <div class="password-tip" style="display:none">
                                 <span><cite></cite></span>
                                 <p id="pwdrule1">长度为6-18个字符</p>
@@ -41,14 +59,14 @@
                         </dd>
                         <dd id="password2">
                             <em>确认密码</em>
-                            <input id="txtphonepwd2" type="password" placeholder="再次输入密码">
+                            <input id="txtphonepwd2" name="password2" type="password" placeholder="再次输入密码">
                         </dd>
                     </dl>
                     <div class="deal">
                         <input type="checkbox" id="deal" name="checkbox" checked>
                         <label for="deal" class="ui-checkbox"></label><label for="deal">我已阅读并同意</label><a href="javascript:void(0)" target="_blank">《用户服务协议》</a>
                     </div>
-                    <a class="red-btn go-reg" href="javascript:" id="btnMailRegister">立即注册</a>
+                    <a class="red-btn go-reg" href="javascript:"  id="btnMailRegister">立即注册</a>
 
                 </div>
             </form>
@@ -71,11 +89,13 @@
     <!--页脚-->
 </div>
 <!--主体-->
-
-<script src="./js/jquery-1.12.4.min.js"></script>
-<script src="./js/common.js"></script>
-<!--注册页面js-->
-<script src="./js/register.js"></script>
+<load href="/Public/js/jquery-1.12.4.min.js"/>
+<load href="/Public/js/common.js"/>
+<load href="/Public/js/register.js"/>
+<!--<script src="./js/jquery-1.12.4.min.js"></script>-->
+<!--<script src="./js/common.js"></script>-->
+<!--&lt;!&ndash;注册页面js&ndash;&gt;-->
+<!--<script src="./js/register.js"></script>-->
 </body>
 
 </html>

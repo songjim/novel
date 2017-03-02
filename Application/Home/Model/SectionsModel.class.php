@@ -11,8 +11,24 @@ namespace Home\Model;
 
 use Think\Model;
 
-class SectionModel extends Model
+class SectionsModel extends Model
 {
+    protected $tableName = 'sections';
+    protected $_map = array(
+        'name' => 'section_name',
+    );
+//    protected $_link = array(
+//        '关联1'  =>  array(
+//            '关联属性1' => '定义',
+//            '关联属性N' => '定义',
+//        ),
+//        '关联2'  =>  array(
+//            '关联属性1' => '定义',
+//            '关联属性N' => '定义',
+//        ),
+//        '关联3'  =>  HAS_ONE, // 快捷定义
+//         ...
+//    );
     // 定义自动验证
     protected $_validate    =   array(
         array('title','require','标题必须'),

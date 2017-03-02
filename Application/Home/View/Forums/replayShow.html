@@ -1,0 +1,52 @@
+<include file="LayOut/head" />
+
+<include file="LayOut/menu"/>
+<load href="/Public/css/view.css" />
+<load href="/Public/css/forum.css"/>
+
+    <!--start论坛-->
+    <div class="box-center pd10 mb40">
+        <div class="wp">
+            <div class="bm cl" id="pt">
+                <div class="z">
+                    <a href="">HOME</a>
+                    <em>›</em>
+                    <a href="">论坛</a>
+                    <em>›</em>
+                    <a href="">{$forum.category_name}</a>
+                    <em>›</em>
+                    <a href="">{$forum.forum_name}</a>
+                </div>
+            </div>
+            <form action="{:U('Forums/editReplays')}" method="post">
+                <div class="ct2_a ct2_a_r wp cl" id="ct">
+                    <div class="bm bw0 cl" id="editorbox">
+                        <div id="postbox">
+                            <div class="pbt cl">
+                                <div class="z">
+                                        <span class="z">
+                                            RE: {$replay.r_content}
+                                        </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="edt">
+                        <input type="hidden" name="replay_id" value="{$replay.id}">
+                        <input type="hidden" name="forum_id" value="{$forum.forum_id}">
+                        <!--style给定宽度可以影响编辑器的最终宽度-->
+                        <script type="text/plain" id="myEditor" style="width: 100%; height: 150px;" name="r_content">
+                            <p>这里我可以写一些输入提示</p>
+                        </script>
+                    </div>
+                    <div class="mtm mbm pnpost">
+                        <button type="submit" id="postsubmit" class="pn pnc" value="true" name="replysubmit">
+                            <span>参与/回复主题</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <include file="LayOut/foot"/>

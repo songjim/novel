@@ -1,0 +1,271 @@
+<include file="LayOut/head" />
+
+<include file="LayOut/menu"/>
+<load href="/Public/css/view.css" />
+
+    <!--start论坛-->
+    <div class="box-center forumboard pd10 mb40">
+        <div class="bm bw0 pgs cl">
+            <span>
+                <div class="pg">
+                    <strong>1</strong>
+                    <a href="">2</a>
+                    <a href="">3</a>
+                    <a href="">4</a>
+                    <a href="" class="nxt">下一页</a>
+                </div>
+            </span>
+            <span class="pgb y">
+                <a href="">返&nbsp;回</a>
+            </span>
+            <a href="" id="newspecial" class="J-check-login">发新帖</a>
+        </div>
+        <!--论坛内容-->
+        <div id="postlist" class="pl bm">
+            <table cellspacing="0" cellpadding="0">
+                <tbody>
+                <tr>
+                    <td class="pls ptn pbn f13">
+                        <div class="hm ptn">
+                            <span class="xg1">查看:</span> <span class="xi1">10598</span><span class="pipe">|</span><span
+                                class="xg1">回复:</span> <span class="xi1">99</span>
+                        </div>
+                    </td>
+                    <td class="plc ptm pbn vwthd">
+                        <h1 class="ts">
+                            <span></span>
+                            <a href="{:U('HomePage/forumshow',array('category_id'=>$forum['category_id']))}">[{$forum.category_name}]</a>
+                            <span id="thread_subject">{$forum.name}</span>
+                        </h1>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <!--start论坛分割线-->
+            <table cellspacing="0" cellpadding="0" class="ad">
+                <tbody><tr>
+                    <td class="pls">
+                    </td>
+                    <td class="plc">
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <!--end论坛分割线-->
+            <!--start论坛item-->
+
+            <div>
+                <table class="plhin" cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                        <td class="pls" rowspan="2">
+                            <div class="pls favatar">
+                                <div class="pi">
+                                    <div class="authi">
+                                        <a href="964883" target="_blank" class="xw1 f13" style="color: #000000">{$forum.user_name}</a>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="avatar">
+                                        <a href="" class="avtm" target="_blank">
+                                            <img src="{$forum.user_img}">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td class="plc f13">
+                            <div class="pi">
+                                <strong>
+                                    <a href="">
+                                        1楼
+                                    </a>
+                                </strong>
+                                <div class="pti">
+                                    <div class="authi">
+                                        <img class="authicn vm" src="/Public/img/ico_lz.png">
+                                        &nbsp;楼主
+                                        <span class="pipe">|</span>
+                                        <em>发表于 {$forum.created_at}</em>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pct">
+                                <div class="pcb">
+                                    <div class="t_fsz">
+                                        <table cellspacing="0" cellpadding="0">
+                                            <tbody>
+                                            <tr>
+                                                <td class="t_f">
+                                                    {$forum.content}
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr class="ad">
+                        <td class="pls"></td>
+                        <td class="plc"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <volist name="replays" id="replay">
+            <!--end论坛item--><!--start论坛item-->
+                <div>
+                    <table class="plhin" cellspacing="0" cellpadding="0">
+                        <tbody>
+                        <tr>
+                            <td class="pls" rowspan="2">
+                                <div class="pls favatar">
+                                    <div class="pi">
+                                        <div class="authi">
+                                            <a href="964883" target="_blank" class="xw1 f13" style="color: #000000">{$replay.user_name}</a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="avatar">
+                                            <a href="" class="avtm" target="_blank">
+                                                <img src="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+
+                            <td class="plc f13">
+                                <div class="pi">
+                                    <strong>
+                                        <a href="">
+                                            {$key+2}楼
+                                        </a>
+                                    </strong>
+                                    <div class="pti">
+                                        <div class="authi">
+                                            <em>发表于 {$replay.created_at}</em>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pct">
+                                    <div class="pcb">
+                                        <div class="t_fsz">
+                                            <table cellspacing="0" cellpadding="0">
+                                                <tbody>
+                                                <tr>
+                                                    <td class="t_f">
+                                                        {$replay.r_content}
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <if  condition="($replay.children neq '')">
+                                            <!--<if condition="($user_name eq '')">-->
+                                        <div class="cm">
+                                            <h3 class="psth xs1">
+                                                <span class="icon_ring vm"></span>
+                                                点评
+                                            </h3>
+                                            <!--{$replay.children}-->
+                                            <volist name="replay.children" id="child">
+                                            <div class="pstl xs1 cl">
+                                                <div class="psta vm">
+                                                    <a href="">
+                                                        <img src="" alt="">
+                                                    </a>
+                                                    <a href="{$child.user_img}" class="xi2 xw1">
+                                                        {$child.user_name}
+                                                    </a>
+                                                </div>
+                                                <div class="psti">
+                                                    {$child.r_content}
+                                                    <a href="" class="xi2">回复</a>
+                                                    <span class="xg1">
+                                                            发表于 {$child.created_at}
+                                                        </span>
+                                                </div>
+                                            </div>
+                                                </volist>
+                                            <else/>
+
+                                            </if>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr></tr>
+                        <tr>
+                            <td class="pls"></td>
+                            <td class="plc" style="overflow:visible;">
+                                <div class="po">
+                                    <div class="pob cl f13">
+                                        <em>
+                                            <a href="{:U('Forums/replayShow',array('category_id'=>$forum['category_id'],'forum_id'=>$forum['id'],'replay_id'=>$replay['id']))}" class="fastre J-check-login">回复</a>
+                                        </em>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="ad">
+                            <td class="pls"></td>
+                            <td class="plc"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </volist>
+            <!--end论坛item-->
+        </div>
+
+        <!--start下一页-->
+        <div class="pgbtn">
+            <a href="" class="bm_h">
+                下一页 »
+            </a>
+        </div>
+        <!--end下一页-->
+
+        <div class="pl bm bmw" id="f_pst">
+            <form action="{:U('Forums/editReplays')}" method="post">
+                <table cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                        <td class="pls">
+                            <div class="avatar avtm">
+                                <img src="" alt="">
+                            </div>
+                        </td>
+                        <td class="plc">
+                            <div class="cl">
+                                <div class="hasfsl">
+                                    <input type="hidden" name="forum_id" value="{$forum.id}">
+                                    <!--style给定宽度可以影响编辑器的最终宽度-->
+                                    <script type="text/plain" id="myEditor" class="is-login" style="width: 100%; height: 150px;" name="r_content">
+                                    <p>这里我可以写一些输入提示</p>
+                                </script>
+                                </div>
+                            </div>
+                            <div class="ptm pnpost">
+                                <button class="pn pnc vm J-check-login" type="submit">
+                                    <strong>发表回复</strong>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </div>
+    <!--end论坛-->
+
+<include file="LayOut/foot"/>

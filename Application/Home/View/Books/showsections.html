@@ -1,35 +1,42 @@
 <include file="LayOut/head" />
+<include file="LayOut/menu"/>
 <load href="/Public/css/list.css" />
     <!--start书详情容器-->
     <div class="book-detail-wrap center990">
         <div class="book-information cf">
             <!--start书封面-->
             <div class="book-img">
-                <a class="J-getJumpUrl" id="bookImg" href="">
-                    <img src="//qidian.qpic.cn/qdbimg/349573/1003617647/180&#10;">
+                <a class="J-getJumpUrl" id="bookImg" href="" disabled="true">
+                    <img src="{$book.book_img}">
                 </a>
             </div>
             <!--end书封面-->
             <!--start书信息-->
             <div class="book-info">
                 <h1>
-                    <em>蛮荒记世</em>
+                    <em>{$book.book_name}</em>
                     <span>
-                            <a class="writer" href="javascript:void(0);" target="_blank" data-eid="qd_G08">寻匿</a> 著
+                            <a class="writer" href="javascript:void(0);" target="_blank" data-eid="qd_G08">{$book.author}</a> 著
                         </span>
                 </h1>
                 <p class="tag">
-                    <span class="blue">连载</span>
+                    <span class="blue">
+                        <switch name="book.is_finished">
+                            <case value="1">完结</case>
+                            <default />连载
+                        </switch>
+
+                    </span>
                 </p>
                 <p class="intro">
-                    肆意挥洒激情的游戏人生，打破现实框架的无尽幻想！
+                    {$book.description}
                 </p>
                 <p>
                     <em>3.73</em>
                     <cite>万字</cite>
                 </p>
                 <p>
-                    <a href="{:U('Books/showarticle','article_id=1')}" class="red-btn J-getJumpUrl ">开始阅读</a>
+                    <a href="{:U('Books/showarticle',array('section_id'=>1,'book_id'=>$book[id]))}" class="red-btn J-getJumpUrl ">开始阅读</a>
                 </p>
             </div>
             <!--end书信息-->
@@ -65,7 +72,7 @@
                     <h3>正文卷</h3>
                     <ul class="cf">
                         <volist name="sections" id="section">
-                            <li><a href="">{$section.name}</a></li>
+                            <li><a href="{:U('Books/showarticle',array('section_id'=>$section[id],'book_id'=>$book[id]))}">{$section.name}</a></li>
                         </volist>
                     </ul>
                 </div>
@@ -76,21 +83,5 @@
     </div>
     <!--end书详情容器-->
 
-
-    <!--页脚-->
-    <div class="footer">
-        <!--start 友情链接-->
-        <div class="box-center cf">
-            <!--start 版权-->
-            <div class="copy-right">
-                <p><span>Copyright © 2002-2017 All Right Reserved</span>版权所有 xxxxxxx</p>
-                <p>本站所收录作品、社区话题、书库评论及本站所做之广告均属个人行为，与本站立场无关</p>
-            </div>
-            <!--end 版权-->
-        </div>
-    </div>
-    <!--页脚-->
-</div>
-<!--主体-->
 
 <include file="LayOut/foot"/>
