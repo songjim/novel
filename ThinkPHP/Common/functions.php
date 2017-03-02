@@ -1548,11 +1548,13 @@ function think_filter(&$value){
 function in_array_case($value,$array){
     return in_array(strtolower($value),array_map('strtolower',$array));
 }
+
 function think_send_mail($to, $name, $subject = '', $body = '', $attachment = null){
 
     $config = C('THINK_EMAIL');
 
-    vendor('PHPMailer.class#PHPMailer');
+    vendor('PHPMailer.class#phpmailer');
+    vendor('SMTP');
     $mail = new PHPMailer(); //PHPMailer对象
 
     $mail->CharSet = 'UTF-8'; //设定邮件编码，默认ISO-8859-1，如果发中文此项必须设置，否则乱码

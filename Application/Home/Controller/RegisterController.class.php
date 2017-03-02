@@ -26,7 +26,7 @@ class RegisterController extends Controller
             $r_code = substr(str_shuffle($code),0,6);
             $content = "尊敬的用户,你好!"."</br>"."下面是你在C_NOVEL的验证码:".$r_code;
             session('code',$r_code);
-            echo $r_code;
+//            echo $r_code;
             if (think_send_mail($email,$name,$subject,$content)) {
                 session('code',$r_code);
 //                var_dump($r_code);
