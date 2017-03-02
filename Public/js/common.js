@@ -110,14 +110,14 @@ $(function () {
                 try {
                     var img = cropper.getDataURL();
                     $.ajax({
-                        url: '1111',
+                        url: 'index.php?m=Home&c=Forums&a=personImg',
                         type: 'post',
                         data: {
                             img: img
                         },
                         success: function(data) {
                             if (data) {
-                                window.reload();
+                                location.reload(true);
                             }
                         }
                     })
@@ -136,7 +136,7 @@ $(function () {
             if (name) {
 
                 $.ajax({
-                    url: '1111',
+                    url: 'index.php?m=Home&c=Forums&a=userNameUp',
                     type: 'post',
                     data: {
                         name: name

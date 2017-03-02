@@ -7,16 +7,17 @@
     <div class="box-center forumboard pd10 mb40">
         <div class="bm bw0 pgs cl">
             <span>
-                <div class="pg">
-                    <strong>1</strong>
-                    <a href="">2</a>
-                    <a href="">3</a>
-                    <a href="">4</a>
-                    <a href="" class="nxt">下一页</a>
-                </div>
+                <!--<div class="pg">-->
+                    <!--{$page}-->
+                    <!--<strong>1</strong>-->
+                    <!--<a href="">2</a>-->
+                    <!--<a href="">3</a>-->
+                    <!--<a href="">4</a>-->
+                    <!--<a href="" class="nxt">下一页</a>-->
+                <!--</div>-->
             </span>
             <span class="pgb y">
-                <a href="">返&nbsp;回</a>
+                <a href="" name="go_back">返&nbsp;回</a>
             </span>
             <a href="" id="newspecial" class="J-check-login">发新帖</a>
         </div>
@@ -26,10 +27,10 @@
                 <tbody>
                 <tr>
                     <td class="pls ptn pbn f13">
-                        <div class="hm ptn">
-                            <span class="xg1">查看:</span> <span class="xi1">10598</span><span class="pipe">|</span><span
-                                class="xg1">回复:</span> <span class="xi1">99</span>
-                        </div>
+                        <!--<div class="hm ptn">-->
+                            <!--<span class="xg1">查看:</span> <span class="xi1">10598</span><span class="pipe">|</span><span-->
+                                <!--class="xg1">回复:</span> <span class="xi1">99</span>-->
+                        <!--</div>-->
                     </td>
                     <td class="plc ptm pbn vwthd">
                         <h1 class="ts">
@@ -98,7 +99,7 @@
                                             <tbody>
                                             <tr>
                                                 <td class="t_f">
-                                                    {$forum.content}
+                                                    {$forum.content|htmlspecialchars_decode}
                                                 </td>
                                             </tr>
                                             </tbody>
@@ -160,7 +161,7 @@
                                                 <tbody>
                                                 <tr>
                                                     <td class="t_f">
-                                                        {$replay.r_content}
+                                                        {$replay.r_content|htmlspecialchars_decode}
                                                     </td>
                                                 </tr>
                                                 </tbody>
@@ -185,8 +186,8 @@
                                                     </a>
                                                 </div>
                                                 <div class="psti">
-                                                    {$child.r_content}
-                                                    <a href="" class="xi2">回复</a>
+                                                    {$child.r_content|htmlspecialchars_decode}
+                                                    <a href="" class="xi2"></a>
                                                     <span class="xg1">
                                                             发表于 {$child.created_at}
                                                         </span>
@@ -269,3 +270,10 @@
     <!--end论坛-->
 
 <include file="LayOut/foot"/>
+<script type="text/javascript">
+    $(function () {
+        $('[name="go_back"]').click(function () {
+            history.go(-1)
+        })
+    });
+</script>

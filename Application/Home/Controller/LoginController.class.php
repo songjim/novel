@@ -32,11 +32,9 @@ class LoginController extends Controller
                 exit($login->getError());
             }
             // 组合查询条件
-//            $where = array();
-//            $where['email'] = $data['email'];
             $result = $login->where("email = '{$data['email']}'")->field('id,user_name,password')->find();
             // 验证用户名 对比 密码
-            if ($result && $result['password'] == $result['password']) {
+            if ($result && $result['password'] == md5($_REQUEST['password'])) {
                 // 存储session
                 session('user_id', $result['id']);          // 当前用户id
                 session('user_name', $result['user_name']);   // 当前用户名

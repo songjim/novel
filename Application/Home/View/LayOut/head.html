@@ -26,7 +26,7 @@
                         <span>你好，{$user_name}</span>
                         <a class="black" id="user-name" href="//me.qidian.com" target="_blank" data-eid="qd_A08"></a>
                         <em>|</em>
-                        <a class="black" id="msg-btn" href="{:U('HomePage/personalshow')}" target="" data-eid="qd_A09">
+                        <a class="black" id="msg-btn" href="{:U('HomePage/personalShow')}" target="" data-eid="qd_A09">
                             消息<cite id="msg-box">(<i>0</i>)</cite></a><em>|</em>
                         <a id="exit-btn" href="{:U('Login/logout')}" data-eid="qd_A10">退出</a>
                     </div>
@@ -42,9 +42,12 @@
             <!--start公告滚动-->
             <div class="anno-box fl J-anno-box">
                 <ul>
-                    <li>公告：[体验交流] 御魂回收比例在这儿！体验服更新速报</li>
-                    <li>公告：[体验交流] 御魂回收比例在这儿！体验服更新速报</li>
-                    <li>公告：[体验交流] 御魂回收比例在这儿！体验服更新速报</li>
+                    <volist name="affiches" id="affiche">
+                        <li>公告：{$affiche.contents}</li>
+                    </volist>
+                    <!--<li>公告：[体验交流] 御魂回收比例在这儿！体验服更新速报</li>-->
+                    <!--<li>公告：[体验交流] 御魂回收比例在这儿！体验服更新速报</li>-->
+                    <!--<li>公告：[体验交流] 御魂回收比例在这儿！体验服更新速报</li>-->
                 </ul>
             </div>
             <!--end公告滚动-->

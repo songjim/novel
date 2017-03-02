@@ -9,13 +9,13 @@
         <div class="wp">
             <div class="bm cl" id="pt">
                 <div class="z">
-                    <a href="">HOME</a>
+                    <a href="{:U('HomePage/homeshow')}">HOME</a>
                     <em>›</em>
-                    <a href="">论坛</a>
+                    <a href="{:U('HomePage/forumshow')}">论坛</a>
                     <em>›</em>
-                    <a href="">{$forum.category_name}</a>
+                    <a href="{:U('HomePage/forumshow',array('category_id'=>$forum['category_id']))}">{$forum.category_name}</a>
                     <em>›</em>
-                    <a href="">{$forum.forum_name}</a>
+                    <a href="{:U('Forums/detailshow',array('forum_id'=>$forum['forum_id']))}">{$forum.forum_name}</a>
                 </div>
             </div>
             <form action="{:U('Forums/editReplays')}" method="post">
@@ -25,7 +25,7 @@
                             <div class="pbt cl">
                                 <div class="z">
                                         <span class="z">
-                                            RE: {$replay.r_content}
+                                            RE: {$replay.r_content|htmlspecialchars_decode}
                                         </span>
                                 </div>
                             </div>
