@@ -26,11 +26,6 @@ class LoginController extends Controller
             // 实例化Login对象
             $login =M('Users');
             // 自动验证 创建数据集
-//            if (!$data = $login->create()) {
-//                // 防止输出中文乱码
-//                header("Content-type: text/html; charset=utf-8");
-//                exit($login->getError());
-//            }
             // 组合查询条件
 
             $result = $login->where("email = '$email'")->field('id,user_name,password')->find();
@@ -39,8 +34,8 @@ class LoginController extends Controller
                 // 存储session
                 session('user_id', $result['id']);          // 当前用户id
                 session('user_name', $result['user_name']);   // 当前用户名
+                $this->assign('user_name',$result['user_name']);
                 $this->display('Login/homeshow');
-//                echo json_encode(array('success'=>true,'url'=>U('Admin/homeshow')));
             } else {
                 echo json_encode(array('success'=>false,'msg'=>'验证失败'));
             }

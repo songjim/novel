@@ -23,6 +23,8 @@ class HomePageController extends Controller
         $Affiches = M('Affiches');
         $affiches = $Affiches->order('created_at desc')->select();
         $this->assign('affiches',$affiches);
+        $new_book = M('Books')->order('created_at desc')->limit(4)->select();
+        $this->assign('new_book',$new_book);
         $books = M('Books')->join('categories c on c.id = books.category_id')->order('books.updated_at desc')
             ->field('books.*,c.name as category_name,c.description as category_description')->select();
         $this->assign('books',$books);

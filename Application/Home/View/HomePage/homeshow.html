@@ -10,11 +10,14 @@
                     <div class="bx_wrap">
                         <div class="bx_container">
                             <ul id="demo1">
-                                <li><a href="javascript:void(0);"><img  alt="#" width="160" height="210" src="{$Think.config.Public_Path}/img/s1.png"><br/>图片1</a></li>
-                                <li><a href="javascript:void(0);"><img  alt="#" width="160" height="210" src="{$Think.config.Public_Path}/img/s1.png"><br/>图片1</a></li>
-                                <li><a href="javascript:void(0);"><img  alt="#" width="160" height="210" src="{$Think.config.Public_Path}/img/s1.png"><br/>图片1</a></li>
-                                <li><a href="javascript:void(0);"><img  alt="#" width="160" height="210" src="{$Think.config.Public_Path}/img/s1.png"><br/>图片1</a></li>
-                                <li><a href="javascript:void(0);"><img  alt="#" width="160" height="210" src="{$Think.config.Public_Path}/img/s1.png"><br/>图片1</a></li>
+                                <volist name="new_book" id="nb">
+                                    <li><a href="{:U('Books/showsections',array('book_id'=>$nb['id']))}"><img  alt="#" width="160" height="210" src="{$nb.book_img}"><br/>{$nb.book_name}</a></li>
+                                </volist>
+                                <!--<li><a href="javascript:void(0);"><img  alt="#" width="160" height="210" src="{$Think.config.Public_Path}/img/s1.png"><br/>图片1</a></li>-->
+                                <!--<li><a href="javascript:void(0);"><img  alt="#" width="160" height="210" src="{$Think.config.Public_Path}/img/s1.png"><br/>图片1</a></li>-->
+                                <!--<li><a href="javascript:void(0);"><img  alt="#" width="160" height="210" src="{$Think.config.Public_Path}/img/s1.png"><br/>图片1</a></li>-->
+                                <!--<li><a href="javascript:void(0);"><img  alt="#" width="160" height="210" src="{$Think.config.Public_Path}/img/s1.png"><br/>图片1</a></li>-->
+                                <!--<li><a href="javascript:void(0);"><img  alt="#" width="160" height="210" src="{$Think.config.Public_Path}/img/s1.png"><br/>图片1</a></li>-->
                             </ul>
                         </div>
                     </div>
@@ -57,9 +60,9 @@
                                         <img src="{$Think.config.Public_Path}/img/user.0.1.png">
                                         <a class="name" href="#" data-eid="qd_B59" target="_blank">{$book.author}</a>
                                         <em>|</em>
-                                        <a href="" target="_blank" data-eid="qd_B60">{$book.category_name}</a>
+                                        <a href="{:U('HomePage/categoryshow',array('category_id'=>$book['category_id']))}" target="" data-eid="qd_B60">{$book.category_name}</a>
                                         <i>·</i>
-                                        <a class="go-sub-type" data-typeid="21" data-subtypeid="73" href="javascript:" data-eid="qd_B61">异世大陆</a>
+                                        <!--<a class="go-sub-type" data-typeid="21" data-subtypeid="73" href="javascript:" data-eid="qd_B61">异世大陆</a>-->
                                         <em>|</em>
                                         <span>
                                             <switch name="book.is_finished">
@@ -72,7 +75,7 @@
                                         {$book.description}
                                     </p>
                                     <p class="update">
-                                        <span>279.3万字</span>
+                                        <!--<span>279.3万字</span>-->
                                     </p>
                                 </div>
                             </li>
