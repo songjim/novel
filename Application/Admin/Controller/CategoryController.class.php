@@ -18,6 +18,7 @@ class CategoryController extends Controller
         if (session('user_name') != 'admin') {
             redirect(U('Login/loginShow'));
         }
+        $this->assign('user_name',session('user_name'));
         $categories = M('Categories')->select();
         $this->assign('categories',$categories);
         $this->display();
@@ -29,12 +30,14 @@ class CategoryController extends Controller
         if (!$id) {
             $this->error('无效的id号');
         }
+        $this->assign('user_name',session('user_name'));
         M('Categories')->where("id = $id")->delete();
         $this->success('删除成功');
     }
 
     public function updateCategory()
     {
+        $this->assign('user_name',session('user_name'));
         $id = I('get.id',0,'intval');
         $category = M('Categories')->find($id);
         $books = M('Books')->where("category_id = $id")->select();
@@ -49,6 +52,7 @@ class CategoryController extends Controller
         if (session('user_name') != 'admin') {
             redirect(U('Login/loginShow'));
         }
+        $this->assign('user_name',session('user_name'));
         if (IS_POST) {
             $id = I('post.id',0,'intval');
             $name = I('post.name','','addslashes');
@@ -81,6 +85,7 @@ class CategoryController extends Controller
         if (session('user_name') != 'admin') {
             redirect(U('Login/loginShow'));
         }
+        $this->assign('user_name',session('user_name'));
         $this->display();
     }
 }
