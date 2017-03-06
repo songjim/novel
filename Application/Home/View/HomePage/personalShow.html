@@ -41,13 +41,14 @@
                     <div class="theme">
                         <div class="theme_con">
                             <div class="theme_nav">
-                                <a href="#" class="theme_nav_list current">主题<span class="num">{$forums_count}</span></a>
-                                <a href="#" class="theme_nav_list">回复<span class="num">{$replays_count}</span></a>
+                                <a href="javascript:void(0);" class="theme_nav_list current">主题<span class="num">{$forums_count}</span></a>
+                                <a href="javascript:void(0);" class="theme_nav_list">回复<span class="num">{$replays_count}</span></a>
                             </div>
                             <p style="height: 56px;">
                                 <span class="th1">帖子</span>
                                 <span class="th2">版块</span>
                                 <span class="th3">回复时间</span>
+                                <span class="th4">删除</span>
                             </p>
                             <div class="theme_con_index current">
                                 <ul>
@@ -60,6 +61,7 @@
                                                 </div>
                                                 <span class="plate">{$forum.category_name}</span>
                                                 <span class="num">{$forum.updated_at}</span>
+                                                <span class=""><a href="{:U('Forums/forumsDel',array('replay_id'=>$replay['id']))}" class="J-del-confirm">删除</a></span>
                                             </div>
                                         </li>
                                    </volist>
@@ -77,6 +79,7 @@
                                             </div>
                                             <span class="plate">{$replay.c_name}</span>
                                             <span class="num">{$replay.created_at}</span>
+                                            <span class=""><a href="{:U('Forums/forumsDel',array('replay_id'=>$replay['id']))}" class="J-del-confirm">删除</a></span>
                                         </div>
                                         <ul>
                                             <li><a href="http://bbs.xiaomi.cn/t-13356996-n2#2" target="_blank" rel="noopener noreferrer">{$replay.r_content}</a>
