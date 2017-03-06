@@ -22,21 +22,22 @@ return array(
     //    'URL_HTML_SUFFIX' => '.html',  // URL伪静态后缀设置
 
     /*页面Trace信息*/
-    'SHOW_PAGE_TRACE' => false,
+    'SHOW_PAGE_TRACE' => true,
 
     /* 项目设定 */
     //    'APP_GROUP_LIST' => 'Home,Admin,Author',
     'THINK_EMAIL' => array(
 
-        //    'SMTP_HOST' => 'smtp.qq.com', //SMTP服务
-        'SMTP_HOST' => '192.168.200.254',
-        'SMTP_PORT' => '25', //SMTP服务器端口
+            'SMTP_HOST' => 'smtp.qq.com', //SMTP服务
+//        'SMTP_HOST' => '192.168.200.254',
+        'SMTP_PORT' => '465', //SMTP服务器端口
+        'MAIL_SMTPAUTH' =>TRUE,
 
-        //        'SMTP_USER' => '809587614@qq.com', //SMTP服务器用户名
+                'SMTP_USER' => '809587614@qq.com', //SMTP服务器用户名
 
-        //        'SMTP_PASS' => 'yongyuandeai', //SMTP服务器密码
+                'SMTP_PASS' => 'yongyuandeai', //SMTP服务器密码
 
-        'FROM_EMAIL' => 'songjian@dxy.cn', //发件人EMAIL
+        'FROM_EMAIL' => '809587614@qq.com', //发件人EMAIL
 
         'FROM_NAME' => '小明', //发件人名称
 

@@ -1548,11 +1548,13 @@ function think_filter(&$value){
 function in_array_case($value,$array){
     return in_array(strtolower($value),array_map('strtolower',$array));
 }
+
 function think_send_mail($to, $name, $subject = '', $body = '', $attachment = null){
 
     $config = C('THINK_EMAIL');
 
-    vendor('PHPMailer.class#PHPMailer');
+    vendor('PHPMailer.class#phpmailer');
+    vendor('SMTP');
     $mail = new PHPMailer(); //PHPMailer对象
 
     $mail->CharSet = 'UTF-8'; //设定邮件编码，默认ISO-8859-1，如果发中文此项必须设置，否则乱码
@@ -1565,17 +1567,17 @@ function think_send_mail($to, $name, $subject = '', $body = '', $attachment = nu
 
     // 2 = messages only
 
-//    $mail->SMTPAuth = true; // 启用 SMTP 验证功能
+    $mail->SMTPAuth = true; // 启用 SMTP 验证功能
 
-//    $mail->SMTPSecure = 'ssl'; // 使用安全协议
+    $mail->SMTPSecure = 'ssl'; // 使用安全协议
     $mail->Mailer = 'SMTP';
     $mail->Host = $config['SMTP_HOST']; // SMTP 服务器
 
     $mail->Port = $config['SMTP_PORT']; // SMTP服务器的端口号
 
-//    $mail->Username = $config['SMTP_USER']; // SMTP服务器用户名
+    $mail->Username = $config['SMTP_USER']; // SMTP服务器用户名
 
-//    $mail->Password = $config['SMTP_PASS']; // SMTP服务器密码
+    $mail->Password = $config['SMTP_PASS']; // SMTP服务器密码
 
     $mail->SetFrom($config['FROM_EMAIL'], $config['FROM_NAME']);
 

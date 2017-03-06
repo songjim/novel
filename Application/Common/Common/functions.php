@@ -8,8 +8,8 @@
 function think_send_mail($to, $name, $subject = '', $body = '', $attachment = null){
 
     $config = C('THINK_EMAIL');
-
-    Vendor('PHPMailer.PHPMailerAutoload'); //从PHPMailer目录导class.phpmailer.php类文件
+    vendor('SMTP');
+    Vendor('PHPMailer.class#phpmailer'); //从PHPMailer目录导class.phpmailer.php类文件
 
     $mail = new PHPMailer(); //PHPMailer对象
 
@@ -17,7 +17,7 @@ function think_send_mail($to, $name, $subject = '', $body = '', $attachment = nu
 
     $mail->IsSMTP(); // 设定使用SMTP服务
 
-    $mail->SMTPDebug = 0; // 关闭SMTP调试功能
+    $mail->SMTPDebug = 1; // 关闭SMTP调试功能
 
     // 1 = errors and messages
 

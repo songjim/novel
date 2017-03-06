@@ -36,18 +36,6 @@
                                 <p>@{$recommend.author}</p>
                             </li>
                         </volist>
-                        <!--<li>-->
-                            <!--<div class="book-shadow"></div>-->
-                            <!--<div class="img-box">-->
-                                <!--<a href="">-->
-                                    <!--<img src="" alt="">-->
-                                <!--</a>-->
-                            <!--</div>-->
-                            <!--<h3>-->
-                                <!--<a href="">雪鹰领主</a>-->
-                            <!--</h3>-->
-                            <!--<p>@小钢炮</p>-->
-                        <!--</li>-->
                     </ul>
                 </div>
             </div>
@@ -70,7 +58,7 @@
                         <volist name="all_book" id="book">
                             <li data-rid="1">
                                 <div class="book-img-box">
-                                    <a href="//book.qidian.com/info/3513193" data-bid="3513193" data-eid="qd_B57" target="_blank">
+                                    <a href="{:U('Books/showsections',array('book_id'=>$book['id']))}" data-bid="3513193" data-eid="qd_B57" target="_blank">
                                         <img src="{$book.book_img}" />
                                     </a>
                                 </div>
@@ -80,71 +68,26 @@
                                         <img src="//qidian.gtimg.com/qd/images/ico/user.0.1.png">
                                         <a class="name" href="#" data-eid="qd_B59" target="_blank">{$book.author}</a>
                                         <em>|</em>
-                                        <a href="" target="_blank" data-eid="qd_B60">玄幻</a>
+                                        <a href="{:U('HomePage/categoryshow',array('category_id'=>$current_category['id']))}" target="" data-eid="qd_B60">{$current_category.name}</a>
                                         <i>·</i>
-                                        <a class="go-sub-type" data-typeid="21" data-subtypeid="73" href="javascript:" data-eid="qd_B61">异世大陆</a>
                                         <em>|</em>
-                                        <span>连载中</span>
+
+                                        <span>
+                                            <switch name="book.is_finished">
+                                                <case value="1">完结</case>
+                                                <default />连载中
+                                            </switch>
+                                        </span>
                                     </p>
                                     <p class="intro">
                                         {$book.description}
                                     </p>
                                     <p class="update">
-                                        <span>279.3万字</span>
+
                                     </p>
                                 </div>
                             </li>
                         </volist>
-                        <!--<li data-rid="1">-->
-                            <!--<div class="book-img-box">-->
-                                <!--<a href="//book.qidian.com/info/3513193" data-bid="3513193" data-eid="qd_B57" target="_blank">-->
-                                    <!--<img src="" />-->
-                                <!--</a>-->
-                            <!--</div>-->
-                            <!--<div class="book-mid-info">-->
-                                <!--<h4><a href="//book.qidian.com/info/3513193" target="_blank" data-eid="qd_B58" data-bid="3513193">雪鹰领主</a></h4>-->
-                                <!--<p class="author">-->
-                                    <!--<img src="//qidian.gtimg.com/qd/images/ico/user.0.1.png">-->
-                                    <!--<a class="name" href="#" data-eid="qd_B59" target="_blank">我吃西红柿</a>-->
-                                    <!--<em>|</em>-->
-                                    <!--<a href="" target="_blank" data-eid="qd_B60">玄幻</a>-->
-                                    <!--<i>·</i>-->
-                                    <!--<a class="go-sub-type" data-typeid="21" data-subtypeid="73" href="javascript:" data-eid="qd_B61">异世大陆</a>-->
-                                    <!--<em>|</em>-->
-                                    <!--<span>连载中</span>-->
-                                <!--</p>-->
-                                <!--<p class="intro">-->
-                                    <!--在夏族的安阳行省，有一个很小很不起眼的领地，叫——雪鹰领！故事，就从这里开始！**继《莽荒纪》《吞噬星空》《九鼎记》《盘龙》《星辰变》《寸芒》《星峰-->
-                                <!--</p>-->
-                                <!--<p class="update">-->
-                                    <!--<span>279.3万字</span>-->
-                                <!--</p>-->
-                            <!--</div>-->
-                        <!--</li>-->
-                        <!--<li data-rid="1">-->
-                            <!--<div class="book-img-box">-->
-                                <!--<a href="//book.qidian.com/info/3513193" data-bid="3513193" data-eid="qd_B57" target="_blank"><img src="//qidian.qpic.cn/qdbimg/349573/3513193/150"></a>-->
-                            <!--</div>-->
-                            <!--<div class="book-mid-info">-->
-                                <!--<h4><a href="//book.qidian.com/info/3513193" target="_blank" data-eid="qd_B58" data-bid="3513193">雪鹰领主</a></h4>-->
-                                <!--<p class="author">-->
-                                    <!--<img src="//qidian.gtimg.com/qd/images/ico/user.0.1.png">-->
-                                    <!--<a class="name" href="#" data-eid="qd_B59" target="_blank">我吃西红柿</a>-->
-                                    <!--<em>|</em>-->
-                                    <!--<a href="" target="_blank" data-eid="qd_B60">玄幻</a>-->
-                                    <!--<i>·</i>-->
-                                    <!--<a class="go-sub-type" data-typeid="21" data-subtypeid="73" href="javascript:" data-eid="qd_B61">异世大陆</a>-->
-                                    <!--<em>|</em>-->
-                                    <!--<span>连载中</span>-->
-                                <!--</p>-->
-                                <!--<p class="intro">-->
-                                    <!--在夏族的安阳行省，有一个很小很不起眼的领地，叫——雪鹰领！故事，就从这里开始！**继《莽荒纪》《吞噬星空》《九鼎记》《盘龙》《星辰变》《寸芒》《星峰-->
-                                <!--</p>-->
-                                <!--<p class="update">-->
-                                    <!--<span>279.3万字</span>-->
-                                <!--</p>-->
-                            <!--</div>-->
-                        <!--</li>-->
                     </ul>
                 </div>
             </div>

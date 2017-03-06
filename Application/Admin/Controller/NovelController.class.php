@@ -18,6 +18,7 @@ class NovelController extends Controller
         if (session('user_name') != 'admin') {
             redirect(U('Login/loginShow'));
         }
+        $this->assign('user_name',session('user_name'));
         $books = M('Books')->select();
         $this->assign('books',$books);
         $this->display();
@@ -28,6 +29,7 @@ class NovelController extends Controller
         if (session('user_name') != 'admin') {
             redirect(U('Login/loginShow'));
         }
+        $this->assign('user_name',session('user_name'));
         $categorys = M('Categories')->select();
         $this->assign('categories',$categorys);
         $this->display();
@@ -38,6 +40,7 @@ class NovelController extends Controller
         if (session('user_name') != 'admin') {
             redirect(U('Login/loginShow'));
         }
+        $this->assign('user_name',session('user_name'));
         $books = M('Books b');
         $book = $books->join("left join categories c on c.id = b.category_id")
             ->field("c.id as c_id,c.name as c_name,b.*")->order('b.created_at desc')
@@ -55,6 +58,7 @@ class NovelController extends Controller
         if (session('user_name') != 'admin') {
             redirect(U('Login/loginShow'));
         }
+        $this->assign('user_name',session('user_name'));
         $book_id = I('get.id',0,'intval');
         if (!$book_id) {
             $this->error('没有需要更新的小说');
@@ -72,6 +76,7 @@ class NovelController extends Controller
             echo json_encode(array('success'=>false,'msg'=> "无效的参数"));
             exit();
         }
+        $this->assign('user_name',session('user_name'));
         $books = M('Books');
         $books->find($id);
         $books->delete();

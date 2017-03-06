@@ -36,6 +36,7 @@ class AffichesController extends Controller
         if (!$id) {
             $this->error('公告id为空');
         }
+        $this->assign('user_name',session('user_name'));
         $Affiches = M('Affiches');
         $Affiches->where("id = $id")->delete();
         $this->success('删除成功');
@@ -46,6 +47,7 @@ class AffichesController extends Controller
         if (session('user_name') != 'admin') {
             redirect(U('Login/loginShow'));
         }
+        $this->assign('user_name',session('user_name'));
         $id = I('get.id',0,'intval');
         if ( !$id ) {
             $this->error('无效的公告号!');
@@ -61,6 +63,7 @@ class AffichesController extends Controller
         if (session('user_name') != 'admin') {
             redirect(U('Login/loginShow'));
         }
+        $this->assign('user_name',session('user_name'));
         if (IS_POST) {
             $id = I('post.id',0,'intval');
             $contents = I('post.contents','','addslashes');
@@ -89,6 +92,7 @@ class AffichesController extends Controller
         if (session('user_name') != 'admin') {
             redirect(U('Login/loginShow'));
         }
+        $this->assign('user_name',session('user_name'));
         $this->display();
     }
 }
