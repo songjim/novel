@@ -73,11 +73,13 @@ class HomePageController extends Controller
         if ($category_id != 0) {
             $where['forums.category_id'] = $category_id;
         }
+
+        $p_s = I('get.p',1,'intval');
         $forums = M('Forums');
         $current_category = $forums->join("users u on u.id = forums.user_id")
             ->join("categories c on c.id = forums.category_id")
             ->where($where)->order('forums.updated_at desc')
-            ->field('u.user_name,c.name as category_name,forums.*')->page($_GET['p'].',5')->select();
+            ->field('u.user_name,c.name as category_name,forums.*')->page($p_s.',5')->select();
         $this->assign('current_categories',$current_category);
         $count = $forums->where($where)->count();
         $Page = new \Think\Page($count,5);
