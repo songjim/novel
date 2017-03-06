@@ -1,0 +1,57 @@
+<include file="Layout/head"/>
+
+
+<!--<div id="page-wrapper">-->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">小说管理</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                修改章节
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <form role="form" action="{:U('Novel/articleSave')}" method="post">
+                            <!--<div class="form-group">-->
+                                <!--<label>请选择小说</label>-->
+                                <!--<select class="form-control" name="book_id">-->
+                                    <!--<volist name="books" id="book">-->
+                                        <!--<option value="{$book.id}">{$book.book_name}</option>-->
+                                    <!--</volist>-->
+                                <!--</select>-->
+                            <!--</div>-->
+                            <div class="form-group">
+                                <label>小说标题</label>
+                                <input class="form-control" name="name" placeholder="{$c_section.name}">
+                                <input class="form-control" name="id" type="hidden" value="{$c_section.id}">
+                            </div>
+                            <!--<div class="form-group">-->
+                                <!--<label>小说正文</label>-->
+                                <!--<textarea class="form-control" name="body" rows="3"></textarea>-->
+                            <!--</div>-->
+                            <button type="submit" class="btn btn-default">提交</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- /.row (nested) -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+</div>
+<!-- /#page-wrapper -->
+
+
+
+<include file="Layout/foot"/>

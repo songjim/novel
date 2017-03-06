@@ -18,10 +18,11 @@ class AffichesController extends Controller
         if (session('user_name') != 'admin') {
             redirect(U('Login/loginShow'));
         }
+        $pa = I('get.p',0,'intval');
         $Affiches = M('Affiches');
 //        $data = M('Affiches a')->select();
         $data = $Affiches->order('created_at desc')
-            ->page($_GET['p'].',5')->select();
+            ->page($pa.',5')->select();
         $count = $Affiches->count();
         $Page = new \Think\Page($count,5);
         $show = $Page->show();
