@@ -3651,7 +3651,8 @@ h3.wrap-title .more em.iconfont {
 }
 
 .book-img-text .book-mid-info p.author a.name:hover {
-    color: #262626
+    color: #a6a6a6;
+    cursor: text;
 }
 
 .book-img-text .book-mid-info p.author i {
