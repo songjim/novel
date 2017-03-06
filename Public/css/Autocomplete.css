@@ -956,6 +956,12 @@ p {
     background: #ed4259
 }
 
+a.no-hover {
+    background: #3e3d43!important;
+    border-color: #3e3d43!important;
+    cursor: default;
+}
+
 .main-nav-wrap .main-nav li.nav-li a:hover {
     line-height: 34px;
     height: 36px;

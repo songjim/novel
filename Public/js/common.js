@@ -31,6 +31,7 @@ $(function () {
                 .on('click', 'button.J-name-input', $.proxy(that.saveName, that))
                 .on('click', '.J-change-avatar', $.proxy(that.changeAvatar, that))
                 .on('click', '.J-add-note', $.proxy(that.addNote, that))
+                .on('click', '.J-del-confirm', $.proxy(that.delConfirm, that))
         },
 
         /**
@@ -47,6 +48,17 @@ $(function () {
                 });
             } catch (err) {
 
+            }
+        },
+
+        /**
+         * 删除确认
+         */
+        delConfirm: function () {
+            var flag = confirm('请确定是否删除');
+
+            if (!flag) {
+                return false;
             }
         },
 
@@ -273,7 +285,8 @@ $(function () {
                         mail: mail
                     },
                     success: function (res) {
-                        console.log(res)
+                        $('#sendCodeBtn').val('已发送');
+                        $('#sendCodeBtn').attr('disabled', 'disabled');
                     }
                 })
             };
