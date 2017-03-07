@@ -13,6 +13,7 @@ $redis->connect('127.0.0.1');
 $a = $redis->get('email_flag');
 $email = $redis->get($a);
 if ($email != '') {
+    echo $email;
     $subject = 'C NOVEL 注册邮件';
     $name = 'C NOVEL';
     $code_key = $a.'code';
@@ -63,4 +64,5 @@ if ($email != '') {
     $mail->Send();
     $redis->del($a);
 }
+exit();
 
