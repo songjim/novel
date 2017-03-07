@@ -40,6 +40,19 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
+                                    <label>是否完结</label>
+                                    <div class="checkbox">
+                                        <label>
+                                            <if condition="$book.is_finished eq '1'">
+                                                <input type="checkbox" name="is_finished" checked value="1">已完结
+                                            <else/>
+                                                <input type="checkbox" name="is_finished" value="1">已完结
+                                            </if>
+
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label>小说名</label>
                                     <input class="form-control" name="book_name" placeholder="{$book.book_name}">
                                     <input type="hidden" name="book_id" value="{$book.id}">

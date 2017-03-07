@@ -3,11 +3,25 @@
     <div class="main-nav box-center cf">
         <ul>
             <li class="nav-li"><a href="javscript:void(0);" target="" data-eid="qd_A19" class="no-hover">C_NOVEL</a></li>
-            <li class="nav-li"><a href="{:U('HomePage/homeshow')}" target="" data-eid="qd_A19" class="act">首页</a></li>
+            <if condition="$current_tab eq 'home'">
+                <li class="nav-li"><a href="{:U('HomePage/homeshow')}" target="" data-eid="qd_A19" class="act">首页</a></li>
+                <else/>
+                <li class="nav-li"><a href="{:U('HomePage/homeshow')}" target="" data-eid="qd_A19" >首页</a></li>
+            </if>
             <volist name="categories" id="category">
-                <li class="nav-li"><a href="{:U('HomePage/categoryshow',array('category_id'=>$category[id]))}" data-eid="qd_A15">{$category.name}</a></li>
+                <if condition="$category.id eq $current_category['id']">
+                    <li class="nav-li"><a href="{:U('HomePage/categoryshow',array('category_id'=>$category[id]))}" data-eid="qd_A15" class="act">{$category.name}</a></li>
+                    <else />
+                    <li class="nav-li"><a href="{:U('HomePage/categoryshow',array('category_id'=>$category[id]))}" data-eid="qd_A15">{$category.name}</a></li>
+
+                </if>
             </volist>
-            <li class="nav-li"><a href="{:U('HomePage/forumshow')}" target="" data-eid="qd_A19">论坛</a></li>
+            <if condition="$current_tab eq 'forum'">
+                <li class="nav-li"><a href="{:U('HomePage/forumshow')}" target="" data-eid="qd_A19" class="act">论坛</a></li>
+                <else/>
+                <li class="nav-li"><a href="{:U('HomePage/forumshow')}" target="" data-eid="qd_A19">论坛</a></li>
+            </if>
+
         </ul>
     </div>
 </div>

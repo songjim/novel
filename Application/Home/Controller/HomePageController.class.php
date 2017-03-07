@@ -28,7 +28,11 @@ class HomePageController extends Controller
         $books = M('Books')->join('categories c on c.id = books.category_id')->order('books.updated_at desc')
             ->field('books.*,c.name as category_name,c.description as category_description')->select();
         $this->assign('books',$books);
-        $replays = M('Replays')->join('forums f on f.id = replays.forum_id')->join('categories c on c.id = f.category_id')->order('created_at desc')->field('c.name as c_name,replays.*')->limit(6)->select();
+        $replays = M('Replays')->join('forums f on f.id = replays.forum_id')->join('categories c on c.id = f.category_id')->order('f.updated_at desc')->field('DISTINCT(f.name) as f_name,c.name as c_name,f.id,f.updated_at')->limit(6)->select();
+        foreach ($replays as $k => $v) {
+            $replays[$k]['r_content'] = str_replace('<p>','',htmlspecialchars_decode($replays[$k]['r_content']));
+        }
+        $this->assign('current_tab','home');
         $this->assign('replays',$replays);
         $this->display();
     }
@@ -79,14 +83,15 @@ class HomePageController extends Controller
         $current_category = $forums->join("users u on u.id = forums.user_id")
             ->join("categories c on c.id = forums.category_id")
             ->where($where)->order('forums.updated_at desc')
-            ->field('u.user_name,c.name as category_name,forums.*')->page($p_s.',5')->select();
+            ->field('u.user_name,c.name as category_name,forums.*')->page($p_s.',20')->select();
         $this->assign('current_categories',$current_category);
         $count = $forums->where($where)->count();
-        $Page = new \Think\Page($count,5);
+        $Page = new \Think\Page($count,20);
         $show = $Page->show();
         $this->assign('page',$show);
         $Categries = M('Categories');
         $data = $Categries->select();
+        $this->assign('current_tab','forum');
         $this->assign('categories',$data);
         $this->display();
     }
@@ -122,7 +127,18 @@ class HomePageController extends Controller
             ->order('r.created_at desc')
             ->where("r.replay_id in (select id from replays where user_id = {$_SESSION['user_id']}) and r.user_id <> {$_SESSION['user_id']}")
             ->field('r.*,c.name as c_name,f.name,u.user_name')->select();
+        $me_replays = M('Replays r')->join('forums f on f.id = r.forum_id')
+            ->join('categories c on f.category_id = c.id')
+            ->join('users u on u.id = r.user_id')
+            ->order('r.created_at desc')
+            ->where("r.user_id = {$_SESSION['user_id']}")
+            ->field('r.*,c.name as c_name,f.name,u.user_name')->select();
+
         $replays_data = array_merge($replays,$replays_r);
+
+        foreach ($replays_data as $k => $v) {
+            $replays_data[$k]['r_content'] = htmlspecialchars_decode($replays_data[$k]['r_content']);
+        }
         $this->assign('replays_count',count($replays_data));
         $this->assign('replays_data',$replays_data);
         $this->display();

@@ -20,7 +20,9 @@ return array(
     // 0 (普通模式); 1 (PATHINFO 模式); 2 (REWRITE  模式); 3 (兼容模式)  默认为PATHINFO 模式，提供最好的用户体验和SEO支持
     'URL_PATHINFO_DEPR' => '/',    // PATHINFO模式下，各参数之间的分割符号
     //    'URL_HTML_SUFFIX' => '.html',  // URL伪静态后缀设置
-
+    'DEFAULT_MODULE' => 'Home',
+    'DEFAULT_CONTROLLER' => 'HomePage',
+    'DEFAULT_ACTION' => 'homeshow',
     /*页面Trace信息*/
     'SHOW_PAGE_TRACE' => true,
 
@@ -28,18 +30,18 @@ return array(
     //    'APP_GROUP_LIST' => 'Home,Admin,Author',
     'THINK_EMAIL' => array(
 
-            'SMTP_HOST' => 'smtp.qq.com', //SMTP服务
+            'SMTP_HOST' => 'smtp.gmail.com', //SMTP服务
 //        'SMTP_HOST' => '192.168.200.254',
         'SMTP_PORT' => '465', //SMTP服务器端口
         'MAIL_SMTPAUTH' =>TRUE,
 
-                'SMTP_USER' => '809587614@qq.com', //SMTP服务器用户名
+                'SMTP_USER' => 'sjtiande@gmail.com', //SMTP服务器用户名
 
-                'SMTP_PASS' => 'yongyuandeai', //SMTP服务器密码
+                'SMTP_PASS' => 'yongyuandeai1024', //SMTP服务器密码
 
-        'FROM_EMAIL' => '809587614@qq.com', //发件人EMAIL
+        'FROM_EMAIL' => 'sjtiande@gmail.com', //发件人EMAIL
 
-        'FROM_NAME' => '小明', //发件人名称
+        'FROM_NAME' => 'C NOVVEL', //发件人名称
 
         'REPLY_EMAIL' => '', //回复EMAIL（留空则为发件人EMAIL）
 

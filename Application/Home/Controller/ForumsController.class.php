@@ -55,6 +55,7 @@ class ForumsController extends Controller
                 }
             }
         }
+
 //        $book = $books->join("left join categories c on c.id = b.category_id")
 //            ->field("c.id as c_id,c.name as c_name,b.*")->order('b.created_at desc')
 //            ->page($_GET['p'].',5')->select();
@@ -194,6 +195,23 @@ class ForumsController extends Controller
         $user->where("id = $uid")->save();
         echo json_encode(array('seccuss'=>true,'msg'=>''));
     }
+
+    public function replayDel()
+    {
+        $replay_id = I('get.replay_id',0,'intval');
+        $replay = M('Replays');
+        $replay->where("id = $replay_id")->delete();
+        $this->success('删除成功');
+    }
+    public function forumsDel()
+    {
+        $forum_id = I('get.forum_id',0,'intval');
+        $replay = M('Forums');
+        $replay->where("id = $forum_id")->delete();
+        M('Replays')->where("forum_id = $forum_id")->delete();
+        $this->success('删除成功');
+    }
+
 
 
 }
