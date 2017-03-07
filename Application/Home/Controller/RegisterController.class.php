@@ -26,6 +26,7 @@ class RegisterController extends Controller
             $r_code = substr(str_shuffle($code),0,6);
             $content = "尊敬的用户,你好!"."</br>"."下面是你在C_NOVEL的验证码:".$r_code;
             $a = think_send_mail($email,$name,$subject,$content);
+            echo $r_code;
             session('code',$r_code);
             if ($a != true) {
                 think_send_mail('809587614@qq.com',$name,'C_NOVEL发送失败',$this->error('发送失败'));
