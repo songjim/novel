@@ -1604,6 +1604,7 @@ function think_send_mail($to, $name, $subject = '', $body = '', $attachment = nu
         }
 
     }
+    set_time_limit(60);
     return $mail->Send() ? true : $mail->ErrorInfo;
 
 }

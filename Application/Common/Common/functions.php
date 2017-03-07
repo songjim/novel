@@ -5,7 +5,7 @@
  * Date: 17/2/20
  * Time: 下午7:23
  */
-function think_send_mail($to, $name, $subject = '', $body = '', $attachment = null){
+function athink_send_mail($to, $name, $subject = '', $body = '', $attachment = null){
 
     $config = C('THINK_EMAIL');
     vendor('SMTP');
