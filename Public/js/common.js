@@ -336,7 +336,7 @@ $(function () {
         changeTag: function (e) {
             e.stopPropagation();
             var curTarget = $(e.currentTarget);
-            var index = curTarget.index();
+            var index = (curTarget.index()) / 2;
 
             $('.theme_nav_list').removeClass('current');
             $('.theme_con_index').removeClass('current');

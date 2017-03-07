@@ -42,7 +42,8 @@
                         <div class="theme_con">
                             <div class="theme_nav">
                                 <a href="javascript:void(0);" class="theme_nav_list current">主题<span class="num">{$forums_count}</span></a>
-                                <a href="javascript:void(0);" class="theme_nav_list">回复<span class="num">{$replays_count}</span></a>
+                                <a href="javascript:void(0);" class="theme_nav_list">我的回复<span class="num">{$replays_count}</span></a>
+                                <a href="javascript:void(0);" class="theme_nav_list">别人的回复<span class="num">{$replays_count}</span></a>
                             </div>
                             <p style="height: 56px;">
                                 <span class="th1">帖子</span>
@@ -89,6 +90,31 @@
                                             </li>
                                         </ul>
                                     </li>
+                                    </volist>
+                                </ul>
+                            </div>
+                            <div class="theme_con_index">
+                                <ul class="clearfix">
+                                    <volist name="replays_data" id="replay">
+                                        <li>
+                                            <div class="theme_list_con">
+                                                <div class="title">
+                                                    <a href="{:U('Forums/detailshow',array('forum_id'=>$replay['forum_id'],'read'=>1,'replay_id'=>$replay['id']))}" class="title_name txtellipsis" target="_blank" rel="noopener noreferrer">{$replay.name}</a>
+
+
+                                                </div>
+                                                <span class="plate">{$replay.c_name}</span>
+                                                <span class="num">{$replay.created_at}</span>
+                                                <span class=""><a href="{:U('Forums/Del',array('replay_id'=>$replay['id']))}" class="J-del-confirm">删除</a></span>
+                                            </div>
+                                            <ul>
+                                                <li><a href="{:U('Forums/detailshow',array('forum_id'=>$replay['forum_id'],'read'=>1,'replay_id'=>$replay['id']))}" target="_blank" rel="noopener noreferrer">{$replay.r_content}</a>
+                                                    <switch name="replay.is_read" >
+                                                        <case value="0">&nbsp;<span style="color: red">*</span></case>
+                                                    </switch>
+                                                </li>
+                                            </ul>
+                                        </li>
                                     </volist>
                                 </ul>
                             </div>
