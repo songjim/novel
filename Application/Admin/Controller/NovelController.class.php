@@ -101,7 +101,8 @@ class NovelController extends Controller
                 $data2 = M('Articles')->create();
                 $data2['sections_id'] = $id;
                 $article->add($data2);
-                exit(json_encode(array('success'=>true,'msg'=>'')));
+                $this->success('上传成功');
+//                exit(json_encode(array('success'=>true,'msg'=>'')));
             } else {
                 exit($books->getError());
             }

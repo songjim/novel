@@ -20,7 +20,9 @@ return array(
     // 0 (普通模式); 1 (PATHINFO 模式); 2 (REWRITE  模式); 3 (兼容模式)  默认为PATHINFO 模式，提供最好的用户体验和SEO支持
     'URL_PATHINFO_DEPR' => '/',    // PATHINFO模式下，各参数之间的分割符号
     //    'URL_HTML_SUFFIX' => '.html',  // URL伪静态后缀设置
-
+    'DEFAULT_MODULE' => 'Home',
+    'DEFAULT_CONTROLLER' => 'HomePage',
+    'DEFAULT_ACTION' => 'homeshow',
     /*页面Trace信息*/
     'SHOW_PAGE_TRACE' => true,
 
