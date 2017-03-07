@@ -11,6 +11,7 @@ require_once(dirname(__FILE__) . '/../ThinkPHP/Library/Vendor/PHPMailer/class.sm
 $redis = new Redis();
 $redis->connect('127.0.0.1');
 $a = $redis->get('email_flag');
+echo $a;
 $email = $redis->get($a);
 if ($email != '') {
     echo $email;
