@@ -2,7 +2,7 @@ $(function () {
     var commonFunc = function () {
         this.init();
     };
-
+    var countdown=120;
     commonFunc.prototype = {
         init: function () {
             var that = this;
@@ -222,7 +222,7 @@ $(function () {
                     move: 1,
                     auto: true,
                     controls: false,
-                    margin: 10,
+                    margin: 18,
                     auto_hover: true,
                     // speed: 3000,
                     auto_interval: 3000
@@ -275,7 +275,9 @@ $(function () {
          * 发送验证码
          */
         sendCode: function () {
+            var that = this;
             var mail = $('#txtemail').val().trim();
+            var sendBtn = $('#sendCodeBtn').get(0);
 
             if (mail) {
                 $.ajax({
@@ -285,11 +287,30 @@ $(function () {
                         mail: mail
                     },
                     success: function (res) {
-                        $('#sendCodeBtn').val('已发送');
-                        $('#sendCodeBtn').attr('disabled', 'disabled');
+                        that.setSendTime(sendBtn);
                     }
                 })
             };
+        },
+
+        /**
+         * 重新发送计时器
+         */
+        setSendTime: function (obj) {
+            var that = this;
+            if (countdown == 0) {
+                obj.removeAttribute("disabled");
+                obj.value="发送验证码";
+                countdown = 120;
+                return;
+            } else {
+                obj.setAttribute("disabled", true);
+                obj.value="重新发送(" + countdown + ")";
+                countdown--;
+            }
+            setTimeout(function() {
+                that.setSendTime(obj);
+            },1000)
         },
 
         // 登录方法

@@ -7165,3 +7165,11 @@ body {
 .bgfff {
     background: #fff;
 }
+
+.po p {
+    float: right;
+}
+
+.po p a, .po p label {
+    margin-right: 6px;
+}
