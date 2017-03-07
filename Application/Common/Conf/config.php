@@ -28,18 +28,18 @@ return array(
     //    'APP_GROUP_LIST' => 'Home,Admin,Author',
     'THINK_EMAIL' => array(
 
-            'SMTP_HOST' => 'smtp.qq.com', //SMTP服务
+            'SMTP_HOST' => 'smtp.gmail.com', //SMTP服务
 //        'SMTP_HOST' => '192.168.200.254',
         'SMTP_PORT' => '465', //SMTP服务器端口
         'MAIL_SMTPAUTH' =>TRUE,
 
-                'SMTP_USER' => '809587614@qq.com', //SMTP服务器用户名
+                'SMTP_USER' => 'sjtiande@gmail.com', //SMTP服务器用户名
 
-                'SMTP_PASS' => 'yongyuandeai', //SMTP服务器密码
+                'SMTP_PASS' => 'yongyuandeai1024', //SMTP服务器密码
 
-        'FROM_EMAIL' => '809587614@qq.com', //发件人EMAIL
+        'FROM_EMAIL' => 'sjtiande@gmail.com', //发件人EMAIL
 
-        'FROM_NAME' => '小明', //发件人名称
+        'FROM_NAME' => 'C NOVVEL', //发件人名称
 
         'REPLY_EMAIL' => '', //回复EMAIL（留空则为发件人EMAIL）
 
