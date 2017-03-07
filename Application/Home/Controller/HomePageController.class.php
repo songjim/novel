@@ -29,6 +29,10 @@ class HomePageController extends Controller
             ->field('books.*,c.name as category_name,c.description as category_description')->select();
         $this->assign('books',$books);
         $replays = M('Replays')->join('forums f on f.id = replays.forum_id')->join('categories c on c.id = f.category_id')->order('created_at desc')->field('c.name as c_name,replays.*')->limit(6)->select();
+        foreach ($replays as $k => $v) {
+            $replays[$k]['r_content'] = str_replace('<p>','',htmlspecialchars_decode($replays[$k]['r_content']));
+        }
+        $this->assign('current_tab','home');
         $this->assign('replays',$replays);
         $this->display();
     }
@@ -87,6 +91,7 @@ class HomePageController extends Controller
         $this->assign('page',$show);
         $Categries = M('Categories');
         $data = $Categries->select();
+        $this->assign('current_tab','forum');
         $this->assign('categories',$data);
         $this->display();
     }
@@ -123,6 +128,9 @@ class HomePageController extends Controller
             ->where("r.replay_id in (select id from replays where user_id = {$_SESSION['user_id']}) and r.user_id <> {$_SESSION['user_id']}")
             ->field('r.*,c.name as c_name,f.name,u.user_name')->select();
         $replays_data = array_merge($replays,$replays_r);
+        foreach ($replays_data as $k => $v) {
+            $replays_data[$k]['r_content'] = htmlspecialchars_decode($replays_data[$k]['r_content']);
+        }
         $this->assign('replays_count',count($replays_data));
         $this->assign('replays_data',$replays_data);
         $this->display();

@@ -21,7 +21,7 @@ class LoginController extends Controller
     public function login()
     {
         $email = I('post.email',0,'addslashes');
-//        $pwd = I('')
+
         if (IS_POST) {
             // 实例化Login对象
             $login =M('Users');

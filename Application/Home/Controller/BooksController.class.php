@@ -44,7 +44,7 @@ class BooksController extends Controller
             ->join('books on books.id = sections.book_id')
             ->join('categories on books.category_id = categories.id')
             ->where("articles.sections_id=$section_id and books.id = $book_id")
-            ->field('sections.name as section_name,sections.book_id,books.*,categories.*,articles.*')
+            ->field('sections.name as section_name,sections.book_id,books.*,categories.*,articles.*,sections.id as section_id,sections.taxis as section_taxis')
             ->find();
         $up_article = M('Sections')->where("book_id = $book_id")->order('id desc')->field('name')->find();
         if ($data) {
@@ -57,6 +57,7 @@ class BooksController extends Controller
             $this->display();
         } else {
             $this->error('已经是最新的了');
+
         }
 
     }

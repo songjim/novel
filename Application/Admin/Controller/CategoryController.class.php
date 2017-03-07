@@ -56,10 +56,14 @@ class CategoryController extends Controller
         if (IS_POST) {
             $id = I('post.id',0,'intval');
             $name = I('post.name','','addslashes');
+            $des = I('post.description','','addslashes');
             $categories = M('Categories');
             if ($id) {
                 if ($name) {
                     $categories->name = $name;
+                }
+                if ($des) {
+                    $categories->description = $des;
                 }
                 $categories->where("id = $id")->save();
                 $recommend = I('post.recommend','','addslashes');

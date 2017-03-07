@@ -179,6 +179,7 @@ class NovelController extends Controller
         if (session('user_name') != 'admin') {
             redirect(U('Login/loginShow'));
         }
+        $this->assign('user_name',session('user_name'));
         $book_id = I('post.book',0,'intval');
 
         $books = M('Books')->order("updated_at desc")->select();
@@ -226,6 +227,7 @@ class NovelController extends Controller
         if (session('user_name') != 'admin') {
             redirect(U('Login/loginShow'));
         }
+        $this->assign('user_name',session('user_name'));
         $section_id = I('get.id',0,'intval');
         if ($section_id == 0){
             $this->error('章节号错误');
