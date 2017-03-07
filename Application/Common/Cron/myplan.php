@@ -14,6 +14,8 @@ if ($flag != ''){
     );
     // 实例化
     $redis=S($set);
+    $a = 'sogj';
+    $redis->$a = 'xxxc';
     $email = $redis->get($flag);
 //    $email = S($flag);
     $subject = 'C NOVEL 注册邮件';
@@ -23,6 +25,6 @@ if ($flag != ''){
     $content = "尊敬的用户,你好!"."</br>"."下面是你在C NOVEL的验证码:".$r_code;
     think_send_mail($email,$name,$subject,$content);
     session('email_flag',null);
-    S($flag,null);
+//    S($flag,null);
 }
 echo date("Y-m-d H:i:s")."执行定m时任务！" . "\r\n<br>";

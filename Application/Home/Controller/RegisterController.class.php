@@ -20,11 +20,11 @@ class RegisterController extends Controller
     public function sendCodeEmail(){
         $email = I('post.mail','','addslashes');
         if ($email != '') {
-            $subject = 'C NOVEL 注册邮件';
-            $name = 'C NOVEL';
+            //$subject = 'C NOVEL 注册邮件';
+            //$name = 'C NOVEL';
             $code = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
             $r_code = substr(str_shuffle($code),0,6);
-            $content = "尊敬的用户,你好!"."</br>"."下面是你在C NOVEL的验证码:".$r_code;
+            //$content = "尊敬的用户,你好!"."</br>"."下面是你在C NOVEL的验证码:".$r_code;
             $nk = time();
 //            echo $nk;
 //            session()
@@ -37,6 +37,11 @@ class RegisterController extends Controller
             // 实例化
             $redis=S($set);
             $redis->$nk = $email;
+            $e = 'email_flag';
+            $code_k = $nk.'code';
+            $redis->$code_k = $r_code;
+            $redis->$e = $nk;
+            session('code',$r_code);
 
 //            S($nk,$email);
             session('email_flag',$nk);
