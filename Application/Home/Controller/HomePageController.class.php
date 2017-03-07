@@ -28,7 +28,7 @@ class HomePageController extends Controller
         $books = M('Books')->join('categories c on c.id = books.category_id')->order('books.updated_at desc')
             ->field('books.*,c.name as category_name,c.description as category_description')->select();
         $this->assign('books',$books);
-        $replays = M('Replays')->join('forums f on f.id = replays.forum_id')->join('categories c on c.id = f.category_id')->order('f.updated_at desc')->field('DISTINCT(f.name) as f_name,c.name as c_name,f.id ')->limit(6)->select();
+        $replays = M('Replays')->join('forums f on f.id = replays.forum_id')->join('categories c on c.id = f.category_id')->order('f.updated_at desc')->field('DISTINCT(f.name) as f_name,c.name as c_name,f.id,f.updated_at')->limit(6)->select();
         foreach ($replays as $k => $v) {
             $replays[$k]['r_content'] = str_replace('<p>','',htmlspecialchars_decode($replays[$k]['r_content']));
         }
