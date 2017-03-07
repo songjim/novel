@@ -95,12 +95,15 @@ class NovelController extends Controller
                 exit($books->getError());
             }
             $taxi = $books->field('taxis')->where("book_id = '$book_id'")->order('id desc')->find();
-            $data['taxis'] = $taxi['taxis'];
+            $data['taxis'] = $taxi['taxis']+1;
             if ($id = $books->add($data)) {
                 $article = M('Articles');
                 $data2 = M('Articles')->create();
                 $data2['sections_id'] = $id;
                 $article->add($data2);
+                $b = M('Books');
+                $b->updated_at = date('Y-m-d H:i:s');
+                $b->where("id=$book_id")->save();
                 $this->success('上传成功');
 //                exit(json_encode(array('success'=>true,'msg'=>'')));
             } else {

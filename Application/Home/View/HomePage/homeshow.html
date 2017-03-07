@@ -30,7 +30,7 @@
                 <div class="notice-list">
                     <ul>
                         <volist name="replays" id="replay">
-                            <li class="color-type_0" data-rid="1"><a href="{:U('Forums/detailshow',array('forum_id'=>$replay['forum_id']))}" target="_blank" data-eid="qd_A94"><i>「</i>{$replay.c_name}<i>」</i>{$replay.r_content}</a></li>
+                            <li class="color-type_0" data-rid="1"><a href="{:U('Forums/detailshow',array('forum_id'=>$replay['id']))}" target="_blank" data-eid="qd_A94"><i>「</i>{$replay.c_name}<i>」</i>{$replay.f_name}</a></li>
                             <!--RE: {$replay.r_content|htmlspecialchars_decode}-->
 
                         </volist>

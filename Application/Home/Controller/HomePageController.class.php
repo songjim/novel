@@ -28,7 +28,7 @@ class HomePageController extends Controller
         $books = M('Books')->join('categories c on c.id = books.category_id')->order('books.updated_at desc')
             ->field('books.*,c.name as category_name,c.description as category_description')->select();
         $this->assign('books',$books);
-        $replays = M('Replays')->join('forums f on f.id = replays.forum_id')->join('categories c on c.id = f.category_id')->order('created_at desc')->field('c.name as c_name,replays.*')->limit(6)->select();
+        $replays = M('Replays')->join('forums f on f.id = replays.forum_id')->join('categories c on c.id = f.category_id')->order('f.updated_at desc')->field('DISTINCT(f.name) as f_name,c.name as c_name,f.id ')->limit(6)->select();
         foreach ($replays as $k => $v) {
             $replays[$k]['r_content'] = str_replace('<p>','',htmlspecialchars_decode($replays[$k]['r_content']));
         }
@@ -83,10 +83,10 @@ class HomePageController extends Controller
         $current_category = $forums->join("users u on u.id = forums.user_id")
             ->join("categories c on c.id = forums.category_id")
             ->where($where)->order('forums.updated_at desc')
-            ->field('u.user_name,c.name as category_name,forums.*')->page($p_s.',5')->select();
+            ->field('u.user_name,c.name as category_name,forums.*')->page($p_s.',20')->select();
         $this->assign('current_categories',$current_category);
         $count = $forums->where($where)->count();
-        $Page = new \Think\Page($count,5);
+        $Page = new \Think\Page($count,20);
         $show = $Page->show();
         $this->assign('page',$show);
         $Categries = M('Categories');

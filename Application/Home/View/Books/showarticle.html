@@ -68,16 +68,16 @@
             </div>
             <!-- start 章节控制器 -->
             <div class="chapter-control dib-wrap" data-l1="3">
-                {$prev = $article['section_id']-1}
+                {$prev = $article['section_taxis']-1}
                 <if condition="$article.section_taxis neq 1">
-                    <a id="j_chapterPrev"  href="{:U('Books/showarticle',array('section_id'=>$prev,'book_id'=>$article['book_id']))}">上一章</a><span>|</span>
+                    <a id="j_chapterPrev"  href="{:U('Books/showarticle',array('taxis_id'=>$prev,'book_id'=>$article['book_id']))}">上一章</a><span>|</span>
                     <else/>
                     <a id="j_chapterPrev" class="disabled" href="javascript:;">上一章</a><span>|</span>
                 </if>
 
                 <a href="{:U('Books/showsections',array('book_id'=>$article['book_id']))}">目录</a><span>|</span>
-                {$next = $article['section_id']+1}
-                <a id="j_chapterNext" href="{:U('Books/showarticle',array('section_id'=>$next,'book_id'=>$article['book_id']))}">下一章</a>
+                {$next = $article['section_taxis']+1}
+                <a id="j_chapterNext" href="{:U('Books/showarticle',array('taxis_id'=>$next,'book_id'=>$article['book_id']))}">下一章</a>
             </div>
             <!-- end 章节控制器 -->
         </div>
