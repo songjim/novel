@@ -10,9 +10,14 @@ return array(
     'DB_PORT' => '3306',        // 端口
     'DB_PREFIX' => '',    // 数据库表前缀
 
-    /* 默认设定 */
-    //'DEFAULT_THEME'    => 'default', // 默认模板主题名称
-    //    'DEFAULT_GROUP' => 'Home',  // 默认分组
+//    'DATA_CACHE_PREFIX' => 'Redis_',//缓存前缀
+//    'DATA_CACHE_TYPE'=>'Redis',//默认动态缓存为Redis
+//    'REDIS_RW_SEPARATE' => true, //Redis读写分离 true 开启
+//    'REDIS_HOST'=>'127.0.0.1', //redis服务器ip，多台用逗号隔开；读写分离开启时，第一台负责写，其它[随机]负责读；
+//    'REDIS_PORT'=>'6379',//端口号
+//    'REDIS_TIMEOUT'=>'300',//超时时间
+//    'REDIS_PERSISTENT'=>false,//是否长连接 false=短连接
+//    'REDIS_AUTH'=>'',//AUTH认证密码
 
     /* URL设置 */
     //    'URL_CASE_INSENSITIVE' => true,   // 默认false 表示URL区分大小写 true则表示不区分大小写
@@ -47,5 +52,10 @@ return array(
 
         'REPLY_NAME' => '', //回复名称（留空则为发件人名称）
 
+    ),
+    /* 自动运行配置 */
+    'CRON_CONFIG_ON' => true, // 是否开启自动运行
+    'CRON_CONFIG' => array(
+        '测试执行定时任务' => array('Admin/Cron/crons', '0', ''), //路径(格式同R)、间隔秒（0为一直运行）、指定一个开始时间
     ),
 );
