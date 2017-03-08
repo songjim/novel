@@ -199,6 +199,7 @@ class ForumsController extends Controller
     public function replayDel()
     {
         $replay_id = I('get.replay_id',0,'intval');
+
         $replay = M('Replays');
         $replay->where("id = $replay_id")->delete();
         $this->success('删除成功');
