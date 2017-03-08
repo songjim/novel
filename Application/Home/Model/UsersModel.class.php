@@ -40,7 +40,7 @@ class UsersModel extends Model
      */
     protected $_auto = array(
         array('password', 'md5', 3, 'function'), // 对password字段在新增和编辑的时候使md5函数处理
-        array('reg_date', 'time', 1, 'function'), // 对regdate字段在新增的时候写入当前时间戳
+        //array('reg_date', 'time', 1, 'function'), // 对regdate字段在新增的时候写入当前时间戳
         array('reg_ip', 'get_client_ip', 1, 'function'), // 对regip字段在新增的时候写入当前注册ip地址
         array('status','1',1),
         array('user_name','get_user_name',1,'callback'),
