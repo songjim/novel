@@ -287,6 +287,7 @@ $(function () {
                         mail: mail
                     },
                     success: function (res) {
+                        $('.J-code-check-text').show();
                         that.setSendTime(sendBtn);
                     }
                 })
@@ -300,12 +301,12 @@ $(function () {
             var that = this;
             if (countdown == 0) {
                 obj.removeAttribute("disabled");
-                obj.value="发送验证码";
+                obj.value="Send Code";
                 countdown = 120;
                 return;
             } else {
                 obj.setAttribute("disabled", true);
-                obj.value="重新发送(" + countdown + ")";
+                obj.value="Resend(" + countdown + ")";
                 countdown--;
             }
             setTimeout(function() {
@@ -347,7 +348,7 @@ $(function () {
                     if (r_data && r_data.success) {
                         location.href = r_data.url
                     } else {
-                        $('.J-error-box').html('用户名或密码输入错误').removeClass('hidden');
+                        $('.J-error-box').html('User name or password input error').removeClass('hidden');
                     }
                 }
             })

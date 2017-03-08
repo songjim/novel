@@ -24,18 +24,18 @@
             <div class="login-box fr">
                 <if condition="($user_name neq '')">
                     <div class="sign-in">
-                        <span>你好，{$user_name}</span>
+                        <span>Hello，{$user_name}</span>
                         <a class="black" id="user-name" href="//me.qidian.com" target="_blank" data-eid="qd_A08"></a>
                         <em>|</em>
                         <a class="black" id="msg-btn" href="{:U('HomePage/personalShow')}" target="" data-eid="qd_A09">
-                            消息<cite id="msg-box">(<i>0</i>)</cite></a><em>|</em>
-                        <a id="exit-btn" href="{:U('Login/logout')}" data-eid="qd_A10">退出</a>
+                            Notice<cite id="msg-box">(<i>0</i>)</cite></a><em>|</em>
+                        <a id="exit-btn" href="{:U('Login/logout')}" data-eid="qd_A10">Sign out</a>
                     </div>
                     <else />
                     <div class="sign-out">
-                        <a id="login-btn" class="black" href="javascript:" data-eid="qd_A06">登录</a>
+                        <a id="login-btn" class="black" href="javascript:" data-eid="qd_A06">Sign in</a>
                         <em>|</em>
-                        <a id="reg-btn" href="{:U('Register/register')}" target="_blank" data-eid="qd_A07">注册</a>
+                        <a id="reg-btn" href="{:U('Register/register')}" target="_blank" data-eid="qd_A07">Register</a>
                     </div>
                 </if>
             </div>
@@ -44,7 +44,7 @@
             <div class="anno-box fl J-anno-box">
                 <ul>
                     <volist name="affiches" id="affiche">
-                        <li>公告：{$affiche.contents}</li>
+                        <li>Notice：{$affiche.contents}</li>
                     </volist>
                     <!--<li>公告：[体验交流] 御魂回收比例在这儿！体验服更新速报</li>-->
                     <!--<li>公告：[体验交流] 御魂回收比例在这儿！体验服更新速报</li>-->

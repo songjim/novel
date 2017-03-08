@@ -17,9 +17,9 @@
                 <!--</div>-->
             </span>
             <span class="pgb y">
-                <a href="" name="go_back">返&nbsp;回</a>
+                <a href="" name="go_back">Back</a>
             </span>
-            <a href="javascript:void(0)" id="newspecial" class="J-add-note">回复</a>
+            <a href="javascript:void(0)" id="newspecial" class="J-add-note">Reply</a>
         </div>
         <!--论坛内容-->
         <div id="postlist" class="pl bm">
@@ -80,15 +80,15 @@
                             <div class="pi">
                                 <strong>
                                     <a href="">
-                                        1楼
+                                        1 Floor
                                     </a>
                                 </strong>
                                 <div class="pti">
                                     <div class="authi">
                                         <img class="authicn vm" src="/Public/img/ico_lz.png">
-                                        &nbsp;楼主
+                                        &nbsp;The Landlord
                                         <span class="pipe">|</span>
-                                        <em>发表于 {$forum.created_at}</em>
+                                        <em>Published In {$forum.created_at}</em>
                                     </div>
                                 </div>
                             </div>
@@ -145,12 +145,12 @@
                                 <div class="pi">
                                     <strong>
                                         <a href="">
-                                            {$key+2}楼
+                                            {$key+2} Floor
                                         </a>
                                     </strong>
                                     <div class="pti">
                                         <div class="authi">
-                                            <em>发表于 {$replay.created_at}</em>
+                                            <em>Published In {$replay.created_at}</em>
                                         </div>
                                     </div>
                                 </div>
@@ -172,7 +172,7 @@
                                         <div class="cm">
                                             <h3 class="psth xs1">
                                                 <span class="icon_ring vm"></span>
-                                                点评
+                                                Comment
                                             </h3>
                                             <!--{$replay.children}-->
                                             <volist name="replay.children" id="child">
@@ -189,7 +189,7 @@
                                                     {$child.r_content|htmlspecialchars_decode}
                                                     <a href="" class="xi2"></a>
                                                     <span class="xg1">
-                                                            发表于 {$child.created_at}
+                                                            Published In {$child.created_at}
                                                         </span>
                                                 </div>
                                             </div>
@@ -210,7 +210,7 @@
                                 <div class="po">
                                     <div class="pob cl f13">
                                         <em>
-                                            <a href="{:U('Forums/replayShow',array('category_id'=>$forum['category_id'],'forum_id'=>$forum['id'],'replay_id'=>$replay['id']))}" class="fastre J-check-login">回复</a>
+                                            <a href="{:U('Forums/replayShow',array('category_id'=>$forum['category_id'],'forum_id'=>$forum['id'],'replay_id'=>$replay['id']))}" class="fastre J-check-login">Replay</a>
                                         </em>
                                         <!--<p>-->
                                             <!--<a href="" class="J-del-confirm">删除</a>-->
@@ -262,7 +262,7 @@
                             </div>
                             <div class="ptm pnpost">
                                 <button class="pn pnc vm J-check-login" type="submit">
-                                    <strong>发表回复</strong>
+                                    <strong>Reply</strong>
                                 </button>
                             </div>
                         </td>

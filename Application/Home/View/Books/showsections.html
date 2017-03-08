@@ -16,14 +16,14 @@
                 <h1>
                     <em>{$book.book_name}</em>
                     <span>
-                            <a class="writer" href="javascript:void(0);" target="_blank" data-eid="qd_G08">{$book.author}</a> 著
+                            <a class="writer" href="javascript:void(0);" target="_blank" data-eid="qd_G08">{$book.author}</a> Write
                         </span>
                 </h1>
                 <p class="tag">
                     <span class="blue">
                         <switch name="book.is_finished">
-                            <case value="1">完结</case>
-                            <default />连载
+                            <case value="1">End</case>
+                            <default />Series
                         </switch>
 
                     </span>
@@ -36,7 +36,7 @@
                     <!--<cite>万字</cite>-->
                 </p>
                 <p>
-                    <a href="{:U('Books/showarticle',array('taxis_id'=>1,'book_id'=>$book[id]))}" class="red-btn J-getJumpUrl ">开始阅读</a>
+                    <a href="{:U('Books/showarticle',array('taxis_id'=>1,'book_id'=>$book[id]))}" class="red-btn J-getJumpUrl ">Start Reading</a>
                 </p>
             </div>
             <!--end书信息-->
@@ -48,7 +48,7 @@
             <div class="nav-wrap fl">
                 <ul>
                     <li class="j_catalog_block act">
-                        <a href="javascript:void(0);" class="lang">目录</a>
+                        <a href="javascript:void(0);" class="lang">Catalog</a>
                     </li>
                 </ul>
             </div>
@@ -69,7 +69,7 @@
 
             <div class="volume-wrap">
                 <div class="volume">
-                    <h3>正文卷</h3>
+                    <h3>Main Volume</h3>
                     <ul class="cf">
                         <volist name="sections" id="section">
                             <li><a href="{:U('Books/showarticle',array('section_id'=>$section[id],'book_id'=>$book[id]))}">{$section.name}</a></li>

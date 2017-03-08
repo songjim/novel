@@ -4,9 +4,9 @@
         <ul>
             <li class="nav-li"><a href="javscript:void(0);" target="" data-eid="qd_A19" class="no-hover">C NOVEL</a></li>
             <if condition="$current_tab eq 'home'">
-                <li class="nav-li"><a href="{:U('HomePage/homeshow')}" target="" data-eid="qd_A19" class="act">首页</a></li>
+                <li class="nav-li"><a href="{:U('HomePage/homeshow')}" target="" data-eid="qd_A19" class="act">Home</a></li>
                 <else/>
-                <li class="nav-li"><a href="{:U('HomePage/homeshow')}" target="" data-eid="qd_A19" >首页</a></li>
+                <li class="nav-li"><a href="{:U('HomePage/homeshow')}" target="" data-eid="qd_A19" >Home</a></li>
             </if>
             <volist name="categories" id="category">
                 <if condition="$category.id eq $current_category['id']">
@@ -17,9 +17,9 @@
                 </if>
             </volist>
             <if condition="$current_tab eq 'forum'">
-                <li class="nav-li"><a href="{:U('HomePage/forumshow')}" target="" data-eid="qd_A19" class="act">论坛</a></li>
+                <li class="nav-li"><a href="{:U('HomePage/forumshow')}" target="" data-eid="qd_A19" class="act">Forum</a></li>
                 <else/>
-                <li class="nav-li"><a href="{:U('HomePage/forumshow')}" target="" data-eid="qd_A19">论坛</a></li>
+                <li class="nav-li"><a href="{:U('HomePage/forumshow')}" target="" data-eid="qd_A19">Forum</a></li>
             </if>
 
         </ul>
