@@ -18,18 +18,18 @@
                             </div>
                             <h1>{$article.book_name}</h1>
                             <h2>
-                                <a href="JavaScript:void(0);" target="_blank">{$article.author}</a>著
+                                <a href="JavaScript:void(0);" target="_blank">{$article.author}</a>Write
                             </h2>
                             <div class="info-list cf">
                                 <ul>
-                                    <li><p>{$article.name}</p><span>类型</span></li>
+                                    <li><p>{$article.name}</p><span>Type</span></li>
 
-                                    <li><em>{$create_time}</em><span>上架</span></li>
-                                    <li><p><em>{$up_article.name}</em>章</p><span>连载（章节）</span></li>
+                                    <li><em>{$create_time}</em><span>Load</span></li>
+                                    <li><p><em>{$up_article.name}</em>Chapter</p><span>Serial（chapter）</span></li>
                                 </ul>
                             </div>
-                            <h5>本书由C NOVEL中文网首发</h5>
-                            <h6>©版权所有 侵权必究</h6>
+                            <h5>The Book Translate Starts By C Novel</h5>
+                            <h6>Reprint Please Indicate The Source</h6>
                         </div>
                         <!-- end 封面版权信息 -->
                     </div>
@@ -70,14 +70,14 @@
             <div class="chapter-control dib-wrap" data-l1="3">
                 {$prev = $article['section_taxis']-1}
                 <if condition="$article.section_taxis neq 1">
-                    <a id="j_chapterPrev"  href="{:U('Books/showarticle',array('taxis_id'=>$prev,'book_id'=>$article['book_id']))}">上一章</a><span>|</span>
+                    <a id="j_chapterPrev"  href="{:U('Books/showarticle',array('taxis_id'=>$prev,'book_id'=>$article['book_id']))}">Previous Chapter</a><span>|</span>
                     <else/>
-                    <a id="j_chapterPrev" class="disabled" href="javascript:;">上一章</a><span>|</span>
+                    <a id="j_chapterPrev" class="disabled" href="javascript:;">Previous Chapter</a><span>|</span>
                 </if>
 
-                <a href="{:U('Books/showsections',array('book_id'=>$article['book_id']))}">目录</a><span>|</span>
+                <a href="{:U('Books/showsections',array('book_id'=>$article['book_id']))}">Catalog</a><span>|</span>
                 {$next = $article['section_taxis']+1}
-                <a id="j_chapterNext" href="{:U('Books/showarticle',array('taxis_id'=>$next,'book_id'=>$article['book_id']))}">下一章</a>
+                <a id="j_chapterNext" href="{:U('Books/showarticle',array('taxis_id'=>$next,'book_id'=>$article['book_id']))}">Next Chapter</a>
             </div>
             <!-- end 章节控制器 -->
         </div>

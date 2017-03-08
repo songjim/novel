@@ -18,7 +18,7 @@
         <div class="box-center">
             <div class="logo cf">
                 <a href="{:U('HomePage/homeshow')}">C NOVEL</a>
-                <span class="lang">用户注册</span>
+                <span class="lang">User Register</span>
             </div>
         </div>
     </div>
@@ -27,23 +27,24 @@
     <!--start注册模块-->
     <div class="reg-wrap">
         <div class="reg-step">
-            <span class="lang act">填写注册信息</span>
+            <span class="lang act">Affiliate Signup</span>
         </div>
         <div class="reg-form-wrap">
             <form action="" method="post" id="re_from">
                 <div class="reg-form-list form-list">
                     <dl>
                         <dd id="email_dd">
-                            <em>邮箱账号</em>
+                            <em>Email</em>
                             <input type="text" placeholder="输入常用邮箱地址" name="email" id="txtemail">
                             <input type="button" id="sendCodeBtn" value="发送验证码" class="send-qr-code">
+                            <span class="J-code-check-text hidden">Verifcation code may be in the junk mail</span>
                         </dd>
                         <dd id="imgphonernd_code">
-                            <em>验证码</em>
+                            <em>Code</em>
                             <input type="text" placeholder="请输入验证码" name="code" id="txtphoneimgcode">
                         </dd>
                         <dd id="phonepwd">
-                            <em>密码</em>
+                            <em>Password</em>
                             <input type="password" name="password" id="txtphonepwd" placeholder="6-18位大小写字母、符号或数字">
                             <div class="password-tip" style="display:none">
                                 <span><cite></cite></span>
@@ -67,7 +68,7 @@
                         <input type="checkbox" id="deal" name="checkbox" checked>
                         <label for="deal" class="ui-checkbox"></label><label for="deal">我已阅读并同意</label><a href="javascript:void(0)" target="_blank">《用户服务协议》</a>
                     </div>
-                    <a class="red-btn go-reg" href="javascript:"  id="btnMailRegister">立即注册</a>
+                    <a class="red-btn go-reg" href="javascript:"  id="btnMailRegister">Register</a>
 
                 </div>
             </form>

@@ -17,20 +17,20 @@
                 <div class="info">
                     <strong class="username J-username-text" u-id="49562247">{$user_name}</strong>
                     <input type="text" class="J-name-input name-input hidden">
-                    <button class="J-name-input name-btn hidden">保存</button>
+                    <button class="J-name-input name-btn hidden">Set</button>
                 </div>
                 <div class="score">
                     <dl>
                         <dt>
                             <span class="txt">
-                                <a href="javascript:void(0);" class="J-change-avatar">修改头像</a>
+                                <a href="javascript:void(0);" class="J-change-avatar">Modify Image</a>
                             </span>
                         </dt>
                     </dl>
                     <dl>
                         <dt>
                             <span class="txt">
-                                <a href="javascript:void(0);" class="J-change-name">修改昵称</a>
+                                <a href="javascript:void(0);" class="J-change-name">Modify Name</a>
                             </span>
                         </dt>
                     </dl>
@@ -41,15 +41,15 @@
                     <div class="theme">
                         <div class="theme_con">
                             <div class="theme_nav">
-                                <a href="javascript:void(0);" class="theme_nav_list current">主题<span class="num">{$forums_count}</span></a>
-                                <a href="javascript:void(0);" class="theme_nav_list">我的回复<span class="num">{$me_replays_count}</span></a>
-                                <a href="javascript:void(0);" class="theme_nav_list">别人的回复<span class="num">{$replays_count}</span></a>
+                                <a href="javascript:void(0);" class="theme_nav_list current">My Post<span class="num">{$forums_count}</span></a>
+                                <a href="javascript:void(0);" class="theme_nav_list">My Reply<span class="num">{$me_replays_count}</span></a>
+                                <a href="javascript:void(0);" class="theme_nav_list">Reply To Me<span class="num">{$replays_count}</span></a>
                             </div>
                             <p style="height: 56px;">
-                                <span class="th1">帖子</span>
-                                <span class="th2">版块</span>
-                                <span class="th3">回复时间</span>
-                                <span class="th4">删除</span>
+                                <span class="th1">Post</span>
+                                <span class="th2">Template</span>
+                                <span class="th3">Time</span>
+                                <span class="th4">Delete</span>
                             </p>
                             <div class="theme_con_index current">
                                 <ul>
@@ -62,7 +62,7 @@
                                                 </div>
                                                 <span class="plate">{$forum.category_name}</span>
                                                 <span class="num">{$forum.updated_at}</span>
-                                                <span class=""><a href="{:U('Forums/forumsDel',array('forum_id'=>$forum['id']))}" class="J-del-confirm">删除</a></span>
+                                                <span class=""><a href="{:U('Forums/forumsDel',array('forum_id'=>$forum['id']))}" class="J-del-confirm">Delete</a></span>
                                             </div>
                                         </li>
                                    </volist>
@@ -78,7 +78,7 @@
                                             </div>
                                             <span class="plate">{$me_replay.c_name}</span>
                                             <span class="num">{$me_replay.created_at}</span>
-                                            <span class=""><a href="{:U('Forums/replayDel',array('replay_id'=>$me_replay['id']))}" class="J-del-confirm">删除</a></span>
+                                            <span class=""><a href="{:U('Forums/replayDel',array('replay_id'=>$me_replay['id']))}" class="J-del-confirm">Delete</a></span>
                                         </div>
                                         <ul>
                                             <li><a href="{:U('Forums/detailshow',array('forum_id'=>$me_replay['forum_id'],'read'=>1,'replay_id'=>$me_replay['id']))}" target="_blank" rel="noopener noreferrer">{$me_replay.r_content}</a>
@@ -103,7 +103,7 @@
                                                 </div>
                                                 <span class="plate">{$replay.c_name}</span>
                                                 <span class="num">{$replay.created_at}</span>
-                                                <span class=""><a href="{:U('Forums/replayDel',array('replay_id'=>$replay['id']))}" class="J-del-confirm">删除</a></span>
+                                                <span class=""><a href="{:U('Forums/replayDel',array('replay_id'=>$replay['id']))}" class="J-del-confirm">Delete</a></span>
                                             </div>
                                             <ul>
                                                 <li><a href="{:U('Forums/detailshow',array('forum_id'=>$replay['forum_id'],'read'=>1,'replay_id'=>$replay['id']))}" target="_blank" rel="noopener noreferrer">{$replay.r_content}</a>
@@ -134,12 +134,12 @@
                 </div>
                 <div class="action">
                     <div class="new-contentarea tc"> <a href="javascript:void(0)" class="upload-img">
-                        <label for="upload-file">上传图像</label>
+                        <label for="upload-file">Upload</label>
                     </a>
                         <input type="file" class="" name="upload-file" id="upload-file" />
                     </div>
-                    <input type="button" id="J-save-head-img"  class="Btnsty_peyton hidden" value="确定">
-                    <input type="button" id="btnCrop"  class="Btnsty_peyton" value="裁切">
+                    <input type="button" id="J-save-head-img"  class="Btnsty_peyton hidden" value="Confirm">
+                    <input type="button" id="btnCrop"  class="Btnsty_peyton" value="Cutting">
                     <input type="button" id="btnZoomIn" class="Btnsty_peyton" value="+"  >
                     <input type="button" id="btnZoomOut" class="Btnsty_peyton" value="-" >
                 </div>

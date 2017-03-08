@@ -287,6 +287,7 @@ $(function () {
                         mail: mail
                     },
                     success: function (res) {
+                        $('.J-code-check-text').show();
                         that.setSendTime(sendBtn);
                     }
                 })
