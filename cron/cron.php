@@ -22,6 +22,7 @@ if ($email != '') {
     //$r_code = substr(str_shuffle($code),0,6);
     $r_code  = $redis->get($code_key);
     $content = "尊敬的用户,你好!"."</br>"."下面是你在C NOVEL的验证码:".$r_code;
+    $redis->del($a);
     $mail = new PHPMailer();
 
     $mail->CharSet = 'UTF-8'; //设定邮件编码，默认ISO-8859-1，如果发中文此项必须设置，否则乱码
@@ -61,9 +62,10 @@ if ($email != '') {
     $mail->MsgHTML($content);
 
     $mail->AddAddress($email, $name);
+
     set_time_limit(60);
     $mail->Send();
-    $redis->del($a);
+
 }
 exit();
 
