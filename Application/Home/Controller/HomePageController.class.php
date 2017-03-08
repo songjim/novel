@@ -135,10 +135,14 @@ class HomePageController extends Controller
             ->field('r.*,c.name as c_name,f.name,u.user_name')->select();
 
         $replays_data = array_merge($replays,$replays_r);
-
+        foreach ($me_replays as $k => $v) {
+            $me_replays[$k]['r_content'] = htmlspecialchars_decode($me_replays[$k]['r_content']);
+        }
         foreach ($replays_data as $k => $v) {
             $replays_data[$k]['r_content'] = htmlspecialchars_decode($replays_data[$k]['r_content']);
         }
+        $this->assign('me_replays_count',count($me_replays));
+        $this->assign('me_replays',$me_replays);
         $this->assign('replays_count',count($replays_data));
         $this->assign('replays_data',$replays_data);
         $this->display();
