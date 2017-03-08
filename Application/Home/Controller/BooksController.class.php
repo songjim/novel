@@ -15,6 +15,9 @@ class BooksController extends Controller
 {
     public function showsections($b_id='')
     {
+        if ($_SESSION['user_name'] != '') {
+            $this->assign('user_name', $_SESSION['user_name']);
+        }
         $book_id = I('get.book_id', 'addslashes');
         //        echo $book_name;
         $Section = M('Sections');
@@ -34,10 +37,12 @@ class BooksController extends Controller
 
     public function showarticle()
     {
+        if ($_SESSION['user_name'] != '') {
+            $this->assign('user_name', $_SESSION['user_name']);
+        }
         $section_id = I('get.section_id', 'addslashes');
         $book_id = I('get.book_id','addslashes');
         $taxis = I('get.taxis_id',0,'intval');
-        var_dump($taxis);
         $Article = D('Articles');
         $Categries = M('Categories');
         $categorys = $Categries->select();
@@ -68,7 +73,7 @@ class BooksController extends Controller
             $this->assign('create_time',$create_time);
             $this->display();
         } else {
-            $this->error('已经是最新的了');
+            $this->error('This is the latest');
 
         }
 

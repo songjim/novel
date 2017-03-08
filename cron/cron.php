@@ -21,7 +21,8 @@ if ($email != '') {
     //$code = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     //$r_code = substr(str_shuffle($code),0,6);
     $r_code  = $redis->get($code_key);
-    $content = "尊敬的用户,你好!"."</br>"."下面是你在C NOVEL的验证码:".$r_code;
+    $content = $r_code . ' is Your C Novel Account Key.';
+//    $content = "尊敬的用户,你好!"."</br>"."下面是你在C NOVEL的验证码:".$r_code;
     $redis->del($a);
     $mail = new PHPMailer();
 

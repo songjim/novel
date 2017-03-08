@@ -29,7 +29,7 @@ return array(
     'DEFAULT_CONTROLLER' => 'HomePage',
     'DEFAULT_ACTION' => 'homeshow',
     /*页面Trace信息*/
-    'SHOW_PAGE_TRACE' => true,
+//    'SHOW_PAGE_TRACE' => true,
 
     /* 项目设定 */
     //    'APP_GROUP_LIST' => 'Home,Admin,Author',
@@ -54,8 +54,8 @@ return array(
 
     ),
     /* 自动运行配置 */
-    'CRON_CONFIG_ON' => true, // 是否开启自动运行
-    'CRON_CONFIG' => array(
-        '测试执行定时任务' => array('Admin/Cron/crons', '0', ''), //路径(格式同R)、间隔秒（0为一直运行）、指定一个开始时间
-    ),
+//    'CRON_CONFIG_ON' => true, // 是否开启自动运行
+//    'CRON_CONFIG' => array(
+//        '测试执行定时任务' => array('Admin/Cron/crons', '0', ''), //路径(格式同R)、间隔秒（0为一直运行）、指定一个开始时间
+//    ),
 );
