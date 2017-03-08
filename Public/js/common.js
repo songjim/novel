@@ -68,6 +68,7 @@ $(function () {
         addNote: function () {
             var that = this;
             that.checkLogin();
+            return false;
 
             var h = $(document).height()-$(window).height();
             $(document).scrollTop(h);
