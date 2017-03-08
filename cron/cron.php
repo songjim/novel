@@ -11,12 +11,10 @@ require_once(dirname(__FILE__) . '/../ThinkPHP/Library/Vendor/PHPMailer/class.sm
 $redis = new Redis();
 $redis->connect('127.0.0.1');
 $a = $redis->get('email_flag');
-echo $a;
 $email = $redis->get($a);
 if ($email != '') {
-    echo $email;
-    $subject = 'C NOVEL 注册邮件';
-    $name = 'C NOVEL';
+    $subject = 'C Novel Registered mail';
+//    $name = 'C NOVEL';
     $code_key = $a.'code';
     //$code = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     //$r_code = substr(str_shuffle($code),0,6);
@@ -58,11 +56,11 @@ if ($email != '') {
 
     $mail->Subject = $subject;
 
-    $mail->AltBody = "为了查看该邮件，请切换到支持 HTML 的邮件客户端";
+    $mail->AltBody = "";
 
     $mail->MsgHTML($content);
 
-    $mail->AddAddress($email, $name);
+    $mail->AddAddress($email);
 
     set_time_limit(60);
     $mail->Send();
