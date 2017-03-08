@@ -78,7 +78,7 @@
                                             </div>
                                             <span class="plate">{$me_replay.c_name}</span>
                                             <span class="num">{$me_replay.created_at}</span>
-                                            <span class=""><a href="{:U('Forums/Del',array('replay_id'=>$me_replay['id']))}" class="J-del-confirm">删除</a></span>
+                                            <span class=""><a href="{:U('Forums/replayDel',array('replay_id'=>$me_replay['id']))}" class="J-del-confirm">删除</a></span>
                                         </div>
                                         <ul>
                                             <li><a href="{:U('Forums/detailshow',array('forum_id'=>$me_replay['forum_id'],'read'=>1,'replay_id'=>$me_replay['id']))}" target="_blank" rel="noopener noreferrer">{$me_replay.r_content}</a>
@@ -103,7 +103,7 @@
                                                 </div>
                                                 <span class="plate">{$replay.c_name}</span>
                                                 <span class="num">{$replay.created_at}</span>
-                                                <span class=""><a href="{:U('Forums/Del',array('replay_id'=>$replay['id']))}" class="J-del-confirm">删除</a></span>
+                                                <span class=""><a href="{:U('Forums/replayDel',array('replay_id'=>$replay['id']))}" class="J-del-confirm">删除</a></span>
                                             </div>
                                             <ul>
                                                 <li><a href="{:U('Forums/detailshow',array('forum_id'=>$replay['forum_id'],'read'=>1,'replay_id'=>$replay['id']))}" target="_blank" rel="noopener noreferrer">{$replay.r_content}</a>

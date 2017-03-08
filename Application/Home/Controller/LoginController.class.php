@@ -66,7 +66,7 @@ class LoginController extends Controller
                 echo json_encode(array('success'=>false,'msg'=>'验证码错误!'));
                 exit();
             }
-            session('code',null);
+
             // 实例化User对象
             $user = D('Users');
             // 自动验证 创建数据集
@@ -80,6 +80,7 @@ class LoginController extends Controller
             if ($id = $user->add($data)) {
                 session('user_name',$user->user_name);
                 session('user_id',$id);
+                session('code',null);
                 echo json_encode(array('success'=>true,'url'=>U('HomePage/homeshow')));
 //                $this->error('注册成功', U('HomePage/homeshow'));
             } else {
