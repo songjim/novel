@@ -29,7 +29,7 @@ return array(
     'DEFAULT_CONTROLLER' => 'HomePage',
     'DEFAULT_ACTION' => 'homeshow',
     /*页面Trace信息*/
-//    'SHOW_PAGE_TRACE' => true,
+    'SHOW_PAGE_TRACE' => true,
 
     /* 项目设定 */
     //    'APP_GROUP_LIST' => 'Home,Admin,Author',
