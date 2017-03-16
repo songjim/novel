@@ -62,9 +62,9 @@ class BooksController extends Controller
                 ->field('sections.name as section_name,sections.book_id,books.*,categories.*,articles.*,sections.id as section_id,sections.taxis as section_taxis')
                 ->find();
         }
-
         $up_article = M('Sections')->where("book_id = $book_id")->order('id desc')->field('name')->find();
         if ($data) {
+            $data['body'] = htmlspecialchars_decode($data['body']);
             $this->assign('article', $data);// 模板变量赋值
             $create_time = date('Y.m.d',strtotime($data['created_at']));
             $up_time = date('Y.m.d H:i:s',strtotime($data['updated_at']));
