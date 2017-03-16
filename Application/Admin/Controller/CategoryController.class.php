@@ -92,4 +92,37 @@ class CategoryController extends Controller
         $this->assign('user_name',session('user_name'));
         $this->display();
     }
+
+    public function forumslist()
+    {
+        if (session('user_name') != 'admin') {
+            redirect(U('Login/loginShow'));
+        }
+        $pa = I('get.p',1,'intval');
+        $this->assign('user_name',session('user_name'));
+        $books = M('Forums b');
+        $book = $books->join("left join categories c on c.id = b.category_id")
+            ->field("c.id as c_id,c.name as c_name,b.*")->order('b.created_at desc')
+            ->page($pa.',5')->select();
+        $count = $books->count();
+        $Page = new \Think\Page($count,5);
+        $show = $Page->show();
+        $this->assign('page',$show);
+        $this->assign('books',$book);
+        $this->display();
+    }
+
+    public function forumsDel()
+    {
+        if (session('user_name') != 'admin') {
+            redirect(U('Login/loginShow'));
+        }
+        $id = I('get.id',0,'intval');
+        if ($id == 0) {
+            $this->error('无效的id');
+        }
+        $forum = M('Forums');
+        $forum->where("id = $id")->delete();
+        $this->success('删除成功');
+    }
 }
