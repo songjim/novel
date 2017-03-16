@@ -1,12 +1,31 @@
 </div>
 <!-- /#wrapper -->
 <load href="Public/vendor/jquery/jquery.min.js" />
+<load href="Public/plugin/ueditor/third-party/template.min.js" />
+<load href="Public/plugin/ueditor/umeditor.config.js" />
+<load href="Public/plugin/ueditor/umeditor.min.js" />
+<load href="Public/plugin/ueditor/lang/zh-cn/zh-cn.js" />
 <load href="Public/vendor/bootstrap/js/bootstrap.min.js" />
 <load href="Public/vendor/metisMenu/metisMenu.min.js" />
 <load href="Public/vendor/raphael/raphael.min.js" />
 <load href="Public/vendor/morrisjs/morris.min.js" />
 <load href="Public/dist/js/sb-admin-2.js" />
 <load href="Public/data/morris-data.js" />
+<script>
+    $(function () {
+        try {
+            var um = UM.getEditor('myEditor');
+            um.addListener('blur',function(){
+                $('#focush2').html('编辑器失去焦点了')
+            });
+            um.addListener('focus',function(){
+                $('#focush2').html('')
+            });
+        } catch (err) {
+
+        }
+    });
+</script>
 </body>
 
 </html>
